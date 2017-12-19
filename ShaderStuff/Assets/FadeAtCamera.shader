@@ -1,4 +1,4 @@
-﻿Shader "Unlit/FadeAtCamera"
+﻿Shader "Custom/Fade At Camera Unlit"
 {
 	Properties
 	{

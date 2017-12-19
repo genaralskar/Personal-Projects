@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Barrel
-  m_Shader: {fileID: 4800000, guid: 22236a83547d92943afc5651b60ad21d, type: 3}
+  m_Shader: {fileID: 4800000, guid: 3cdf377c2129e8b4a9281638e1fd2d5f, type: 3}
   m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -87,8 +87,11 @@ Material:
     - _Var3: 0.749
     - _ZWrite: 1
     m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DepthTint: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ObjPos: {r: 0.29000002, g: 1.1399999, b: -2.29, a: 0}
+    - _ObjPos: {r: 0.15000004, g: 1.1399999, b: 6.77, a: 0}
     - _RimColor: {r: 0.08088237, g: 0.08088237, b: 0.08088237, a: 0}
+    - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _Tint: {r: 1, g: 0.9485294, b: 0.9485294, a: 0.516}
