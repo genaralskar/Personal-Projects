@@ -103,7 +103,7 @@ MonoBehaviour:
     m_Value: 1
   color:
     m_OverrideState: 1
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    m_Value: {r: 1, g: 0.37254903, b: 0.2509804, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
@@ -127,14 +127,14 @@ MonoBehaviour:
     min: 0
   fogDistance:
     m_OverrideState: 1
-    m_Value: 200
+    m_Value: 300
     min: 0
   fogBaseHeight:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 61
   fogHeightAttenuation:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.001
     min: 0
     max: 1
 --- !u!114 &114914201461855468
@@ -180,21 +180,21 @@ MonoBehaviour:
     max: 10
   atmosphereThickness:
     m_OverrideState: 1
-    m_Value: 0.5
+    m_Value: 0.63
     min: 0
     max: 5
   skyTint:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 0.2784314, g: 0.4117647, b: 0.62352943, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
   groundColor:
     m_OverrideState: 1
-    m_Value: {r: 0.59927905, g: 0.6172068, b: 0.6320754, a: 1}
+    m_Value: {r: 1, g: 0.34901962, b: 0.12156863, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
   enableSunDisk:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
