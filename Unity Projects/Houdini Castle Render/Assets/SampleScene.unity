@@ -34,7 +34,7 @@ RenderSettings:
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
-  m_ReflectionBounces: 1
+  m_ReflectionBounces: 2
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2035111234}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 77170153}
   - component: {fileID: 77170152}
   - component: {fileID: 77170151}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,11 +139,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 77170149}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.7254558, y: -2.445377, z: -4.1628942}
+  m_LocalPosition: {x: -1.7254558, y: -0.015377045, z: -4.1628942}
   m_LocalScale: {x: 3.7213, y: 3.7213, z: 3.7213}
-  m_Children: []
-  m_Father: {fileID: 440123829}
-  m_RootOrder: 2
+  m_Children:
+  - {fileID: 1471043969}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &77170151
 MeshCollider:
@@ -174,7 +175,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: f98795836bd323e49a3465b17145520c, type: 2}
+  - {fileID: 2100000, guid: 80f61680b0654df4aac5362fe61d9fa3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -466,12 +467,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 440123828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.0727386, z: 0}
+  m_LocalPosition: {x: 0, y: 2.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1996829693}
   - {fileID: 1499808084}
-  - {fileID: 77170150}
   - {fileID: 2111634361}
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -1847,8 +1847,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1297650280}
-  m_LocalRotation: {x: -0.019434169, y: 0.9491919, z: -0.059883673, w: -0.30833602}
-  m_LocalPosition: {x: 6.2055354, y: 2.465773, z: 7.439364}
+  m_LocalRotation: {x: 0.01133299, y: 0.92540133, z: 0.027771914, w: -0.3777997}
+  m_LocalPosition: {x: 7.7644196, y: 2.537097, z: 8.080668}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1985,6 +1985,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1471043968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1471043969}
+  - component: {fileID: 1471043970}
+  m_Layer: 9
+  m_Name: Decal Projector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1471043969
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1471043968}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.04177457, y: 0.0632513, z: 2.3279216}
+  m_LocalScale: {x: 0.8061699, y: 0.8061699, z: 1.6123399}
+  m_Children: []
+  m_Father: {fileID: 77170150}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1471043970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1471043968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19d9143a39eb3b46bc4563e9889cfbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: d1710297a48073342bafc067532ecc1c, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.925
+  m_UVScale: {x: 1, y: 2}
+  m_UVBias: {x: 0, y: 0}
+  m_AffectsTransparency: 0
 --- !u!1001 &1499808083
 Prefab:
   m_ObjectHideFlags: 0
@@ -2646,8 +2692,8 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
+  m_ColorTemperature: 5586
+  m_UseColorTemperature: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &2035111235
@@ -2908,7 +2954,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 440123829}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!220 &2111634362
 LightProbeGroup:
