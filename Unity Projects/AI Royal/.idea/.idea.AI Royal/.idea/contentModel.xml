@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\genar\.Rider2018.1\system\resharper-host\Local\Transient\ReSharperHost\v12\SolutionCaches\_AI Royal.398261854.00" t="ExcludeRecursive" />
+    <e p="D:\GIT\Personal-Projects\Unity Projects\AI Royal" t="IncludeRecursive">
+      <e p="AI Royal.sln" t="IncludeFlat" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="AIController.cs" t="Include" />
+        <e p="AIScan.cs" t="Include" />
+        <e p="AITrackAndShoot.cs" t="Include" />
+        <e p="AIWalkToLastEnemyPosition.cs" t="Include" />
+        <e p="AIWander.cs" t="Include" />
+        <e p="CharController.cs" t="Include" />
+        <e p="ConeOfVision.cs" t="Include" />
+        <e p="Controller.cs" t="Include" />
+        <e p="Health.cs" t="Include" />
+        <e p="LWRP Stuff" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="SimpleCameraController.cs" t="Include" />
+          </e>
+          <e p="TutorialInfo" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Editor" t="Include">
+                <e p="ReadmeEditor.cs" t="Include" />
+              </e>
+              <e p="Readme.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="PlayerController.cs" t="Include" />
+        <e p="Weapon.cs" t="Include" />
+        <e p="WeaponDamager.cs" t="Include" />
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
