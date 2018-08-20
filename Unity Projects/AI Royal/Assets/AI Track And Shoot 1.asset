@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Name: AI Track And Shoot 1
   m_EditorClassIdentifier: 
   lineOfSightTracking: 1
-  trackingRadius: 15
+  trackingRadius: 5
+  trackingFuzz: 1
+  fuzzChangeTime: 5
   lastKnownPosition: {x: 0, y: 0, z: 0}
   playerLayerMask:
     serializedVersion: 2

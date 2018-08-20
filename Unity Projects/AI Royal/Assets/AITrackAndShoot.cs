@@ -9,10 +9,13 @@ public class AITrackAndShoot : Controller
 
 	
 	public float trackingRadius;
+	public float trackingFuzz = 2;
+	public float fuzzChangeTime = 1;
 	
 	public Vector3 lastKnownPosition;
 
 	public LayerMask playerLayerMask;
+	
 	
 	public override void ExecuteBehavior(NavMeshAgent agent, CharController charController )
 	{
@@ -32,14 +35,17 @@ public class AITrackAndShoot : Controller
 		}
 		else
 		{
-			lastKnownPosition = hit.point;
+			//lastKnownPosition = hit.point;
 			lastKnownPosition = charController.AITransform.position;
 			//execute tracking behavior
 			//rotate towards target
 			FaceTarget(charController, agent);
 			//move within raduis of target
 			direction = direction.normalized;
-			Vector3 newPos = lastKnownPosition + (new Vector3(direction.x, 0, direction.z) * trackingRadius);
+			Debug.Log("direction: " + direction);
+			
+			Vector3 newPos = charController.AITransform.position - (new Vector3(direction.x + (Perlin(0) * trackingFuzz), 0, direction.z + (Perlin(10) * trackingFuzz)) * trackingRadius);
+			Debug.Log("newPos = " + newPos);
 //			Debug.Log("newPos : " + newPos);
 			agent.destination = newPos;
 		}
@@ -65,7 +71,7 @@ public class AITrackAndShoot : Controller
 		Quaternion rotateAmount = FaceTargetLimits(charController, agent);
 		charController.gun.transform.rotation = rotateAmount;
 		Vector3 rotaionLimit = charController.gun.transform.localRotation.eulerAngles;
-		Debug.Log(rotaionLimit);
+//		Debug.Log(rotaionLimit);
 		if(rotaionLimit.y > 15 && rotaionLimit.y < 180)
 		{
 			rotaionLimit.y = 15;
@@ -85,5 +91,10 @@ public class AITrackAndShoot : Controller
 		{
 			charController.weapon.FireWeapon();
 		}
+	}
+
+	public float Perlin(float seed)
+	{
+		return (Mathf.PerlinNoise(Time.time / fuzzChangeTime, seed + this.GetInstanceID()) - .5f) * 2;
 	}
 }

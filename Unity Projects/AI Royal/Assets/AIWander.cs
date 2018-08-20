@@ -68,6 +68,11 @@ public class AIWander : Controller
 		
 		Vector3 newDest = new Vector3(startPoint.transform.position.x - randX, startPoint.transform.position.y, startPoint.transform.position.z - randZ);
 		//check if it's on the navmesh
+		NavMeshHit hit;
+		if (!NavMesh.SamplePosition(newDest, out hit, 1, NavMesh.AllAreas))
+		{
+			newDest = NewWanderPos(startPoint, location);
+		}
 //		Debug.Log(newDest);
 		return newDest;
 	}
