@@ -33,7 +33,10 @@ public class ConeOfVision : MonoBehaviour
 			bool charHit = false;
 			foreach (var obj in charsInCone)
 			{
-				if(charController.controller == charController.wander || charController.controller == charController.moveToLastPos || charController.controller == charController.scan)
+				if(charController.controller == charController.wander 
+				   || charController.controller == charController.moveToLastPos 
+				   || charController.controller == charController.scan
+				   || charController.controller == charController.runAway)
 				{
 	
 					RaycastHit hit;

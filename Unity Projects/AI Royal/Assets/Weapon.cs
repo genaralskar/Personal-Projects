@@ -19,6 +19,7 @@ public class Weapon : MonoBehaviour
 			tempProj.transform.rotation = projSpawn.rotation;
 			tempProj.AddComponent<WeaponDamager>();
 			tempProj.GetComponent<WeaponDamager>().damage = this.damage;
+			tempProj.GetComponent<WeaponDamager>().spawnerTransform = transform.root;
 
 			StartCoroutine(CooldownTimer());
 		}

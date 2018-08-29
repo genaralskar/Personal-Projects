@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed644cdcc366c7d4e813a1431b2318d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  controller: {fileID: 11400000, guid: 8649e1923274d184eab9ef41f8f0db7a, type: 2}
   eyes: {fileID: 0}
   AITransform: {fileID: 4627744982312988}
   wanderDestination: {fileID: 0}
@@ -429,10 +429,12 @@ MonoBehaviour:
   characterLayer:
     serializedVersion: 2
     m_Bits: 4294965759
+  health: {fileID: 114587553882484954}
   wander: {fileID: 11400000, guid: 0104d2ac2b0994645a57260a87fddf06, type: 2}
   trackAndShoot: {fileID: 11400000, guid: b455701d33077204b9aa60c06851be22, type: 2}
   moveToLastPos: {fileID: 11400000, guid: f3c7283fe73833543a5abf854b607df9, type: 2}
   scan: {fileID: 11400000, guid: 6f5a6919e6c15174f961e15931cbb7fc, type: 2}
+  runAway: {fileID: 11400000, guid: 73adc0672477d554b82be767ab84d1de, type: 2}
   lastEnemyPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &114587553882484954
 MonoBehaviour:
@@ -447,6 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   health: 100
+  charController: {fileID: 114362755527654858}
 --- !u!114 &114657965444373910
 MonoBehaviour:
   m_ObjectHideFlags: 1

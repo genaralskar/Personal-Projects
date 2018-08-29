@@ -8,9 +8,12 @@ public class Health : MonoBehaviour
 {
 
 	public UnityAction HealthAtZero = delegate {  };
+	public UnityAction HealthDamage = delegate {  };
 
 	public int maxHealth = 100;
 	public int health = 100;
+
+	public CharController charController;
 
 	private void OnEnable()
 	{
@@ -21,6 +24,14 @@ public class Health : MonoBehaviour
 	{
 		int newDamage = other.GetComponent<WeaponDamager>().damage;
 		AddHealth(-newDamage);
+		HealthDamage();
+		if (charController.controller == charController.wander 
+		    || charController.controller == charController.moveToLastPos
+		    || charController.controller == charController.scan)
+		{
+			charController.AITransform = other.transform;
+			//charController.controller = charController.runAway;
+		}
 	}
 
 	public void AddHealth(int amount)

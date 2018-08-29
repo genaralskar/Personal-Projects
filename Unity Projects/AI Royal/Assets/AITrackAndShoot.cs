@@ -28,7 +28,7 @@ public class AITrackAndShoot : Controller
 	{
 		Vector3 direction = charController.AITransform.position - charController.eyes.transform.position;
 		RaycastHit hit;
-		if (Physics.Raycast(charController.eyes.position, direction, out hit, Mathf.Infinity, charController.characterLayer))
+		if (!Physics.Raycast(charController.eyes.position, direction, out hit, Mathf.Infinity, charController.characterLayer))
 		{
 			charController.lastEnemyPosition = lastKnownPosition;
 			charController.controller = charController.moveToLastPos;
