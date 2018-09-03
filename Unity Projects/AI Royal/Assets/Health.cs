@@ -26,10 +26,9 @@ public class Health : MonoBehaviour
 		AddHealth(-newDamage);
 		HealthDamage();
 		if (charController.controller == charController.wander 
-		    || charController.controller == charController.moveToLastPos
-		    || charController.controller == charController.scan)
+		    || charController.controller == charController.moveToLastPos)
 		{
-			charController.AITransform = other.transform;
+			charController.AITransform = other.GetComponent<WeaponDamager>().spawnerTransform;
 			//charController.controller = charController.runAway;
 		}
 	}

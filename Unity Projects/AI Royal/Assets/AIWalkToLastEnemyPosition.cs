@@ -15,6 +15,8 @@ public class AIWalkToLastEnemyPosition : Controller {
 
 		if (Vector3.Distance(agent.transform.position, agent.destination) < .5)
 		{
+			Debug.Log("setting to agent look");
+			charController.lookController = charController.agentLook;
 			charController.controller = charController.scan;
 		}
 	}

@@ -17,25 +17,25 @@ public class AIBeingShot : Controller
     
     public override void ExecuteBehavior(NavMeshAgent agent, CharController charController)
     {
-        if (foundHiding)
-        {
-            charController.controller = charController.trackAndShoot;
-            return;
-        }
-        
         //find spot out of view of the enemy shooting
         //if no spot, turn around and change to track and shoot
         if (!running)
         {
-            FindHidingSpot(agent, charController.AITransform);
+            FindHidingSpot(agent, charController);
         }
+        else
+        {
+            DestinationCheck(agent, charController);
+        }
+        
+        
     }
 
-    private void FindHidingSpot(NavMeshAgent agent, Transform target)
+    private void FindHidingSpot(NavMeshAgent agent, CharController charController)
     {
         for (int i = 0; i < 20; i++)
         {
-            Vector3 temp = FindValidHidingSpot(agent.transform, target);
+            Vector3 temp = FindValidHidingSpot(agent.transform, charController.AITransform);
             if (temp != Vector3.one * 100)
             {
                 //if spot is found
@@ -43,12 +43,15 @@ public class AIBeingShot : Controller
                 running = true;
                 break;
             }
+            else //if no valid destination found
+            {
+                charController.controller = charController.trackAndShoot;
+                charController.lookController = charController.lookAtTarget;
+                return;
+            }
         }
 
-        if (!running)
-        {
-            foundHiding = true;
-        }
+        
     }
 
     private Vector3 FindValidHidingSpot(Transform character, Transform target)
@@ -69,21 +72,16 @@ public class AIBeingShot : Controller
         return Vector3.one * 100;
     }
     
-    private void FaceTarget(Transform target, NavMeshAgent agent)
-    {
-        Vector3 direction = (target.position - agent.transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        agent.transform.rotation = Quaternion.Slerp(agent.transform.rotation, lookRotation, Time.deltaTime * 5f);
-        
-        
-        
-    }
 
-    private void DestinationCheck(NavMeshAgent agent)
+
+    private void DestinationCheck(NavMeshAgent agent, CharController charController)
     {
         if (Vector3.Distance(agent.transform.position, agent.destination) < 1)
         {
             running = false;
+            charController.controller = charController.scan;
+//            Debug.Log("setting to agent look ai being shot");
+//            charController.lookAtTarget = charController.agentLook;
         }
     }
     

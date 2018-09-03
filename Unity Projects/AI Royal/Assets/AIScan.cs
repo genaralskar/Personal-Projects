@@ -12,6 +12,12 @@ public class AIScan : Controller
 	public float timer = 0;
 	public override void ExecuteBehavior(NavMeshAgent agent, CharController charController)
 	{
+		if (charController.lookController != charController.agentLook)
+		{
+//			Debug.Log("Setting new lookController from AIScan");
+			charController.lookController = charController.agentLook;
+		}
+		
 		//rotate 360
 		Vector3 rotation = agent.transform.rotation.eulerAngles;
 		rotation.y += 360 / rotationSpeed * Time.deltaTime;

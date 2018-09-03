@@ -7,8 +7,10 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="AIAgentLook.cs" t="Include" />
         <e p="AIBeingShot.cs" t="Include" />
         <e p="AIController.cs" t="Include" />
+        <e p="AILookAtTarget.cs" t="Include" />
         <e p="AIScan.cs" t="Include" />
         <e p="AITrackAndShoot.cs" t="Include" />
         <e p="AIWalkToLastEnemyPosition.cs" t="Include" />
@@ -16,6 +18,9 @@
         <e p="CharController.cs" t="Include" />
         <e p="ConeOfVision.cs" t="Include" />
         <e p="Controller.cs" t="Include" />
+        <e p="CurrentPlayerUI.cs" t="Include" />
+        <e p="EnemyCounter.cs" t="Include" />
+        <e p="FloatValue.cs" t="Include" />
         <e p="Health.cs" t="Include" />
         <e p="LWRP Stuff" t="Include">
           <e p="Scripts" t="Include">
@@ -31,6 +36,9 @@
           </e>
         </e>
         <e p="PlayerController.cs" t="Include" />
+        <e p="PlayerSpawner.cs" t="Include" />
+        <e p="StickToGround.cs" t="Include" />
+        <e p="UICounter.cs" t="Include" />
         <e p="Weapon.cs" t="Include" />
         <e p="WeaponDamager.cs" t="Include" />
       </e>

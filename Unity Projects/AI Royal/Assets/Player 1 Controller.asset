@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81255d638d96277419315b28d3ee2eca, type: 3}
   m_Name: Player 1 Controller
   m_EditorClassIdentifier: 
-  lineOfSightTracking: 1
+  lineOfSightTracking: 0
   moveSpeed: 5

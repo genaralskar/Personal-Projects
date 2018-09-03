@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 195840340001853636}
   - component: {fileID: 114362755527654858}
   - component: {fileID: 114587553882484954}
+  - component: {fileID: 114397520543931910}
   m_Layer: 9
   m_Name: AI
   m_TagString: Untagged
@@ -221,7 +222,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1561854008660132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.546}
+  m_LocalPosition: {x: 0, y: 0, z: 0.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4382520317220208}
@@ -234,7 +235,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1727209801860566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.76, y: -0.02, z: 35.76}
+  m_LocalPosition: {x: 218, y: 4.699999, z: 197}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4697229493872124}
@@ -420,7 +421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed644cdcc366c7d4e813a1431b2318d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 11400000, guid: 8649e1923274d184eab9ef41f8f0db7a, type: 2}
+  controller: {fileID: 0}
+  lookController: {fileID: 11400000, guid: 571d1e94362d19644ad383d52231db0d, type: 2}
   eyes: {fileID: 0}
   AITransform: {fileID: 4627744982312988}
   wanderDestination: {fileID: 0}
@@ -435,7 +437,21 @@ MonoBehaviour:
   moveToLastPos: {fileID: 11400000, guid: f3c7283fe73833543a5abf854b607df9, type: 2}
   scan: {fileID: 11400000, guid: 6f5a6919e6c15174f961e15931cbb7fc, type: 2}
   runAway: {fileID: 11400000, guid: 73adc0672477d554b82be767ab84d1de, type: 2}
+  lookAtTarget: {fileID: 11400000, guid: 83569268af9858e4fbe7cc11cde57fb0, type: 2}
+  agentLook: {fileID: 11400000, guid: 571d1e94362d19644ad383d52231db0d, type: 2}
   lastEnemyPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &114397520543931910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1727209801860566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0887857c656c9df4885d61d93117adf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyCounter: {fileID: 11400000, guid: f72d4533a18c1c047b8774d8fdb1b70a, type: 2}
 --- !u!114 &114587553882484954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -479,7 +495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 1750982023394698, guid: 66d7589ab3e0a7241ae9b331c5baba35, type: 2}
   projSpawn: {fileID: 4570734989021802}
-  damage: 0
+  damage: 10
   cooldown: 0.2
 --- !u!136 &136116580943967260
 CapsuleCollider:

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
+using UnityEditor.Experimental.Rendering;
 using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.AI;
@@ -9,6 +10,7 @@ public class CharController : MonoBehaviour
 {
 
 	public Controller controller;
+	public Controller lookController;
 	public Transform eyes;
 	public Transform AITransform;
 	public Transform wanderDestination;
@@ -16,6 +18,7 @@ public class CharController : MonoBehaviour
 	public Transform gun;
 	public Weapon weapon;
 
+	[Tooltip("Everything except the player selected")]
 	public LayerMask characterLayer;
 	
 	private NavMeshAgent agent;
@@ -27,6 +30,13 @@ public class CharController : MonoBehaviour
 	public Controller moveToLastPos;
 	public Controller scan;
 	public Controller runAway;
+
+
+	public Controller lookAtTarget;
+	public Controller agentLook;
+
+	[HideInInspector]
+	public PlayerSpawner spawner;
 
 	private void Start()
 	{
@@ -40,6 +50,10 @@ public class CharController : MonoBehaviour
 		scan = InstanceBehaviors(scan);
 		runAway = InstanceBehaviors(runAway);
 		
+		lookAtTarget = InstanceBehaviors(lookAtTarget);
+		agentLook = InstanceBehaviors(agentLook);
+		
+		
 		if (eyes == null)
 		{
 			eyes = transform;
@@ -50,19 +64,24 @@ public class CharController : MonoBehaviour
 			controller = wander;
 		}
 
-		print(wander.GetInstanceID());
+//		print(wander.GetInstanceID());
 	}
 
 	private Controller InstanceBehaviors(Controller cont)
 	{		
 		Controller newCont = ScriptableObject.Instantiate(cont);
-		print(newCont);
+//		print(newCont);
 		return newCont;
 	}
 	
 	private void Update()
 	{
-		controller.ExecuteBehavior(agent, this);
+		if (agent.enabled)
+		{
+			controller.ExecuteBehavior(agent, this);
+            lookController.ExecuteBehavior(agent, this);
+		}
+		
 	}
 
 	
@@ -72,23 +91,38 @@ public class CharController : MonoBehaviour
 	
 	public void StartVisionCheck(Transform objectTransform)
 	{
-		if (controller.lineOfSightTracking)
+		if (controller.lineOfSightTracking) //if ai is being used
 		{
-			controller = trackAndShoot;
 			AITransform = objectTransform;
 			trackedEnemy = objectTransform;
-		//	StartCoroutine(LineOfSightCheck());
+			controller = trackAndShoot;
+			lookController = lookAtTarget;
+			//	StartCoroutine(LineOfSightCheck());
 		}
 	}
 
 	private void HealthHitHandler()
 	{
-		if (controller == wander || controller == moveToLastPos || controller == scan)
+		if (controller == wander || controller == moveToLastPos)
 		{
 			controller = runAway;
 		}
 	}
-	
+
+	public void ResetBehavior()
+	{
+//		Debug.Log(";kjsadjlkf;lkzladslkfj");
+		this.AITransform = transform;
+		this.controller = wander;
+		this.lookController = agentLook;
+//		Debug.Log(controller + " " + lookController + " " + AITransform + " " + this);
+	}
+
+	private void OnDisable()
+	{
+		
+	}
+
 //	private IEnumerator LineOfSightCheck()
 //	{
 //		//set behavior to track and shoot

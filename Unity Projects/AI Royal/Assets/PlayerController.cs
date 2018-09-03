@@ -23,7 +23,7 @@ public class PlayerController : Controller
 			agent.transform.LookAt(lookAtPoint);
 		}
 
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButton(0))
 		{
 			charController.weapon.FireWeapon();
 		}
