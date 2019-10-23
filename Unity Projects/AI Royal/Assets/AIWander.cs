@@ -29,7 +29,7 @@ public class AIWander : Controller
 			agent.destination = newPos;
 		}
 
-		if (Vector3.Distance(agent.transform.position, newPos) < .5)
+		if (Vector3.Distance(agent.transform.position, newPos) < 1f) //check amount of nav path left instead of distance
 		{
 			newPos = NewWanderPos(agent.transform, charController.wanderDestination);
 //			Debug.Log("charController = " + charController.gameObject);
@@ -74,7 +74,7 @@ public class AIWander : Controller
 			newDest = NewWanderPos(startPoint, location);
 		}
 //		Debug.Log(newDest);
-		return newDest;
+		return hit.position;
 	}
 
 	private void OnDisable()

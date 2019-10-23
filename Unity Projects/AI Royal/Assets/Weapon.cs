@@ -1,16 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Weapon : MonoBehaviour
+[CreateAssetMenu(menuName = "Weapons/Weapon")]
+public class Weapon : ScriptableObject
 {
 	public GameObject projectile;
-	public Transform projSpawn;
 	public int damage;
 	public float cooldown = .2f;
 	private bool canFire = true;
 
-	public void FireWeapon()
+	/*public void FireWeapon()
 	{
 		if (canFire)
 		{
@@ -20,16 +19,12 @@ public class Weapon : MonoBehaviour
 			tempProj.AddComponent<WeaponDamager>();
 			tempProj.GetComponent<WeaponDamager>().damage = this.damage;
 			tempProj.GetComponent<WeaponDamager>().spawnerTransform = transform.root;
+			fireSound.Play();
 
 			StartCoroutine(CooldownTimer());
 		}
 		
-	}
+	}*/
 
-	private IEnumerator CooldownTimer()
-	{
-		canFire = false;
-		yield return new WaitForSeconds(cooldown);
-		canFire = true;
-	}
+	
 }

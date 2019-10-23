@@ -15,10 +15,13 @@
         <e p="AITrackAndShoot.cs" t="Include" />
         <e p="AIWalkToLastEnemyPosition.cs" t="Include" />
         <e p="AIWander.cs" t="Include" />
+        <e p="CameraZoom.cs" t="Include" />
         <e p="CharController.cs" t="Include" />
         <e p="ConeOfVision.cs" t="Include" />
         <e p="Controller.cs" t="Include" />
-        <e p="CurrentPlayerUI.cs" t="Include" />
+        <e p="Damage Flash" t="Include">
+          <e p="ParticleFlash.cs" t="Include" />
+        </e>
         <e p="EnemyCounter.cs" t="Include" />
         <e p="FloatValue.cs" t="Include" />
         <e p="Health.cs" t="Include" />
@@ -37,10 +40,13 @@
         </e>
         <e p="PlayerController.cs" t="Include" />
         <e p="PlayerSpawner.cs" t="Include" />
+        <e p="PlayerSwapManager.cs" t="Include" />
         <e p="StickToGround.cs" t="Include" />
         <e p="UICounter.cs" t="Include" />
         <e p="Weapon.cs" t="Include" />
         <e p="WeaponDamager.cs" t="Include" />
+        <e p="WeaponManager.cs" t="Include" />
+        <e p="WeaponMono.cs" t="Include" />
       </e>
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />

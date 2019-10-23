@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed7c002a494b6747b97e42b6660769d, type: 3}
+  m_Name: Weapon1
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1750982023394698, guid: 66d7589ab3e0a7241ae9b331c5baba35, type: 2}
+  projSpawn: {fileID: 4571215397553060, guid: b2a89801ca8bb6c4c854558be8cabe26, type: 2}
+  damage: 5
+  art: {fileID: 1818785899484966, guid: b2a89801ca8bb6c4c854558be8cabe26, type: 2}
+  cooldown: 0.2

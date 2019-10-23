@@ -26,6 +26,11 @@ public class PlayerController : Controller
 		if (Input.GetMouseButton(0))
 		{
 			charController.weapon.FireWeapon();
+			moveSpeed = charController.speed * .7f;
+		}
+		else
+		{
+			moveSpeed = charController.speed;
 		}
 	}
 }

@@ -15,6 +15,8 @@ public class Health : MonoBehaviour
 
 	public CharController charController;
 
+	
+
 	private void OnEnable()
 	{
 		health = maxHealth;

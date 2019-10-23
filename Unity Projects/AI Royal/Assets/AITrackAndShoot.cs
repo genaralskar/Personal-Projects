@@ -18,7 +18,7 @@ public class AITrackAndShoot : Controller
 	public LayerMask playerLayerMask;
 	
 	
-	public override void ExecuteBehavior(NavMeshAgent agent, CharController charController )
+	public override void ExecuteBehavior(NavMeshAgent agent, CharController charController)
 	{
 		
 		if (charController.AITransform.gameObject.activeInHierarchy == false)
@@ -103,6 +103,11 @@ public class AITrackAndShoot : Controller
 		if (Physics.SphereCast(charController.weapon.projSpawn.position, .5f, charController.transform.forward, out hit, 50, playerLayerMask)) //if hits a player, shoot gun
 		{
 			charController.weapon.FireWeapon();
+			charController.agent.speed = charController.speed  * .7f;
+		}
+		else
+		{
+			charController.agent.speed = charController.speed;
 		}
 	}
 

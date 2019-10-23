@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.Rendering;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,9 +14,14 @@ public class AIWalkToLastEnemyPosition : Controller {
 			agent.destination = charController.lastEnemyPosition;
 		}
 
+		if (agent.speed < charController.speed)
+		{
+			agent.speed = charController.speed;
+		}
+
 		if (Vector3.Distance(agent.transform.position, agent.destination) < .5)
 		{
-			Debug.Log("setting to agent look");
+//			Debug.Log("setting to agent look");
 			charController.lookController = charController.agentLook;
 			charController.controller = charController.scan;
 		}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
+using UnityEditor;
 using UnityEditor.Experimental.Rendering;
 using UnityEditor.ShaderGraph;
 using UnityEngine;
@@ -14,33 +15,39 @@ public class CharController : MonoBehaviour
 	public Transform eyes;
 	public Transform AITransform;
 	public Transform wanderDestination;
+	public float speed = 5;
 
 	public Transform gun;
-	public Weapon weapon;
+	public WeaponManager weapon;
 
 	[Tooltip("Everything except the player selected")]
 	public LayerMask characterLayer;
 	
-	private NavMeshAgent agent;
+	[HideInInspector]
+	public NavMeshAgent agent;
 
 	public Health health;
 
+	//move behaviors
 	public Controller wander;
 	public Controller trackAndShoot;
 	public Controller moveToLastPos;
 	public Controller scan;
 	public Controller runAway;
 
-
+	//look behaviors
 	public Controller lookAtTarget;
 	public Controller agentLook;
 
 	[HideInInspector]
 	public PlayerSpawner spawner;
+	public GameObject deathParticles;
+	
 
 	private void Start()
 	{
 		health.HealthDamage += HealthHitHandler;
+		health.HealthAtZero += OnDeath;
 		
 		agent = GetComponent<NavMeshAgent>();
 		
@@ -52,6 +59,8 @@ public class CharController : MonoBehaviour
 		
 		lookAtTarget = InstanceBehaviors(lookAtTarget);
 		agentLook = InstanceBehaviors(agentLook);
+
+		agent.speed = speed;
 		
 		
 		if (eyes == null)
@@ -85,8 +94,6 @@ public class CharController : MonoBehaviour
 	}
 
 	
-	
-	private Transform trackedEnemy;
 	public Vector3 lastEnemyPosition;
 	
 	public void StartVisionCheck(Transform objectTransform)
@@ -94,7 +101,6 @@ public class CharController : MonoBehaviour
 		if (controller.lineOfSightTracking) //if ai is being used
 		{
 			AITransform = objectTransform;
-			trackedEnemy = objectTransform;
 			controller = trackAndShoot;
 			lookController = lookAtTarget;
 			//	StartCoroutine(LineOfSightCheck());
@@ -118,34 +124,20 @@ public class CharController : MonoBehaviour
 //		Debug.Log(controller + " " + lookController + " " + AITransform + " " + this);
 	}
 
+	private void OnDeath()
+	{
+		GameObject dp = Instantiate(deathParticles);
+		dp.transform.position = transform.position;
+	}
+
 	private void OnDisable()
 	{
+		spawner.RemovePlayer(gameObject);
+		if (Application.isPlaying)
+		{
+			
+		}
 		
 	}
 
-//	private IEnumerator LineOfSightCheck()
-//	{
-//		//set behavior to track and shoot
-//		Vector3 direction = trackedEnemy.position - eyes.transform.position;
-//		RaycastHit hit;
-//		while (Physics.Raycast(eyes.position, direction, out hit, Mathf.Infinity, characterLayer))
-//		{
-//			lastEnemyPosition = hit.point;
-//			//execute tracking behavior
-//			yield return new WaitForEndOfFrame();
-//		}
-//		
-//		//break line of sight
-//		//walk towards last know destination
-//		agent.destination = lastEnemyPosition;
-//
-//
-//		//return to wander
-//	}
-//
-//	private void ResetLOSCheck()
-//	{
-//		StopAllCoroutines();
-//		StartCoroutine(LineOfSightCheck());
-//	}
 }
