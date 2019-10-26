@@ -64,14 +64,20 @@ SpriteAtlas:
     - {fileID: -2446794975273977164, guid: c97db6a4b58740541945d18c34c51586, type: 3}
     - {fileID: -2033776217500058201, guid: c97db6a4b58740541945d18c34c51586, type: 3}
     - {fileID: -3637585315767756026, guid: c97db6a4b58740541945d18c34c51586, type: 3}
-    totalSpriteSurfaceArea: 14553
+    - {fileID: 7816579671404485219, guid: c97db6a4b58740541945d18c34c51586, type: 3}
+    - {fileID: 3343042871892444036, guid: c97db6a4b58740541945d18c34c51586, type: 3}
+    - {fileID: 8404486892279688919, guid: c97db6a4b58740541945d18c34c51586, type: 3}
+    - {fileID: -3363700683580124580, guid: c97db6a4b58740541945d18c34c51586, type: 3}
+    totalSpriteSurfaceArea: 16317
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: -9153645828579385054, guid: c97db6a4b58740541945d18c34c51586, type: 3}
+  - {fileID: -3363700683580124580, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -1394649290122749023, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -3637585315767756026, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: 7570803956972993819, guid: c97db6a4b58740541945d18c34c51586, type: 3}
+  - {fileID: 7816579671404485219, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -7378219029796807267, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -3253330834931219228, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -7506471482557541844, guid: c97db6a4b58740541945d18c34c51586, type: 3}
@@ -81,6 +87,7 @@ SpriteAtlas:
   - {fileID: -6323925813487305543, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -2033776217500058201, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: 2598833627876718223, guid: c97db6a4b58740541945d18c34c51586, type: 3}
+  - {fileID: 8404486892279688919, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -939578418697560390, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: 9109323392184880499, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -8450034330120072285, guid: c97db6a4b58740541945d18c34c51586, type: 3}
@@ -89,6 +96,7 @@ SpriteAtlas:
   - {fileID: -1878874476107186914, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: 7742353039807090840, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: 2518419522078788468, guid: c97db6a4b58740541945d18c34c51586, type: 3}
+  - {fileID: 3343042871892444036, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -4457890327959402608, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -8728702345363150914, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: 3986406276423654522, guid: c97db6a4b58740541945d18c34c51586, type: 3}
@@ -103,9 +111,11 @@ SpriteAtlas:
   - {fileID: 6205809148709160227, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   m_PackedSpriteNamesToIndex:
   - Grass Left Ledge
+  - Pillar Top Short
   - Grass Ramp Left Transition
   - Spikes
   - Grass Platform
+  - Tractor Beam
   - Heart Full
   - spritesheet_79
   - Grass Right Ledge
@@ -115,6 +125,7 @@ SpriteAtlas:
   - Grass Right Ledge Curve 1
   - Rock
   - Cloud
+  - Pillar Top
   - Dirt Block
   - Bush
   - Grass Platform Right
@@ -123,6 +134,7 @@ SpriteAtlas:
   - Mushroom Brown Small
   - Dirt Block Mid
   - Grass Platform Left
+  - Pillar Mid
   - Grass Platform Mid
   - Grass Ramp Left
   - Grass Ramp Right

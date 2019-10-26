@@ -124,7 +124,7 @@ TextureImporter:
     second: spritesheet_39
   - first:
       213: 7816579671404485219
-    second: spritesheet_40
+    second: Tractor Beam
   - first:
       213: 8434893452232278025
     second: spritesheet_41
@@ -1315,10 +1315,10 @@ TextureImporter:
     second: spritesheet_436
   - first:
       213: 8404486892279688919
-    second: spritesheet_437
+    second: Pillar Top
   - first:
       213: -3363700683580124580
-    second: spritesheet_438
+    second: Pillar Top Short
   - first:
       213: -9091015350020149546
     second: spritesheet_439
@@ -1405,7 +1405,7 @@ TextureImporter:
     second: spritesheet_466
   - first:
       213: 3343042871892444036
-    second: spritesheet_467
+    second: Pillar Mid
   - first:
       213: 8794994281793206272
     second: spritesheet_468
@@ -2375,7 +2375,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_40
+      name: Tractor Beam
       rect:
         serializedVersion: 2
         x: 233
@@ -10439,7 +10439,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_437
+      name: Pillar Top
       rect:
         serializedVersion: 2
         x: 394
@@ -10460,7 +10460,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_438
+      name: Pillar Top Short
       rect:
         serializedVersion: 2
         x: 417
@@ -11069,7 +11069,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_467
+      name: Pillar Mid
       rect:
         serializedVersion: 2
         x: 394
