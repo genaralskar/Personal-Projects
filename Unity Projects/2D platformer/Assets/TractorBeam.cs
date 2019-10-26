@@ -11,6 +11,7 @@ public class TractorBeam : MonoBehaviour
     public float tractorForce = 5f;
     public GameObject endGameCam;
     public float tractorMoveSpeed = 4f;
+    public AudioSource tractorSound;
 
     private Transform playerTransform;
     private Rigidbody2D rb;
@@ -38,6 +39,7 @@ public class TractorBeam : MonoBehaviour
         StartCoroutine(Tractor());
         StartCoroutine(MoveTractorPoint());
         endGameCam.SetActive(true);
+        tractorSound.Play();
     }
 
 
@@ -68,13 +70,13 @@ public class TractorBeam : MonoBehaviour
     {
         while (Mathf.Abs(tractorPoint.y - tractorPointTarget.y) > .1f)
         {
-            Debug.Log("moving on up?");
+            //Debug.Log("moving on up?");
             //move tractor point
             float dirMag = Vector2.Distance(tractorPoint + position, playerTransform.position);
-            Debug.Log(dirMag);
+            //Debug.Log(dirMag);
             if (dirMag < 2f)
             {
-                Debug.Log("Upward movement!");
+                //Debug.Log("Upward movement!");
                 tractorPoint.y += tractorMoveSpeed * Time.deltaTime;
             }
             

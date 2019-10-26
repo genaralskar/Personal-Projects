@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.relativeVelocity.magnitude > 3f)
+        if (other.relativeVelocity.magnitude > 2f)
         {
             impactSound.Play();
         }
