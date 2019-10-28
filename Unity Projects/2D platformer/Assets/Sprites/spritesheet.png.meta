@@ -226,7 +226,7 @@ TextureImporter:
     second: spritesheet_73
   - first:
       213: 4764081960791798808
-    second: spritesheet_74
+    second: Button Yellow Up
   - first:
       213: 4358228687824631495
     second: spritesheet_75
@@ -304,7 +304,7 @@ TextureImporter:
     second: spritesheet_99
   - first:
       213: -222044690269729384
-    second: spritesheet_100
+    second: Fence
   - first:
       213: 7904464350286974632
     second: spritesheet_101
@@ -406,16 +406,16 @@ TextureImporter:
     second: spritesheet_133
   - first:
       213: 7138373754498443674
-    second: spritesheet_134
+    second: Button Yellow Down
   - first:
       213: -5547053768375964987
     second: spritesheet_135
   - first:
       213: -62547705545817361
-    second: spritesheet_136
+    second: Door Top Open
   - first:
       213: -3028251517133842638
-    second: spritesheet_137
+    second: Door Bottom Open
   - first:
       213: -5414413498983580535
     second: spritesheet_138
@@ -502,16 +502,16 @@ TextureImporter:
     second: spritesheet_165
   - first:
       213: 7482745408495789000
-    second: spritesheet_166
+    second: Door Top Closed
   - first:
       213: 5457760814868076180
-    second: spritesheet_167
+    second: Door Bottom Closed Keyhole
   - first:
       213: 7499681283773124070
     second: spritesheet_168
   - first:
       213: -1312604216809891599
-    second: spritesheet_169
+    second: Key Yellow
   - first:
       213: -7814904642673703271
     second: spritesheet_170
@@ -553,19 +553,19 @@ TextureImporter:
     second: spritesheet_182
   - first:
       213: -4858864357370471629
-    second: spritesheet_183
+    second: Ground Under Middle
   - first:
       213: -8281908828538503506
     second: spritesheet_184
   - first:
       213: 8861663311678512013
-    second: spritesheet_185
+    second: Ground Under Left Ledge
   - first:
       213: -3840772487147415941
-    second: spritesheet_186
+    second: Ground Under Ramp Left
   - first:
       213: -5888812268749110083
-    second: spritesheet_187
+    second: Ground Under Ramp Right
   - first:
       213: 8832249885449424328
     second: spritesheet_188
@@ -574,10 +574,10 @@ TextureImporter:
     second: spritesheet_189
   - first:
       213: 1447308487252543818
-    second: spritesheet_190
+    second: Crate 1
   - first:
       213: -969364871392117510
-    second: spritesheet_191
+    second: Crate 2
   - first:
       213: -4392325704916978185
     second: spritesheet_192
@@ -586,7 +586,7 @@ TextureImporter:
     second: spritesheet_193
   - first:
       213: 7979476824260078576
-    second: spritesheet_194
+    second: Lock Yellow
   - first:
       213: -2008465988816978003
     second: spritesheet_195
@@ -640,7 +640,7 @@ TextureImporter:
     second: spritesheet_211
   - first:
       213: -2128518123501829246
-    second: spritesheet_212
+    second: Ground Under Solid
   - first:
       213: -4857701473709822670
     second: spritesheet_213
@@ -649,13 +649,13 @@ TextureImporter:
     second: spritesheet_214
   - first:
       213: 9134910031848845908
-    second: spritesheet_215
+    second: Ground Under Right Ledge
   - first:
       213: 25208050134178333
-    second: spritesheet_216
+    second: Ground Under Ramp Left Transition
   - first:
       213: 4149515023564643645
-    second: spritesheet_217
+    second: Ground Under Ramp Right Transition
   - first:
       213: 4583554833819213502
     second: spritesheet_218
@@ -691,7 +691,7 @@ TextureImporter:
     second: spritesheet_228
   - first:
       213: 282765226203145494
-    second: spritesheet_229
+    second: Door Bottom Closed
   - first:
       213: -5163894306360678561
     second: spritesheet_230
@@ -715,13 +715,13 @@ TextureImporter:
     second: spritesheet_236
   - first:
       213: -429049672868709979
-    second: spritesheet_237
+    second: Light Beam Left
   - first:
       213: 728851745803153
-    second: spritesheet_238
+    second: Light Beam Right
   - first:
       213: -4162361812521736791
-    second: spritesheet_239
+    second: Light Beam Mid
   - first:
       213: 3951074885310407024
     second: spritesheet_240
@@ -775,10 +775,10 @@ TextureImporter:
     second: spritesheet_256
   - first:
       213: -801030767208119973
-    second: spritesheet_257
+    second: Bomb
   - first:
       213: -8015795707001315427
-    second: spritesheet_258
+    second: Bomb Flash
   - first:
       213: 1220291187406205560
     second: spritesheet_259
@@ -805,10 +805,10 @@ TextureImporter:
     second: spritesheet_266
   - first:
       213: -114695788158286696
-    second: spritesheet_267
+    second: Light Beam Left Top
   - first:
       213: 4196105166655449800
-    second: spritesheet_268
+    second: Light Beam Right Top
   - first:
       213: 2802716872587951575
     second: spritesheet_269
@@ -1381,7 +1381,7 @@ TextureImporter:
     second: spritesheet_458
   - first:
       213: 4468708901130535192
-    second: spritesheet_459
+    second: Mushroom Brown Large
   - first:
       213: 2576809770665665646
     second: spritesheet_460
@@ -3089,7 +3089,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_74
+      name: Button Yellow Up
       rect:
         serializedVersion: 2
         x: 325
@@ -3635,7 +3635,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_100
+      name: Fence
       rect:
         serializedVersion: 2
         x: 233
@@ -4269,7 +4269,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_134
+      name: Button Yellow Down
       rect:
         serializedVersion: 2
         x: 325
@@ -4311,7 +4311,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_136
+      name: Door Top Open
       rect:
         serializedVersion: 2
         x: 371
@@ -4332,7 +4332,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_137
+      name: Door Bottom Open
       rect:
         serializedVersion: 2
         x: 394
@@ -4857,7 +4857,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_166
+      name: Door Top Closed
       rect:
         serializedVersion: 2
         x: 371
@@ -4878,7 +4878,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_167
+      name: Door Bottom Closed Keyhole
       rect:
         serializedVersion: 2
         x: 394
@@ -4920,7 +4920,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_169
+      name: Key Yellow
       rect:
         serializedVersion: 2
         x: 440
@@ -5151,7 +5151,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_183
+      name: Ground Under Middle
       rect:
         serializedVersion: 2
         x: 72
@@ -5193,7 +5193,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_185
+      name: Ground Under Left Ledge
       rect:
         serializedVersion: 2
         x: 118
@@ -5214,7 +5214,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_186
+      name: Ground Under Ramp Left
       rect:
         serializedVersion: 2
         x: 141
@@ -5235,7 +5235,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_187
+      name: Ground Under Ramp Right
       rect:
         serializedVersion: 2
         x: 164
@@ -5298,7 +5298,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_190
+      name: Crate 1
       rect:
         serializedVersion: 2
         x: 233
@@ -5319,7 +5319,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_191
+      name: Crate 2
       rect:
         serializedVersion: 2
         x: 256
@@ -5382,7 +5382,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_194
+      name: Lock Yellow
       rect:
         serializedVersion: 2
         x: 325
@@ -5739,7 +5739,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_212
+      name: Ground Under Solid
       rect:
         serializedVersion: 2
         x: 49
@@ -5802,7 +5802,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_215
+      name: Ground Under Right Ledge
       rect:
         serializedVersion: 2
         x: 118
@@ -5823,7 +5823,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_216
+      name: Ground Under Ramp Left Transition
       rect:
         serializedVersion: 2
         x: 141
@@ -5844,7 +5844,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_217
+      name: Ground Under Ramp Right Transition
       rect:
         serializedVersion: 2
         x: 164
@@ -6075,11 +6075,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_229
+      name: Door Bottom Closed
       rect:
         serializedVersion: 2
-        x: 440
-        y: 187
+        x: 417
+        y: 210
         width: 21
         height: 21
       alignment: 0
@@ -6243,7 +6243,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_237
+      name: Light Beam Left
       rect:
         serializedVersion: 2
         x: 624
@@ -6264,7 +6264,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_238
+      name: Light Beam Right
       rect:
         serializedVersion: 2
         x: 647
@@ -6285,7 +6285,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_239
+      name: Light Beam Mid
       rect:
         serializedVersion: 2
         x: 670
@@ -6663,7 +6663,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_257
+      name: Bomb
       rect:
         serializedVersion: 2
         x: 394
@@ -6684,7 +6684,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_258
+      name: Bomb Flash
       rect:
         serializedVersion: 2
         x: 417
@@ -6873,7 +6873,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_267
+      name: Light Beam Left Top
       rect:
         serializedVersion: 2
         x: 624
@@ -6894,7 +6894,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_268
+      name: Light Beam Right Top
       rect:
         serializedVersion: 2
         x: 647
@@ -10905,7 +10905,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_459
+      name: Mushroom Brown Large
       rect:
         serializedVersion: 2
         x: 210
