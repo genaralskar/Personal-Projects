@@ -96,7 +96,11 @@ SpriteAtlas:
     - {fileID: 728851745803153, guid: c97db6a4b58740541945d18c34c51586, type: 3}
     - {fileID: -114695788158286696, guid: c97db6a4b58740541945d18c34c51586, type: 3}
     - {fileID: 4196105166655449800, guid: c97db6a4b58740541945d18c34c51586, type: 3}
-    totalSpriteSurfaceArea: 28665
+    - {fileID: 1009912393440422847, guid: c97db6a4b58740541945d18c34c51586, type: 3}
+    - {fileID: 6393348276689707748, guid: c97db6a4b58740541945d18c34c51586, type: 3}
+    - {fileID: 4764081960791798808, guid: c97db6a4b58740541945d18c34c51586, type: 3}
+    - {fileID: 7138373754498443674, guid: c97db6a4b58740541945d18c34c51586, type: 3}
+    totalSpriteSurfaceArea: 29547
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -121,6 +125,7 @@ SpriteAtlas:
   - {fileID: 4764081960791798808, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: 7979476824260078576, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: 2598833627876718223, guid: c97db6a4b58740541945d18c34c51586, type: 3}
+  - {fileID: 1009912393440422847, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: 8404486892279688919, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -939578418697560390, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: 7138373754498443674, guid: c97db6a4b58740541945d18c34c51586, type: 3}
@@ -154,6 +159,7 @@ SpriteAtlas:
   - {fileID: 4356792513306228756, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: 4149515023564643645, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -62547705545817361, guid: c97db6a4b58740541945d18c34c51586, type: 3}
+  - {fileID: 6393348276689707748, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -8009467270515301202, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -222044690269729384, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -8120609992666035654, guid: c97db6a4b58740541945d18c34c51586, type: 3}
@@ -187,6 +193,7 @@ SpriteAtlas:
   - Button Yellow Up
   - Lock Yellow
   - Cloud
+  - Flag Yellow Down
   - Pillar Top
   - Dirt Block
   - Button Yellow Down
@@ -220,6 +227,7 @@ SpriteAtlas:
   - Grass Middle
   - Ground Under Ramp Right Transition
   - Door Top Open
+  - Flag Yellow Up
   - Grass Ramp Right Transition
   - Fence
   - Coin Gold Large

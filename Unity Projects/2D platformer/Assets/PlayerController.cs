@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour
 
     private UnityAction Landed;
     private UnityAction Airborne;
+
+    public static UnityAction<GameObject> Death;
     
     private void Awake()
     {

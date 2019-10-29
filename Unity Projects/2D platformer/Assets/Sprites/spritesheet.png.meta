@@ -934,7 +934,7 @@ TextureImporter:
     second: spritesheet_309
   - first:
       213: 6393348276689707748
-    second: spritesheet_310
+    second: Flag Yellow Up
   - first:
       213: 220224528583260420
     second: spritesheet_311
@@ -946,7 +946,7 @@ TextureImporter:
     second: spritesheet_313
   - first:
       213: 1009912393440422847
-    second: spritesheet_314
+    second: Flag Yellow Down
   - first:
       213: 2463269316420110718
     second: spritesheet_315
@@ -1378,7 +1378,7 @@ TextureImporter:
     second: spritesheet_457
   - first:
       213: -1231028553254938101
-    second: spritesheet_458
+    second: Mushroom Red Large
   - first:
       213: 4468708901130535192
     second: Mushroom Brown Large
@@ -7776,7 +7776,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_310
+      name: Flag Yellow Up
       rect:
         serializedVersion: 2
         x: 233
@@ -7860,7 +7860,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_314
+      name: Flag Yellow Down
       rect:
         serializedVersion: 2
         x: 325
@@ -10884,7 +10884,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_458
+      name: Mushroom Red Large
       rect:
         serializedVersion: 2
         x: 187
