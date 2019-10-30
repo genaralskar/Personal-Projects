@@ -68,7 +68,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1370276480415180060, guid: c97db6a4b58740541945d18c34c51586,
+  m_Sprite: {fileID: -5163894306360678561, guid: c97db6a4b58740541945d18c34c51586,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -224,6 +224,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   useGravity: 1
+  lookDownCam: {fileID: 0}
   fastFallForce: 1
   fastFallThreshold: 1
   xDrag: 0.3
@@ -246,7 +247,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.45
 --- !u!82 &2343031788274923334
 AudioSource:
   m_ObjectHideFlags: 0
@@ -453,3 +454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e461af4cca36b31458929976bc70866b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startHealthAmount: 2
+  deathParticles: {fileID: 0}
+  invicible: 0

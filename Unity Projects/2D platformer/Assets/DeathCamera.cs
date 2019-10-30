@@ -32,7 +32,7 @@ public class DeathCamera : MonoBehaviour
             .GetCinemachineComponent<CinemachineFramingTransposer>()
             .m_LookaheadTime;
         playerCam.GetComponent<CinemachineVirtualCamera>().Follow = null;
-        playerCam.SetActive(false);
+        //playerCam.SetActive(false);
         
         StartCoroutine(RespawnWait(player));
     }

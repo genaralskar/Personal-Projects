@@ -13,7 +13,7 @@ public class HealthContainer : MonoBehaviour
     {
         health = amount;
         float normalized = (float) amount / (float) maxHealth;
-        Debug.Log("Normalized!");
+        //Debug.Log("Normalized!");
         heart.fillAmount = normalized;
     }
 }

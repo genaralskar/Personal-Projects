@@ -21,8 +21,11 @@ public class PlayerController : MonoBehaviour
     public ContactFilter2D cFilter;
     public bool useGravity = true;
 
+    public GameObject lookDownCam;
+    
     private Vector2 groundedRayOffset { get { return Gravity.down * transform.localScale.x * col.radius; } }
     private bool isGrounded = false;
+    
     
     [Header("Fast Fall")]
     public float fastFallForce = 1;
@@ -78,6 +81,18 @@ public class PlayerController : MonoBehaviour
     {
         if(canMove)
             Jump();
+
+        if (canMove && lookDownCam)
+        {
+            if (Input.GetAxis("Vertical") < 0)
+            {
+                LookDownCam(true);
+            }
+            else
+            {
+                LookDownCam(false);
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -206,5 +221,10 @@ public class PlayerController : MonoBehaviour
         {
             jumpAmount = maxJumps;
         }
+    }
+
+    private void LookDownCam(bool value)
+    {
+        lookDownCam.SetActive(value);
     }
 }

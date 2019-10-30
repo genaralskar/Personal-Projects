@@ -32,12 +32,51 @@ public class HealthUI : MonoBehaviour
         UpdateHealthHandler();
     }
 
+    private void UpdateContainers()
+    {
+        int numContainers = containers.Count;
+        int thing = numContainers * healthPerHeart;
+        
+        Debug.Log($"numContainers = {numContainers}, thing = {thing}");
+        
+        //remove containers
+        if (thing > PlayerHealth.maxHealth)
+        {
+            //remove containers
+            
+            //get how many to remove
+            int removeNum = (thing - PlayerHealth.maxHealth) / healthPerHeart;
+            for (int i = removeNum; i >= 0; --i)
+            {
+                Destroy(containers[i].gameObject);
+                containers.RemoveAt(i);
+            }
+        }
+        
+        //add containers
+        if (thing < PlayerHealth.maxHealth)
+        {
+            //add containers
+            int addNum = (PlayerHealth.maxHealth - thing) / healthPerHeart;
+
+            for (int i = 0; i < addNum; i++)
+            {
+                GameObject heart = Instantiate(healthContainer, transform);
+                containers.Add(heart.GetComponent<HealthContainer>());
+                heart.GetComponent<HealthContainer>().maxHealth = healthPerHeart;
+            }
+        }
+    }
+
     private void UpdateHealthHandler()
     {   
         Debug.Log("Update Health UI");
+
+        UpdateContainers();
         
         //current health
         int currentHealth = PlayerHealth.currentHealth;
+
         //health / 2 gets container number << not quite
         int container = currentHealth / healthPerHeart;
         int healthMod = currentHealth % healthPerHeart;

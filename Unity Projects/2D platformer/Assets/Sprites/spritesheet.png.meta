@@ -694,7 +694,7 @@ TextureImporter:
     second: Door Bottom Closed
   - first:
       213: -5163894306360678561
-    second: spritesheet_230
+    second: Bubble
   - first:
       213: -1806125502490669816
     second: spritesheet_231
@@ -6096,11 +6096,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_230
+      name: Bubble
       rect:
         serializedVersion: 2
-        x: 463
-        y: 187
+        x: 601
+        y: 279
         width: 21
         height: 21
       alignment: 0

@@ -100,11 +100,14 @@ SpriteAtlas:
     - {fileID: 6393348276689707748, guid: c97db6a4b58740541945d18c34c51586, type: 3}
     - {fileID: 4764081960791798808, guid: c97db6a4b58740541945d18c34c51586, type: 3}
     - {fileID: 7138373754498443674, guid: c97db6a4b58740541945d18c34c51586, type: 3}
-    totalSpriteSurfaceArea: 29547
+    - {fileID: -1231028553254938101, guid: c97db6a4b58740541945d18c34c51586, type: 3}
+    - {fileID: -5163894306360678561, guid: c97db6a4b58740541945d18c34c51586, type: 3}
+    totalSpriteSurfaceArea: 30429
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 4468708901130535192, guid: c97db6a4b58740541945d18c34c51586, type: 3}
+  - {fileID: -5163894306360678561, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -9153645828579385054, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -3363700683580124580, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -1394649290122749023, guid: c97db6a4b58740541945d18c34c51586, type: 3}
@@ -144,6 +147,7 @@ SpriteAtlas:
   - {fileID: 8861663311678512013, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: -8728702345363150914, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: 3986406276423654522, guid: c97db6a4b58740541945d18c34c51586, type: 3}
+  - {fileID: -1231028553254938101, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: 728851745803153, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: 282765226203145494, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   - {fileID: 7482745408495789000, guid: c97db6a4b58740541945d18c34c51586, type: 3}
@@ -173,6 +177,7 @@ SpriteAtlas:
   - {fileID: -5888812268749110083, guid: c97db6a4b58740541945d18c34c51586, type: 3}
   m_PackedSpriteNamesToIndex:
   - Mushroom Brown Large
+  - Bubble
   - Grass Left Ledge
   - Pillar Top Short
   - Grass Ramp Left Transition
@@ -212,6 +217,7 @@ SpriteAtlas:
   - Ground Under Left Ledge
   - Grass Ramp Left
   - Grass Ramp Right
+  - Mushroom Red Large
   - Light Beam Right
   - Door Bottom Closed
   - Door Top Closed
