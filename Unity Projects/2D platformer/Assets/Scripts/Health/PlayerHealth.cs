@@ -66,7 +66,7 @@ public class PlayerHealth : MonoBehaviour
     public void SetMaxHealth(int amount, bool heal = true)
     {
         maxHealth = amount;
-        Debug.Log($"Max healh = {maxHealth}");
+        //Debug.Log($"Max healh = {maxHealth}");
         if (heal)
         {
             ChangeHealth(maxHealth);

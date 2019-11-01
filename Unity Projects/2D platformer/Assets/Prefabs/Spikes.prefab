@@ -153,3 +153,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   force: 15
+  xMod: 4
