@@ -5,7 +5,6 @@ using UnityEngine;
 public class AddHeartLoop : MonoBehaviour
 {
     public PlayerHealth health;
-    public ShakeHeart shake;
     public int maxHealth = 500;
     public float fillTime = 10f;
 
