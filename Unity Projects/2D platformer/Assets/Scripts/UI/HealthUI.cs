@@ -35,7 +35,7 @@ public class HealthUI : MonoBehaviour
     
     
     private void UpdateHealthHandler()
-    {
+    {        
         if (this.currentHealth == -1)
         {
             this.currentHealth = PlayerHealth.currentHealth;
@@ -70,7 +70,7 @@ public class HealthUI : MonoBehaviour
         int numContainers = containers.Count;
         int thing = numContainers * healthPerHeart;
         
-        Debug.Log($"current containers = {numContainers}");
+        //Debug.Log($"current containers = {numContainers}");
         
         //Debug.Log($"numContainers = {numContainers}, thing = {thing}");
         
@@ -82,11 +82,11 @@ public class HealthUI : MonoBehaviour
             //get how many to remove
             int removeNum = (thing - PlayerHealth.maxHealth) / healthPerHeart;
             
-            Debug.Log($"removeNum = {removeNum}, current containers = {numContainers}");
+            //Debug.Log($"removeNum = {removeNum}, current containers = {numContainers}");
             for (int i = removeNum - 1; i >= 0; --i)
             {
-                Debug.Log($"removeNum i = {i}, containers max index = {containers.Count - 1}");
-                Debug.Log($"removing health, removed {containers[i].health}, new health = {currentHealth}");
+                //Debug.Log($"removeNum i = {i}, containers max index = {containers.Count - 1}");
+                //Debug.Log($"removing health, removed {containers[i].health}, new health = {currentHealth}");
                 Destroy(containers[i].gameObject);
                 containers.RemoveAt(i);
                 UpdateInternalCurrentHealth();
@@ -151,7 +151,7 @@ public class HealthUI : MonoBehaviour
         heart.GetComponent<HealthContainer>().maxHealth = healthPerHeart;
 
         UpdateInternalCurrentHealth();
-        Debug.Log($"current health = {currentHealth}");
+        //Debug.Log($"current health = {currentHealth}");
 
         return heart;
     }
@@ -166,11 +166,11 @@ public class HealthUI : MonoBehaviour
         
         int healthDifference = PlayerHealth.currentHealth - currentHealth;
 
-        Debug.Log($"updating health, healthDifference = {healthDifference}, currentHealth = {currentHealth}");
+        //Debug.Log($"updating health, healthDifference = {healthDifference}, currentHealth = {currentHealth}");
         //if gaining health
         if (healthDifference > 0)
         {
-            Debug.Log("Adding health");
+            //Debug.Log("Adding health");
             //add health
             //loop as many times as there is a health difference
             for (int i = 0; i < healthDifference; i++)
@@ -199,7 +199,7 @@ public class HealthUI : MonoBehaviour
         //if losing health
         else if (healthDifference < 0)
         {
-            Debug.Log("Removing Health");
+            //Debug.Log("Removing Health");
             //remove health
             for (int i = 0; i < -healthDifference; i++)
             {
@@ -234,5 +234,9 @@ public class HealthUI : MonoBehaviour
 
         currentHealth = c;
     }
-    
+
+    private void OnDisable()
+    {
+        PlayerHealth.HealthUpdated -= UpdateHealthHandler;
+    }
 }

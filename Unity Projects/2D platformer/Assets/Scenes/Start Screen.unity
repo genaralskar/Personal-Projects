@@ -688,7 +688,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374297738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5599995, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -939,7 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a9cb0e73ceb0c4eac88d7c1f5a9dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numLevels: 25
+  numLevels: 3
   levelSelectButton: {fileID: 6034683950278991605, guid: f659aeedfa6c95b438971154630b10ac,
     type: 3}
 --- !u!114 &542867565
@@ -3795,7 +3795,7 @@ PrefabInstance:
     - target: {fileID: 1711953933331363570, guid: 4680ff4a26039354d8c6e9cb3f6a268f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5599995
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1711953933331363570, guid: 4680ff4a26039354d8c6e9cb3f6a268f,
         type: 3}

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\genar\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_2D platformer.-1861858398.00" t="ExcludeRecursive" />
-    <e p="D:\GIT\Personal-Projects\Unity Projects\2D platformer" t="IncludeRecursive">
+    <e p="C:\Users\genar\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\genar\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_2D platformer.1949433571.00" t="ExcludeRecursive" />
+    <e p="E:\GIT\Personal-Projects\Unity Projects\2D platformer" t="IncludeRecursive">
       <e p="2D platformer.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -19,6 +20,7 @@
         <e p="GravityManager.cs" t="Include" />
         <e p="Healthroom.cs" t="Include" />
         <e p="JumpPickup.cs" t="Include" />
+        <e p="MovePlatform.cs" t="Include" />
         <e p="Parallax.cs" t="Include" />
         <e p="Pickup.cs" t="Include" />
         <e p="PlayerController.cs" t="Include" />
@@ -43,6 +45,7 @@
         </e>
         <e p="SetMaxJumps.cs" t="Include" />
         <e p="Spikes.cs" t="Include" />
+        <e p="StickPlayerToPlatform.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
             <e p="LiberationSans - OFL.txt" t="Include" />
@@ -73,7 +76,6 @@
         </e>
         <e p="TractorBeam.cs" t="Include" />
       </e>
-      <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
