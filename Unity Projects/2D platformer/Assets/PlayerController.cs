@@ -53,7 +53,8 @@ public class PlayerController : MonoBehaviour
     private UnityAction Airborne;
 
     public static UnityAction<GameObject> Death;
-    
+    public static UnityAction<int> JumpReset;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -114,6 +115,8 @@ public class PlayerController : MonoBehaviour
             rb.velocity = vel;
             jumpSound.Play();
             jumpAmount--;
+            
+            JumpReset?.Invoke(jumpAmount);
             //Debug.Log("Jump");
         }
     }
@@ -220,6 +223,7 @@ public class PlayerController : MonoBehaviour
         if (jumpAmount > maxJumps)
         {
             jumpAmount = maxJumps;
+            JumpReset?.Invoke(jumpAmount);
         }
     }
 
