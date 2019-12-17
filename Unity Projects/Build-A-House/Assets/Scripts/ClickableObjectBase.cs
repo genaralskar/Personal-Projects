@@ -7,71 +7,57 @@ public class ClickableObjectBase : MonoBehaviour, IClickableObject
     public float interactDistance = 2f;
     public float stoppingDistance = 2f;
     public bool movePlayer = true;
-    protected Controller player;
+    public Controller player;
     public string mouseOverText = "";
     
-    protected bool active = false;
+    protected bool busy = false;
 
-    public bool Active
+    public bool Busy
     {
-        get {
-            
-            return active;
-            
-        }
+        get { return busy; }
+    }
+
+    public bool alwaysInactive = false;
+
+    public void SetActive(bool value)
+    {
+        busy = value;
     }
 
     public void OnClicked(Controller newPlayer)
     {
+        newPlayer.MovePlayerInRange(this);
         //Debug.Log($"{newPlayer} clicked on {this}. active: {active}", this);
-        if (Active) return;
+        //if (Active) return;
         
-        active = true;
+        //active = true;
         //Debug.Log("Clicked");
-        player = newPlayer;
-        MovePlayerInRange(newPlayer);
-    }
-    
-    private void MovePlayerInRange(Controller player)
-    {
-        
-        if (movePlayer)
-        {
-            //Debug.Log("Starting move player");
-            player.PlayerMoving?.Invoke();
-            player.SetDestination(transform.position, stoppingDistance);
-            StartCoroutine(MovePlayer());
-            player.PlayerMoving = StopMovingPlayer;
-        }
+        //player = newPlayer;
+        //MovePlayerInRange(newPlayer);
     }
 
     protected virtual void StopMovingPlayer()
     {
         //stop coroutine
         //Debug.Log("Stopping move player");
-        StopCoroutine(MovePlayer());
-        player.PlayerMoving = null;
-        active = false;
-        player.AnimIdle(true);
+        //StopCoroutine(MovePlayer());
+        //player.PlayerMoving = null;
+        //active = false;
+        //player.AnimIdle(true);
         //Debug.Log($"{player} setting idle to true");
+        StopAllCoroutines();
+        busy = false;
+        player.AnimIdle(true);
+        player.NewCobTarget = null;
+        Debug.Log("setting Player to idle");
     }
 
-    private IEnumerator MovePlayer()
+    public virtual void OnPlayerInRange()
     {
-        
-        //Debug.Log("Starting move coroutine");
-        while (Vector3.Distance(transform.position, player.transform.position) > interactDistance - .01f)
-        {
-            yield return new WaitForEndOfFrame();
-        }
-        OnPlayerInRange();
-    }
-
-    
-
-    protected virtual void OnPlayerInRange()
-    {
-        
+        if(!alwaysInactive)
+            busy = true;
+        player.NewCobTarget = StopMovingPlayer;
+        Debug.Log("NewCobTaget action assigned");
     }
 
     private void OnMouseEnter()

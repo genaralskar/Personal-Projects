@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Fish
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  weight: 0
+  weight: 5

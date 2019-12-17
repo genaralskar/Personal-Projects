@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-
+/// <summary>
+/// This goes on the moveable characters and handles moving/object interaction
+/// </summary>
 [RequireComponent(typeof(NavMeshAgent))]
 public class Controller : MonoBehaviour
 {
@@ -14,7 +16,7 @@ public class Controller : MonoBehaviour
 
     public float runSpeed = 5f;
 
-    public UnityAction PlayerMoving;
+    public UnityAction NewCobTarget;
     
     public enum PlayerAnim
     {
@@ -23,7 +25,7 @@ public class Controller : MonoBehaviour
 
     public bool player = false;
 
-    public bool gathering = false;
+    public bool busy = false;
 
     public Item gatherType;
 
@@ -31,18 +33,123 @@ public class Controller : MonoBehaviour
     public int maxWeight = 10;
     public int weight;
 
+    private ClickableObjectBase cobTarget;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         anims = GetComponentInChildren<Animator>();
     }
+    
 
     // Start is called before the first frame update
     void Start()
     {
 
     }
+    
 
+    // Update is called once per frame
+    void Update()
+    {   
+        //if (!EventSystem.current.IsPointerOverGameObject(-1) && Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject(-1) && player)
+        {
+            MovePlayer();
+        }
+        UpdateAnimation();
+    }
+
+    
+    #region Movement/Interaction
+    
+    private void MovePlayer()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            //if no interactable object is hit
+            IClickableObject CO = hit.collider.GetComponent<IClickableObject>();
+            if (CO == null)
+            {
+                NewCobTarget?.Invoke();
+                cobTarget = null;
+                //agent.stoppingDistance = 0;
+                //agent.SetDestination(hit.point);
+                SetDestination(hit.point, 0);
+            }
+            else
+            {
+                //move player into position
+                ClickableObjectBase COBase = hit.collider.GetComponent<ClickableObjectBase>();
+
+                if (cobTarget == COBase) return;
+                
+                MovePlayerInRange(COBase);
+                
+                COBase.OnClicked(this);
+                
+                //CO.OnClicked(this);
+            }
+        }
+    }
+    
+
+    public void MovePlayerInRange(ClickableObjectBase cob)
+    {
+        StopAllCoroutines();
+        
+        cobTarget = cob;
+        SetDestination(cob.transform.position, cob.stoppingDistance);
+        
+        StartCoroutine(MovePlayerInRangeIter(cob));
+    }
+    
+
+    private IEnumerator MovePlayerInRangeIter(ClickableObjectBase cob)
+    {
+        //NewCobTarget?.Invoke();
+        while (Vector3.Distance(transform.position, cob.transform.position) > cob.interactDistance - .01f)
+        {
+            if (cobTarget != cob)
+            {
+                StopMovePlayerInRange(cob);
+                break;
+            }
+            yield return null;
+        }
+
+        if (cobTarget == cob)
+        {
+            OnPlayerInRange(cob);
+        }
+    }
+    
+    
+    private void OnPlayerInRange(ClickableObjectBase cob)
+    {
+        if (cob.Busy)
+        {
+            busy = false;
+            return;
+        }
+        cobTarget.player = this;
+        cob.OnPlayerInRange();
+    }
+    
+
+    private void StopMovePlayerInRange(ClickableObjectBase cob)
+    {
+        //PlayerMoving?.Invoke();
+        NewCobTarget = null;
+        cob.SetActive(false);
+        AnimIdle(true);
+    }
+    
+    #endregion
+    
+    
     public void FindNearestResource()
     {
         //gathering = true;
@@ -55,7 +162,7 @@ public class Controller : MonoBehaviour
             float des = Vector3.Distance(transform.position, point.transform.position);
             if (des < distance || distance < 0)
             {
-                if(point.Active || !point.Full)
+                if(point.Busy || !point.Full)
                     continue;
                 
                 if(gatherType != null & point.item != gatherType)
@@ -69,24 +176,14 @@ public class Controller : MonoBehaviour
         //Debug.Log($"closest point full: {closestPoint.Full}, active: {closestPoint.Active}");
         if (closestPoint == null) return;
         closestPoint.OnClicked(this);
-        gathering = true;
-        //Debug.Log($"{gameObject} going to {closestPoint}", this);
+        busy = true;
+        Debug.Log($"{gameObject} going to {closestPoint}", this);
     }
     
-    // Update is called once per frame
-    void Update()
-    {   
-        //if (!EventSystem.current.IsPointerOverGameObject(-1) && Input.GetMouseButtonDown(0))
-        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject(-1) && player)
-        {
-            MovePlayer();
-        }
-        UpdateAnimation();
-    }
 
     public void DepositMats()
     {
-        gathering = true;
+        busy = true;
         Depot[] depots = FindObjectsOfType<Depot>();
         Depot closestPoint = null;
         float distance = -1f;
@@ -104,6 +201,7 @@ public class Controller : MonoBehaviour
         if (closestPoint == null) return;
         closestPoint.OnClicked(this);
     }
+    
 
     public void AddItem(Item newItem, int amount)
     {
@@ -113,7 +211,7 @@ public class Controller : MonoBehaviour
             {
                 item.amount += amount;
                 weight += item.item.weight * amount;
-                if (weight > maxWeight)
+                if (weight >= maxWeight)
                 {
                     DepositMats();
                 }
@@ -123,59 +221,41 @@ public class Controller : MonoBehaviour
         
         items.Add(new InventorySlot(newItem, amount));
         weight += newItem.weight * amount;
-        if (weight > maxWeight)
+        if (weight >= maxWeight)
         {
             DepositMats();
         }
         return;
     }
+    
 
     public void ClearItems()
     {
         items = new List<InventorySlot>();
         weight = 0;
-        gathering = false;
+        busy = false;
     }
 
-    private void MovePlayer()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            //if no interactable object is hit
-            IClickableObject CO = hit.collider.GetComponent<IClickableObject>();
-            if (CO == null)
-            {
-                PlayerMoving?.Invoke();
-                agent.stoppingDistance = 0;
-                agent.SetDestination(hit.point);    
-            }
-            else
-            {
-                //move player into position
-                ClickableObjectBase COBase = hit.collider.GetComponent<ClickableObjectBase>();
-                CO.OnClicked(this);
-            }
-        }
-    }
 
     private void UpdateAnimation()
     {
         float movementPercent = agent.velocity.magnitude / runSpeed;
         anims.SetFloat("Speed", movementPercent);
     }
+    
 
     public void AnimSetBool(string name, bool value)
     {
         anims.SetBool(name, value);
         anims.SetTrigger("GatherUpdate");
     }
+    
 
     public void AnimsSetTrigger(string name)
     {
         anims.SetTrigger(name);
     }
+    
 
     public void AnimIdle(bool value)
     {
@@ -184,20 +264,22 @@ public class Controller : MonoBehaviour
         //Debug.Log($"{gameObject} Idling {value}");
         if (value)
         {
-            gathering = false;
+            busy = false;
         }
-            
     }
+    
 
     public void SetDestination(Vector3 newDest, float stoppingDistance = 0)
     {
         agent.SetDestination(newDest);
         agent.stoppingDistance = stoppingDistance;
-        PlayerMoving?.Invoke();
+        NewCobTarget?.Invoke();
     }
+    
 
     public void StopPlayer()
     {
         agent.isStopped = true;
     }
+    
 }

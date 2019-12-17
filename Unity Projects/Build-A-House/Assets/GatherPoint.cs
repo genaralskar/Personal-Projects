@@ -29,14 +29,14 @@ public class GatherPoint : ClickableObjectBase
         }
     }
 
-    protected override void OnPlayerInRange()
+    public override void OnPlayerInRange()
     {
-        //Debug.Log($"{player} Player in range?");
+        base.OnPlayerInRange();
+
         if (!full) return;
-        //Debug.Log($"{player} Player in range");
-        player.gathering = true;
+ 
+        player.busy = true;
         //start playing animation on player
-        //player.AnimSetBool(enumName, true);
         player.AnimIdle(false);
         player.AnimsSetTrigger(enumName);
         StopAllCoroutines();
@@ -48,16 +48,7 @@ public class GatherPoint : ClickableObjectBase
 
         //Debug.Log("Got em");
     }
-
-    protected override void StopMovingPlayer()
-    {
-        //Debug.Log($"{player} stopping playerMovement");
-        StopAllCoroutines();
-        base.StopMovingPlayer();
-        //Debug.Log("Stop Gathering!");
-        //player.AnimSetBool(enumName, false);
-        
-    }
+    
 
     private void UpdateModel(bool value)
     {
@@ -69,8 +60,10 @@ public class GatherPoint : ClickableObjectBase
         {
             StopMovingPlayer();
             StartCoroutine(Regrow());
+            busy = true;
         }
     }
+    
 
     private IEnumerator Gather()
     {
@@ -79,11 +72,10 @@ public class GatherPoint : ClickableObjectBase
         yield return new WaitForSeconds(gatherRate);
         //Debug.Log($"{player} success gather?");
         GatherSucess();
-
-        //StartCoroutine(Regrow());
     }
+    
 
-    public void GatherSucess()
+    private void GatherSucess()
     {
         //Debug.Log($"{player} success gather");
         UpdateModel(false);
@@ -91,6 +83,7 @@ public class GatherPoint : ClickableObjectBase
         //Inventory.AddItem(item, itemAmount);
         
     }
+    
 
     private IEnumerator Regrow()
     {
@@ -98,10 +91,11 @@ public class GatherPoint : ClickableObjectBase
         yield return new WaitForSeconds(regrowTime);
         UpdateModel(true);
     }
+    
 
     private IEnumerator RotatePlayer()
     {
-        while (active)
+        while (busy)
         {
             yield return new WaitForFixedUpdate();
             Vector3 pos = transform.position;

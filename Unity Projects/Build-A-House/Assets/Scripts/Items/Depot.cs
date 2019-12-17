@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Depot : ClickableObjectBase
 {
-    protected override void OnPlayerInRange()
+    public override void OnPlayerInRange()
     {
         DepositItems(player);
     }

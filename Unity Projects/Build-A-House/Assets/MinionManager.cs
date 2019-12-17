@@ -41,7 +41,7 @@ public class MinionManager : MonoBehaviour
             foreach (var controller in inactiveControllers)
             {
                 
-                if(controller.gathering) continue;
+                if(controller.busy) continue;
             
                 controller.FindNearestResource();
                 yield return new WaitForSeconds(.1f);
