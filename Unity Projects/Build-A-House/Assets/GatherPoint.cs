@@ -2,10 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public class GatherPoint : ClickableObjectBase
 {
+    public UnityAction<Item> GatherSuccess;
+    
     
     public Controller.PlayerAnim anim;
     public GameObject FullModel;
@@ -56,11 +59,12 @@ public class GatherPoint : ClickableObjectBase
         FullModel.SetActive(value);
         EmptyModel.SetActive(!value);
         GetComponent<Collider>().enabled = value;
+        busy = !value;
         if (!value)
         {
             StopMovingPlayer();
             StartCoroutine(Regrow());
-            busy = true;
+            
         }
     }
     
@@ -78,6 +82,7 @@ public class GatherPoint : ClickableObjectBase
     private void GatherSucess()
     {
         //Debug.Log($"{player} success gather");
+        GatherSuccess?.Invoke(item);
         UpdateModel(false);
         player.AddItem(item, itemAmount);
         //Inventory.AddItem(item, itemAmount);
@@ -110,4 +115,5 @@ public class GatherPoint : ClickableObjectBase
             //Debug.Log("rotation = " + direction);
         }
     }
+
 }

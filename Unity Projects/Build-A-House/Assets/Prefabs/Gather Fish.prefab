@@ -152,12 +152,12 @@ PrefabInstance:
     - target: {fileID: 6540378149569726572, guid: 2f187f7e277912448a39d1def614c80a,
         type: 3}
       propertyPath: interactDistance
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6540378149569726572, guid: 2f187f7e277912448a39d1def614c80a,
         type: 3}
       propertyPath: stoppingDistance
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6540378149569726572, guid: 2f187f7e277912448a39d1def614c80a,
         type: 3}

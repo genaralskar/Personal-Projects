@@ -49,7 +49,8 @@ public class ClickableObjectBase : MonoBehaviour, IClickableObject
         busy = false;
         player.AnimIdle(true);
         player.NewCobTarget = null;
-        Debug.Log("setting Player to idle");
+        OnPlayerLeave();
+        //Debug.Log("setting Player to idle");
     }
 
     public virtual void OnPlayerInRange()
@@ -57,7 +58,12 @@ public class ClickableObjectBase : MonoBehaviour, IClickableObject
         if(!alwaysInactive)
             busy = true;
         player.NewCobTarget = StopMovingPlayer;
-        Debug.Log("NewCobTaget action assigned");
+        //Debug.Log("NewCobTaget action assigned");
+    }
+
+    protected virtual void OnPlayerLeave()
+    {
+        
     }
 
     private void OnMouseEnter()
@@ -68,5 +74,12 @@ public class ClickableObjectBase : MonoBehaviour, IClickableObject
     private void OnMouseExit()
     {
         MouseOverText.RemoveObject?.Invoke(this);
+    }
+    
+    
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, interactDistance);
     }
 }

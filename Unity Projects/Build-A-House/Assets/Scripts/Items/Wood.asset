@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f821d6ea3a05aeb48851f286817b8a67, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
-  image: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  image: {fileID: 21300000, guid: c725ca33075313e4c8ea0f54950d4e47, type: 3}
   weight: 3

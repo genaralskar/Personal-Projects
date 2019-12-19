@@ -82,6 +82,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shared_Prop_Boulder_1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: eff3c4992a106a44bb0f05b415fbedba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff3c4992a106a44bb0f05b415fbedba, type: 3}
 --- !u!1001 &2355022637231773732
@@ -165,6 +170,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shared_Prop_Boulder_1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: eff3c4992a106a44bb0f05b415fbedba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff3c4992a106a44bb0f05b415fbedba, type: 3}
@@ -525,6 +535,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shared_Prop_Boulder_1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: eff3c4992a106a44bb0f05b415fbedba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff3c4992a106a44bb0f05b415fbedba, type: 3}

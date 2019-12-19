@@ -11,6 +11,8 @@ using UnityEngine.EventSystems;
 public class Controller : MonoBehaviour
 {
 
+    public UnityAction<InventorySlot> ItemAddedToInventory;
+    
     private NavMeshAgent agent;
     private Animator anims;
 
@@ -34,6 +36,7 @@ public class Controller : MonoBehaviour
     public int weight;
 
     private ClickableObjectBase cobTarget;
+    
 
     private void Awake()
     {
@@ -41,8 +44,7 @@ public class Controller : MonoBehaviour
         anims = GetComponentInChildren<Animator>();
     }
     
-
-    // Start is called before the first frame update
+    
     void Start()
     {
 
@@ -177,7 +179,7 @@ public class Controller : MonoBehaviour
         if (closestPoint == null) return;
         closestPoint.OnClicked(this);
         busy = true;
-        Debug.Log($"{gameObject} going to {closestPoint}", this);
+        //Debug.Log($"{gameObject} going to {closestPoint}", this);
     }
     
 
@@ -211,6 +213,9 @@ public class Controller : MonoBehaviour
             {
                 item.amount += amount;
                 weight += item.item.weight * amount;
+                
+                ItemAddedToInventory?.Invoke(new InventorySlot(newItem, amount));
+                
                 if (weight >= maxWeight)
                 {
                     DepositMats();
@@ -221,10 +226,14 @@ public class Controller : MonoBehaviour
         
         items.Add(new InventorySlot(newItem, amount));
         weight += newItem.weight * amount;
+        
+        ItemAddedToInventory?.Invoke(new InventorySlot(newItem, amount));
+        
         if (weight >= maxWeight)
         {
             DepositMats();
         }
+        
         return;
     }
     

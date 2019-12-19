@@ -77,5 +77,17 @@ public static class Inventory
         inventoryUpdated?.Invoke(null);
         return null;
     }
-    
+
+    public static InventorySlot GetItemSlot(Item itemToFind)
+    {
+        foreach (var item in Items)
+        {
+            if (item.item == itemToFind)
+            {
+                return item;
+            }
+        }
+
+        return null;
+    }
 }

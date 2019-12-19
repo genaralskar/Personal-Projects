@@ -44,7 +44,7 @@ public class MinionManager : MonoBehaviour
                 if(controller.busy) continue;
             
                 controller.FindNearestResource();
-                yield return new WaitForSeconds(.1f);
+                yield return new WaitForSeconds(.02f);
             }
             
             yield return new WaitForSeconds(.1f);
