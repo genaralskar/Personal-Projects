@@ -136,11 +136,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6540378149569726572, guid: 2f187f7e277912448a39d1def614c80a,
         type: 3}
-      propertyPath: anim
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6540378149569726572, guid: 2f187f7e277912448a39d1def614c80a,
-        type: 3}
       propertyPath: mouseOverText
       value: Fish
       objectReference: {fileID: 0}
@@ -165,6 +160,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 6c6b505f53342f746bd31a18777865ca,
         type: 2}
+    - target: {fileID: 6540378149569726572, guid: 2f187f7e277912448a39d1def614c80a,
+        type: 3}
+      propertyPath: utilAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: 06d66dd4f23be4f449bb0b54d43b0fcd, type: 3}
     - target: {fileID: 6540378149569726573, guid: 2f187f7e277912448a39d1def614c80a,
         type: 3}
       propertyPath: m_Name

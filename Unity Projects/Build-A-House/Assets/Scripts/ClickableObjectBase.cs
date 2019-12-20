@@ -48,7 +48,9 @@ public class ClickableObjectBase : MonoBehaviour, IClickableObject
         StopAllCoroutines();
         busy = false;
         player.AnimIdle(true);
+        player.cobTarget = null;
         player.NewCobTarget = null;
+        //Debug.Log($"Stopped moving player{player.NewCobTarget}");
         OnPlayerLeave();
         //Debug.Log("setting Player to idle");
     }

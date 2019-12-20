@@ -78,6 +78,42 @@ public static class Inventory
         return null;
     }
 
+    public static bool CanBuyItem(List<InventorySlot> costs, int checkAmount)
+    {
+        //check if there are enough items in inventory
+        foreach (var cost in costs)
+        {
+            //if there are not enough of an item, return false
+            InventorySlot tempSlot = Inventory.GetItemSlot(cost.item);
+            if (tempSlot == null || tempSlot.amount < cost.amount * checkAmount)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+    
+    //return true of transation success, false if not
+    public static bool BuyItem(List<InventorySlot> costs, int amountToBuy, Item itemToBuy = null, int amountPerBuy = 1)
+    {
+        //check if you can buy
+        if (!CanBuyItem(costs, amountToBuy)) return false;
+        
+        //remove items
+        foreach (var cost in costs)
+        {
+            RemoveItem(cost.item, cost.amount * amountToBuy);
+        }
+        
+        //add needed items
+        if (itemToBuy == null) return true;
+        
+        AddItem(itemToBuy, amountToBuy * amountPerBuy);
+        
+        return true;
+    }
+
     public static InventorySlot GetItemSlot(Item itemToFind)
     {
         foreach (var item in Items)

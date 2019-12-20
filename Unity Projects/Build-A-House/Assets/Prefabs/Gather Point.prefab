@@ -169,10 +169,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactDistance: 2
+  stoppingDistance: 2
   movePlayer: 1
+  player: {fileID: 0}
   mouseOverText: 
-  anim: 2
+  alwaysInactive: 0
+  anim: 6
+  utilAnimation: {fileID: 0}
   FullModel: {fileID: 6540378148814713882}
   EmptyModel: {fileID: 6540378148478472585}
   gatherTime: 4
   regrowTime: 30
+  item: {fileID: 0}
+  itemAmount: 1

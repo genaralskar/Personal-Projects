@@ -11,6 +11,7 @@ public class GatherPoint : ClickableObjectBase
     
     
     public Controller.PlayerAnim anim;
+    public AnimationClip utilAnimation;
     public GameObject FullModel;
     public GameObject EmptyModel;
 
@@ -41,7 +42,16 @@ public class GatherPoint : ClickableObjectBase
         player.busy = true;
         //start playing animation on player
         player.AnimIdle(false);
-        player.AnimsSetTrigger(enumName);
+        if (anim == Controller.PlayerAnim.Util)
+        {
+            player.AnimUtil(utilAnimation);
+        }
+        else
+        {
+            player.AnimsSetTrigger(enumName);
+        }
+        
+        
         StopAllCoroutines();
         StartCoroutine(Gather());
         StartCoroutine(RotatePlayer());

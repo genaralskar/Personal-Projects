@@ -83,6 +83,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 7bb4e62143f28d848b31af343b5a3de5,
         type: 2}
+    - target: {fileID: 6540378149569726572, guid: 2f187f7e277912448a39d1def614c80a,
+        type: 3}
+      propertyPath: utilAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: e2694e09078647640bc4a77f486a32fd, type: 3}
     - target: {fileID: 6540378149569726573, guid: 2f187f7e277912448a39d1def614c80a,
         type: 3}
       propertyPath: m_Name

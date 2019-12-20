@@ -15,6 +15,7 @@ public class Controller : MonoBehaviour
     
     private NavMeshAgent agent;
     private Animator anims;
+    AnimatorOverrideController animatorOverrideController;
 
     public float runSpeed = 5f;
 
@@ -22,9 +23,12 @@ public class Controller : MonoBehaviour
     
     public enum PlayerAnim
     {
-        Move, Mine, Woodcut, Fish, Gather
+        Move, Mine, Woodcut, Fish, Gather, Build, Util
     }
 
+    private AnimationState utilState;
+    public string UtilStateName = "Utility State";
+    
     public bool player = false;
 
     public bool busy = false;
@@ -35,13 +39,15 @@ public class Controller : MonoBehaviour
     public int maxWeight = 10;
     public int weight;
 
-    private ClickableObjectBase cobTarget;
+    public ClickableObjectBase cobTarget;
     
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         anims = GetComponentInChildren<Animator>();
+        animatorOverrideController = new AnimatorOverrideController(this.anims.runtimeAnimatorController);
+        this.anims.runtimeAnimatorController = animatorOverrideController;
     }
     
     
@@ -57,6 +63,8 @@ public class Controller : MonoBehaviour
         //if (!EventSystem.current.IsPointerOverGameObject(-1) && Input.GetMouseButtonDown(0))
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject(-1) && player)
         {
+            if (BuildManager.isBuilding) return;
+            
             MovePlayer();
         }
         UpdateAnimation();
@@ -229,7 +237,7 @@ public class Controller : MonoBehaviour
         
         ItemAddedToInventory?.Invoke(new InventorySlot(newItem, amount));
         
-        if (weight >= maxWeight)
+        if (!player && weight >= maxWeight)
         {
             DepositMats();
         }
@@ -275,6 +283,13 @@ public class Controller : MonoBehaviour
         {
             busy = false;
         }
+    }
+
+    public void AnimUtil(AnimationClip clip)
+    {   
+        animatorOverrideController["Villager@Idle01"] = clip;
+        
+        AnimsSetTrigger("Util");
     }
     
 

@@ -15,15 +15,15 @@ public class CostPanelUI : MonoBehaviour
     public Sprite haveEnoughSprite;
     public Sprite notEnoughSprite;
 
-    public void UpdatePanel(InventorySlot newSlot)
+    public void UpdatePanel(InventorySlot newSlot, int amount = 1)
     {
         itemImage.sprite = newSlot.item.image;
-        amountText.text = newSlot.amount.ToString();
+        amountText.text = (newSlot.amount * amount).ToString();
 
         InventorySlot itemCheck = Inventory.GetItemSlot(newSlot.item);
 
         //if the inventory has enough of the item to upgrade
-        if (itemCheck != null && itemCheck.amount >= newSlot.amount)
+        if (itemCheck != null && itemCheck.amount >= newSlot.amount * amount)
         {
             itemPanelImage.color = haveEnoughColor;
             itemPanelImage.sprite = haveEnoughSprite;

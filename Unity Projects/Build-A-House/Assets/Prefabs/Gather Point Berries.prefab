@@ -715,15 +715,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6540378149569726572, guid: 2f187f7e277912448a39d1def614c80a,
         type: 3}
-      propertyPath: anim
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6540378149569726572, guid: 2f187f7e277912448a39d1def614c80a,
-        type: 3}
       propertyPath: item
       value: 
       objectReference: {fileID: 11400000, guid: b42515f9ab3c3d84fb5a84c3d8e91d90,
         type: 2}
+    - target: {fileID: 6540378149569726572, guid: 2f187f7e277912448a39d1def614c80a,
+        type: 3}
+      propertyPath: utilAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: a6171f33082636344bca20e73cd57fe0, type: 3}
     - target: {fileID: 6540378149569726573, guid: 2f187f7e277912448a39d1def614c80a,
         type: 3}
       propertyPath: m_Name

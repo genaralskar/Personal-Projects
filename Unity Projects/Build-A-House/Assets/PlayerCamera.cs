@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerCamera : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class PlayerCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject(-1)) return;
+        
         Vector3 newAngle = transposer.m_FollowOffset;
         newAngle.y += Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
         newAngle.y = Mathf.Clamp(newAngle.y, minMaxAngle.x, minMaxAngle.y);

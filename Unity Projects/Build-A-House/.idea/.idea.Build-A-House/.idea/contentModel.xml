@@ -7,6 +7,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="ControllerGatherParticles.cs" t="Include" />
+        <e p="CraftingWindowUI.cs" t="Include" />
         <e p="Editor" t="Include">
           <e p="RaycastObjects.cs" t="Include" />
         </e>
@@ -21,25 +22,33 @@
         <e p="PlayerCamera.cs" t="Include" />
         <e p="PropPlacer.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="Build" t="Include">
+            <e p="Buildable.cs" t="Include" />
+            <e p="BuildManager.cs" t="Include" />
+          </e>
           <e p="ClickableObjectBase.cs" t="Include" />
           <e p="Controller.cs" t="Include" />
           <e p="CostPanelUI.cs" t="Include" />
+          <e p="Crafter.cs" t="Include" />
           <e p="House.cs" t="Include" />
           <e p="Interfaces" t="Include">
             <e p="IClickableObject.cs" t="Include" />
             <e p="IMouseHover.cs" t="Include" />
           </e>
           <e p="Items" t="Include">
+            <e p="CraftableItem.cs" t="Include" />
             <e p="Depot.cs" t="Include" />
             <e p="Inventory.cs" t="Include" />
             <e p="InventorySlot.cs" t="Include" />
             <e p="Item.cs" t="Include" />
           </e>
+          <e p="NavMeshAgentRootMotion.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="CameraController.cs" t="Include" />
             <e p="HouseUpgradeCostPanelUI.cs" t="Include" />
             <e p="InventoryPanelUI.cs" t="Include" />
+            <e p="ItemSelectionButtonUI.cs" t="Include" />
             <e p="UpgradeCostsPanelUI.cs" t="Include" />
           </e>
           <e p="Upgrade.cs" t="Include" />
@@ -73,6 +82,8 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
+        <e p="UpdateUtilityState.cs" t="Include" />
+        <e p="UtilityState.cs" t="Include" />
       </e>
       <e p="Build-A-House.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />

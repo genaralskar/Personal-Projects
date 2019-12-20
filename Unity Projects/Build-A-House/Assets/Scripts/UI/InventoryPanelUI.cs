@@ -44,19 +44,6 @@ public class InventoryPanelUI : MonoBehaviour
     public void UpdatePanels(InventorySlot newSlot)
     {
         UpdateAllPanels(null);
-        return;
-        
-        foreach (var item in items)
-        {
-            if (item.slot.item == newSlot.item)
-            {
-                item.UpdateUI(newSlot);
-                return;
-            }
-        }
-        
-        //add new item ui
-        
     }
 
     public void SetPanel(int index, InventorySlot newSlot)
