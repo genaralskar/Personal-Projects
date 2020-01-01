@@ -61,7 +61,7 @@ public class GatherPoint : ClickableObjectBase
 
         //Debug.Log("Got em");
     }
-    
+
 
     private void UpdateModel(bool value)
     {

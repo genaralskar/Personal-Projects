@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305f8276999a3ea428311a591a3f6dc1, type: 3}
+  m_Name: Tavern
+  m_EditorClassIdentifier: 
+  upgradeCosts:
+  - costs:
+    - item: {fileID: 11400000, guid: 7bb4e62143f28d848b31af343b5a3de5, type: 2}
+      amount: 1

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ClickableObjectBase : MonoBehaviour, IClickableObject
 {
@@ -9,6 +10,8 @@ public class ClickableObjectBase : MonoBehaviour, IClickableObject
     public bool movePlayer = true;
     public Controller player;
     public string mouseOverText = "";
+
+    public UnityEvent onPlayerInRange;
     
     protected bool busy = false;
 
@@ -60,6 +63,7 @@ public class ClickableObjectBase : MonoBehaviour, IClickableObject
         if(!alwaysInactive)
             busy = true;
         player.NewCobTarget = StopMovingPlayer;
+        onPlayerInRange?.Invoke();
         //Debug.Log("NewCobTaget action assigned");
     }
 

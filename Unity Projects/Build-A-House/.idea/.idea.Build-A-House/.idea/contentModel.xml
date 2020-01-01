@@ -6,7 +6,9 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="BuildingUpgradeUI.cs" t="Include" />
         <e p="ControllerGatherParticles.cs" t="Include" />
+        <e p="CostInfoUI.cs" t="Include" />
         <e p="CraftingWindowUI.cs" t="Include" />
         <e p="Editor" t="Include">
           <e p="RaycastObjects.cs" t="Include" />
@@ -15,9 +17,24 @@
           <e p="License.txt" t="Include" />
           <e p="readme.txt" t="Include" />
         </e>
+        <e p="GameObjectBrush" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Editor" t="Include">
+              <e p="AddObjectPopup.cs" t="Include" />
+              <e p="BrushCollection.cs" t="Include" />
+              <e p="BrushObject.cs" t="Include" />
+              <e p="GameObjectBrushEditor.cs" t="Include" />
+              <e p="StringPopupDialog.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="GatherPoint.cs" t="Include" />
         <e p="ItemUI.cs" t="Include" />
+        <e p="MedievalTownExteriors" t="Include">
+          <e p="readme.txt" t="Include" />
+        </e>
         <e p="MinionManager.cs" t="Include" />
+        <e p="MouseDownButton.cs" t="Include" />
         <e p="MouseOverText.cs" t="Include" />
         <e p="PlayerCamera.cs" t="Include" />
         <e p="PropPlacer.cs" t="Include" />
@@ -25,6 +42,10 @@
           <e p="Build" t="Include">
             <e p="Buildable.cs" t="Include" />
             <e p="BuildManager.cs" t="Include" />
+          </e>
+          <e p="Buildings" t="Include">
+            <e p="BuildingLevel.cs" t="Include" />
+            <e p="BuildingType.cs" t="Include" />
           </e>
           <e p="ClickableObjectBase.cs" t="Include" />
           <e p="Controller.cs" t="Include" />
@@ -44,6 +65,10 @@
           </e>
           <e p="NavMeshAgentRootMotion.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="Sliding Puzzle" t="Include">
+            <e p="PuzzlePiece.cs" t="Include" />
+            <e p="SlidingPuzzle.cs" t="Include" />
+          </e>
           <e p="UI" t="Include">
             <e p="CameraController.cs" t="Include" />
             <e p="HouseUpgradeCostPanelUI.cs" t="Include" />
@@ -83,6 +108,7 @@
           </e>
         </e>
         <e p="UpdateUtilityState.cs" t="Include" />
+        <e p="UpgradeableBuilding.cs" t="Include" />
         <e p="UtilityState.cs" t="Include" />
       </e>
       <e p="Build-A-House.sln" t="IncludeFlat" />
