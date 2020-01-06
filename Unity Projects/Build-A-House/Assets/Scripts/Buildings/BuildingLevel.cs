@@ -6,4 +6,5 @@ using UnityEngine;
 public class BuildingLevel
 {
     public List<InventorySlot> costs;
+    public string upgradeText;
 }

@@ -6,9 +6,5 @@ using UnityEngine;
 public class BuildingType : ScriptableObject
 {
     public List<BuildingLevel> upgradeCosts;
-
-    public void UpgradeBuilding()
-    {
-        
-    }
+    public List<BuildingModuleType> moduleTypes;
 }

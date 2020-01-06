@@ -16,3 +16,8 @@ MonoBehaviour:
   - costs:
     - item: {fileID: 11400000, guid: 7bb4e62143f28d848b31af343b5a3de5, type: 2}
       amount: 1
+    upgradeText: Build an inn and some friends will come to help you!
+  - costs:
+    - item: {fileID: 11400000, guid: 7bb4e62143f28d848b31af343b5a3de5, type: 2}
+      amount: 5
+    upgradeText: Build some more rooms, get some more friends!

@@ -4,25 +4,28 @@ using UnityEngine;
 
 public class UpgradeableBuilding : ClickableObjectBase
 {
-    public GameObject upgradeUI;
+    public GameObject buildingInfoUI;
     public BuildingUpgradeUI buildingUpgradeUi;
+    public BuildingInfoPanelUI buildingInfoPanel;
     
     public List<GameObject> buildingLevels;
 
-    public BuildingType building;
+    public BuildingType buildingType;
+    
     public int currentLevel;
 
     public override void OnPlayerInRange()
     {
         base.OnPlayerInRange();
         
-        buildingUpgradeUi.SetBuilding(this);
-        upgradeUI.SetActive(true);
+        //buildingUpgradeUi.SetBuilding(this);
+        buildingInfoPanel.SetBuilding(this);
+        buildingInfoUI.SetActive(true);
     }
 
     protected override void OnPlayerLeave()
     {
-        upgradeUI.SetActive(false);
+        buildingInfoUI.SetActive(false);
         
     }
 

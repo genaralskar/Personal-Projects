@@ -1,26 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class BuildingUpgradeUI : MonoBehaviour
+public class BuildingUpgradeUI : BuildingModule
 {
-    public UpgradeableBuilding building;
+    //public UpgradeableBuilding building;
 
     public UpgradeCostsPanelUI costInfo;
+
+    public TextMeshProUGUI upgradeInfoText;
 
     private List<InventorySlot> upgradeCost;
 
     public void SetBuilding(UpgradeableBuilding newBuilding)
     {
+        Debug.Log(newBuilding);
         building = newBuilding;
-        upgradeCost = building.building.upgradeCosts[building.currentLevel].costs;
+        upgradeCost = building.buildingType.upgradeCosts[building.currentLevel].costs;
+        upgradeInfoText.text = building.buildingType.upgradeCosts[building.currentLevel].upgradeText;
         costInfo.UpdateCosts(upgradeCost);
     }
 
     public void UpgradeBuilding()
     {
         if (!building) return;
-        bool canBuild = Inventory.BuyItem(upgradeCost, 1);
-        building.UpgradeBuilding();
+        if (Inventory.BuyItem(upgradeCost, 1))
+        {
+           building.UpgradeBuilding();
+        }
+
+        upgradeCost = building.buildingType.upgradeCosts[building.currentLevel].costs;
+        upgradeInfoText.text = building.buildingType.upgradeCosts[building.currentLevel].upgradeText;
+        costInfo.UpdateCosts(upgradeCost);
     }
 }
