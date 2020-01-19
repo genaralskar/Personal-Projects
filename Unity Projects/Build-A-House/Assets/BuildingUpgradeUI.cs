@@ -13,13 +13,14 @@ public class BuildingUpgradeUI : BuildingModule
 
     private List<InventorySlot> upgradeCost;
 
-    public void SetBuilding(UpgradeableBuilding newBuilding)
+    public override void SetBuilding(UpgradeableBuilding newBuilding)
     {
         Debug.Log(newBuilding);
-        building = newBuilding;
+        base.SetBuilding(newBuilding);
+        //building = newBuilding;
         upgradeCost = building.buildingType.upgradeCosts[building.currentLevel].costs;
         upgradeInfoText.text = building.buildingType.upgradeCosts[building.currentLevel].upgradeText;
-        costInfo.UpdateCosts(upgradeCost);
+        costInfo.UpdateCosts(newBuilding.buildingType.upgradeCosts[newBuilding.currentLevel]);
     }
 
     public void UpgradeBuilding()

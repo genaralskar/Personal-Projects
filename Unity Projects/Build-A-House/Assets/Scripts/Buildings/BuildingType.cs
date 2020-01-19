@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Building/Building Type")]
 public class BuildingType : ScriptableObject
 {
-    public List<BuildingLevel> upgradeCosts;
+    public List<UpgradeLevel> upgradeCosts;
+    public List<Upgrade> upgrades;
     public List<BuildingModuleType> moduleTypes;
 }

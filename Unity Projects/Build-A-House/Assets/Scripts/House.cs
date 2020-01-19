@@ -29,10 +29,6 @@ public class House : MonoBehaviour
         }
     }
 
-    public Upgrade GetNextUpgrade()
-    {
-        return upgrades[currentHouse + 1];
-    }
     
     
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,12 @@ public class UpgradeCostsPanelUI : MonoBehaviour
     public List<CostPanelUI> costPanels;
 
     private List<InventorySlot> theseCosts;
-    
+
+    private void Awake()
+    {
+        costPanels.AddRange(GetComponentsInChildren<CostPanelUI>());
+    }
+
     private void OnEnable()
     {
         Inventory.inventoryUpdated += InventoryUpdatedHandler;
@@ -18,7 +24,7 @@ public class UpgradeCostsPanelUI : MonoBehaviour
         Inventory.inventoryUpdated -= InventoryUpdatedHandler;
     }
 
-    public void UpdateCosts(Upgrade upgrade)
+    public void UpdateCosts(UpgradeLevel costs)
     {
         foreach (var panel in costPanels)
         {
@@ -26,7 +32,7 @@ public class UpgradeCostsPanelUI : MonoBehaviour
         }
 
         int counter = 0;
-        foreach (var cost in upgrade.costs)
+        foreach (var cost in costs.costs)
         {
             CostPanelUI costPanel = costPanels[counter];
             costPanel.gameObject.SetActive(true);

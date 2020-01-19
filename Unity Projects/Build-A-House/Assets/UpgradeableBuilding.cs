@@ -19,14 +19,16 @@ public class UpgradeableBuilding : ClickableObjectBase
         base.OnPlayerInRange();
         
         //buildingUpgradeUi.SetBuilding(this);
-        buildingInfoPanel.SetBuilding(this);
-        buildingInfoUI.SetActive(true);
+        //buildingInfoPanel.SetBuilding(this);
+        BuildingInfoPanelUI.SetUIBuilding(this);
+        
+        //buildingInfoUI.SetActive(true);
     }
 
     protected override void OnPlayerLeave()
     {
-        buildingInfoUI.SetActive(false);
-        
+        BuildingInfoPanelUI.DeactivateUI();
+
     }
 
     public void UpgradeBuilding()

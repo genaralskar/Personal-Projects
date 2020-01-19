@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class BuildingLevel
+public class UpgradeLevel
 {
     public List<InventorySlot> costs;
     public string upgradeText;

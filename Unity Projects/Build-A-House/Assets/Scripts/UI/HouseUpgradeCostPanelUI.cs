@@ -26,7 +26,7 @@ public class HouseUpgradeCostPanelUI : UpgradeCostsPanelUI
 
     public void AutoUpdateCosts()
     {
-        UpdateCosts(house.GetNextUpgrade());
+        //UpdateCosts(house.GetNextUpgrade());
     }
 
     private void NewHouseUpgradeHandler(Upgrade newUpgrade)
