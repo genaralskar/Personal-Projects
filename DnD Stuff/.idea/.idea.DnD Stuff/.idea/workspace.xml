@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef102430-933f-4ce3-893c-eb40fe595d9a" name="Default Changelist" comment="" />
@@ -13,11 +13,17 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Click Clunker/ClickClunker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Door.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Waltz FPS Controller/Scripts/PlayerFPSController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Controller.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Click Clunker/ClickClunker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Waltz FPS Controller/Scripts/PlayerFPSController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Door.cs" />
       </list>
     </option>
   </component>
@@ -51,6 +57,7 @@
       <option name="presentableId" value="Default" />
       <updated>1581450179306</updated>
       <workItem from="1581450184345" duration="1718000" />
+      <workItem from="1584386405645" duration="2508000" />
     </task>
     <servers />
   </component>
@@ -62,7 +69,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
