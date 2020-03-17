@@ -44,7 +44,8 @@ public class CoinUIUpdater : MonoBehaviour
             else
             {
                 slot.gameObject.SetActive(true);
-                slot.UpdateUISlot(inv.GetCoinAmount(slot.coin));
+                CoinInvSlot newSlot = new CoinInvSlot(slot.coin, inv.GetCoinAmount(slot.coin));
+                slot.UpdateUISlot(newSlot);
             }
         }
     }

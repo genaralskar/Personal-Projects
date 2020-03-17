@@ -10,6 +10,8 @@ public class CoinInventory : MonoBehaviour
     public UnityAction InventoryUpdated;
 
     public Coin selectedCoin;
+    
+    public CoinUISlot selectedCoinSlot;
 
     private void Awake()
     {
@@ -20,6 +22,8 @@ public class CoinInventory : MonoBehaviour
 
     public void AddCoin(Coin newCoin)
     {
+        if (newCoin == null) return;
+        
         foreach (var coin in coins)
         {
             if (coin.coin == newCoin)
@@ -35,6 +39,7 @@ public class CoinInventory : MonoBehaviour
         //coin not in inventory, add it
         coins.Add(new CoinInvSlot(newCoin, 1));
         InventoryUpdated?.Invoke();
+        selectedCoinSlot.UpdateUISlot(null, -1);
     }
 
     public void RemoveCoin(Coin coin)
@@ -69,6 +74,9 @@ public class CoinInventory : MonoBehaviour
             ReturnSelectedCoin();
             RemoveCoin(newCoin);
             selectedCoin = newCoin;
+            selectedCoinSlot.UpdateUISlot(selectedCoin, -1);
+            Debug.Log(newCoin);
+            
         }
     }
 
@@ -77,6 +85,14 @@ public class CoinInventory : MonoBehaviour
     {
         if (selectedCoin == null) return;
         AddCoin(selectedCoin);
+        selectedCoinSlot.UpdateUISlot(null, -1);
+        selectedCoin = null;
+    }
+
+    public void RemoveSelectedCoin()
+    {
+        if (selectedCoin == null) return;
+        selectedCoinSlot.UpdateUISlot(null, -1);
         selectedCoin = null;
     }
 
@@ -94,6 +110,13 @@ public class CoinInventory : MonoBehaviour
         }
 
         coins = null;
+    }
+
+    public Coin TakeSelectedCoin()
+    {
+        Coin _coin = selectedCoin;
+        RemoveSelectedCoin();
+        return _coin;
     }
 
     #endregion

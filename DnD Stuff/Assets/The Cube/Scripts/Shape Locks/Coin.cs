@@ -7,5 +7,5 @@ using UnityEngine.UI;
 public class Coin : ScriptableObject
 {
     public int value;
-    public Image image;
+    public Sprite image;
 }

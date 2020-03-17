@@ -19,8 +19,24 @@ public class CoinUISlot : MonoBehaviour
         amountText = GetComponentInChildren<TextMeshProUGUI>();
     }
 
-    public void UpdateUISlot(int newAmount)
+    public void UpdateUISlot(CoinInvSlot newSlot)
     {
-        amountText.text = newAmount.ToString();
+        coin = newSlot.coin;
+        if(coin.image != null)
+            image.sprite = coin.image;
+        amountText.text = newSlot.amount.ToString();
+    }
+    
+    public void UpdateUISlot(Coin newCoin, int newAmount)
+    {
+        coin = newCoin;
+        if(coin != null && coin.image != null)
+            image.sprite = coin.image;
+        else
+        {
+            image.sprite = null;
+        }
+        amountText.text = newAmount < 0 ? "" : newAmount.ToString();
+        
     }
 }

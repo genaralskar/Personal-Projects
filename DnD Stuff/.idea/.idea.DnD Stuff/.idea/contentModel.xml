@@ -1041,8 +1041,8 @@
         <e p="Click Clunker" t="Include">
           <e p="ClickClunker.cs" t="Include" />
         </e>
+        <e p="CoinComparator.cs" t="Include" />
         <e p="CoinHolder.cs" t="Include" />
-        <e p="CoinInteract.cs" t="Include" />
         <e p="CoinInventory.cs" t="Include" />
         <e p="CoinInvSlot.cs" t="Include" />
         <e p="CoinUISlot.cs" t="Include" />
