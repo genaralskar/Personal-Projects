@@ -13,17 +13,33 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Click Clunker/ClickClunker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Door.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CoinInventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Shape Locks/Coin.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CoinInvSlot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CoinUIUpdater.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CoinHolder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CoinInteract.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Waltz FPS Controller/Scripts/PlayerFPSController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Controller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CoinUISlot.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Click Clunker/ClickClunker.cs" />
         <option value="$PROJECT_DIR$/Assets/Controller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Waltz FPS Controller/Scripts/PlayerFPSController.cs" />
         <option value="$PROJECT_DIR$/Assets/Door.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Shape Locks/KeyShape.cs" />
+        <option value="$PROJECT_DIR$/Assets/Coin.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Shape Locks/CoinShape.cs" />
+        <option value="$PROJECT_DIR$/Assets/CoinHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Waltz FPS Controller/Scripts/PlayerFPSController.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Shape Locks/Coin.cs" />
+        <option value="$PROJECT_DIR$/Assets/CoinInvSlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/CoinInteract.cs" />
+        <option value="$PROJECT_DIR$/Assets/CoinInventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/CoinUISlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/CoinUIUpdater.cs" />
       </list>
     </option>
   </component>
@@ -33,6 +49,7 @@
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -57,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1581450179306</updated>
       <workItem from="1581450184345" duration="1718000" />
-      <workItem from="1584386405645" duration="2508000" />
+      <workItem from="1584386405645" duration="7814000" />
     </task>
     <servers />
   </component>

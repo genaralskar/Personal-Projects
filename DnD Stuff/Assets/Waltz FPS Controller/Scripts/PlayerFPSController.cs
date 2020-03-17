@@ -18,6 +18,8 @@ public class PlayerFPSController : MonoBehaviour {
         - For player sounds, the FPS Controller needs an AudioManager component attached to the same object! Just use the prefab provided for reference.
     */
 
+    public bool hasControl = true;
+
     [Header("Controls")]
     [Tooltip("The axis used for strafing. \n\nCheck Edit>Project Settings>Input for more information.")] public string strafeAxis = "Horizontal";
     [Tooltip("The axis used for walking forward. \n\nCheck Edit>Project Settings>Input for more information.")] public string walkAxis = "Vertical";
@@ -119,9 +121,11 @@ public class PlayerFPSController : MonoBehaviour {
         m_camOriginBaseHeight = m_camOrigin.y;
         m_camPosTracer = m_camOrigin; //This is where the camera truly lies in a given frame.
 
-        Cursor.lockState = CursorLockMode.Locked; //Cursor is locked.
-        Cursor.visible = false; //Cursor is hidden.
-                                ///
+        if (cursorManagement)
+        {
+            Cursor.lockState = CursorLockMode.Locked; //Cursor is locked.
+            Cursor.visible = false; //Cursor is hidden.
+        }
 
         ///Framerate locking, if you so please.
         if (lockFramerate)
@@ -139,8 +143,11 @@ public class PlayerFPSController : MonoBehaviour {
 
     }
 
-    void Update() {
+    void Update()
+    {
 
+        if (!hasControl) return;
+        
         if (!Physics.SphereCast(new Ray(transform.position, Vector3.up), m_char.radius, m_baseHeight * 0.7f))
         {
             isCrouching = Input.GetKey(crouchButton); //Check if the player wants to crouch.

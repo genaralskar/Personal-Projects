@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e73ebae1fb54cc24583bd24c500cfdcd, type: 3}
-  m_Name: Triangle
+  m_Script: {fileID: 11500000, guid: ed0e479f61a807d4491109c9b514b8fb, type: 3}
+  m_Name: Coin Pentagon
   m_EditorClassIdentifier: 
-  value: 5
+  value: 3
+  image: {fileID: 0}

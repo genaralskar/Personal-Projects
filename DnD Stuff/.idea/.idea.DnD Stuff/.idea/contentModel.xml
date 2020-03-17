@@ -1041,6 +1041,12 @@
         <e p="Click Clunker" t="Include">
           <e p="ClickClunker.cs" t="Include" />
         </e>
+        <e p="CoinHolder.cs" t="Include" />
+        <e p="CoinInteract.cs" t="Include" />
+        <e p="CoinInventory.cs" t="Include" />
+        <e p="CoinInvSlot.cs" t="Include" />
+        <e p="CoinUISlot.cs" t="Include" />
+        <e p="CoinUIUpdater.cs" t="Include" />
         <e p="Controller.cs" t="Include" />
         <e p="InputManager.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
@@ -1075,7 +1081,7 @@
           <e p="Scripts" t="Include">
             <e p="Door.cs" t="Include" />
             <e p="Shape Locks" t="Include">
-              <e p="KeyShape.cs" t="Include" />
+              <e p="Coin.cs" t="Include" />
             </e>
           </e>
           <e p="Toon.shader" t="Include" />
