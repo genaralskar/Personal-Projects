@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Coin Triangle
   m_EditorClassIdentifier: 
   value: 1
-  image: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  image: {fileID: 8400000, guid: 766d975e48851fc4fbe20a1e23e5298f, type: 2}

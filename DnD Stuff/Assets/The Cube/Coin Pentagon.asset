@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Coin Pentagon
   m_EditorClassIdentifier: 
   value: 3
-  image: {fileID: 21300002, guid: 6a4891a1ec505d64e97d82bb5a3b9c04, type: 3}
+  image: {fileID: 8400000, guid: e1ce1d881827e2b4783ab8d13a124e95, type: 2}

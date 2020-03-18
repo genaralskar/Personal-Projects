@@ -4,6 +4,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class PlayerFPSController : MonoBehaviour {
@@ -49,7 +50,10 @@ public class PlayerFPSController : MonoBehaviour {
     [Header("Camera")]
     [Tooltip("Whether or not the player can look around or zoom in.")] public bool lockCamera = false;
     [Tooltip("If this is enabled: Left-Clicking on the screen will lock your cursor in. Pressing Escape unlocks the cursor.")] public bool cursorManagement = true;
-    [Tooltip("A direct reference to the player's camera.")] public Camera playerCamera;
+    //[Tooltip("A direct reference to the player's camera.")] public Camera playerCamera;
+
+    public CinemachineVirtualCamera cam;
+    
     [Tooltip("How sensitive the player's mouse is.")] public float mouseSensitivity = 1.5f;
     [Tooltip("The angles at which the player's camera can look up and down.")] public Vector2 verticalRestraint = new Vector2(-90f, 90f);
     [Space]
@@ -105,8 +109,8 @@ public class PlayerFPSController : MonoBehaviour {
 
 
     void Start() {
-
-        FOV = playerCamera.fieldOfView;
+        
+        FOV = cam.m_Lens.FieldOfView;
 
         /// Initialization details.
         current = this; //The current player controller is assigned so you can access it whenever you need to.
@@ -116,8 +120,8 @@ public class PlayerFPSController : MonoBehaviour {
         m_topSpeed = moveSpeed; //The top speed is set to the default moveSpeed.
         m_char = gameObject.GetComponent<CharacterController>(); //The character controller reference is cached.
 
-        m_goalAngles = playerCamera.gameObject.transform.rotation.eulerAngles; //Goal angles are based on the player camera's rotation.
-        m_camOrigin = playerCamera.transform.localPosition; //The camera's origin is cached so bobbing and landing effects can be applied without the camera losing its default position.
+        m_goalAngles = cam.gameObject.transform.rotation.eulerAngles; //Goal angles are based on the player camera's rotation.
+        m_camOrigin = cam.transform.localPosition; //The camera's origin is cached so bobbing and landing effects can be applied without the camera losing its default position.
         m_camOriginBaseHeight = m_camOrigin.y;
         m_camPosTracer = m_camOrigin; //This is where the camera truly lies in a given frame.
 
@@ -140,6 +144,8 @@ public class PlayerFPSController : MonoBehaviour {
         ///
 
         m_baseHeight = m_char.height;
+        
+        cam.transform.SetParent(null);
 
     }
 
@@ -198,9 +204,9 @@ public class PlayerFPSController : MonoBehaviour {
 
         if (isSprinting) { //If we're sprinting, lerp the top speed as well as the FOV to reflect that.
             m_topSpeed += (sprintSpeed - m_topSpeed) * 0.2f;
-            playerCamera.fieldOfView += ((sprintFOV + m_zoomAdditive) - playerCamera.fieldOfView) * 0.2f;
+            cam.m_Lens.FieldOfView += ((sprintFOV + m_zoomAdditive) - cam.m_Lens.FieldOfView) * 0.2f;
         } else { //Otherwise put it back to normal!
-            playerCamera.fieldOfView += ((FOV + m_zoomAdditive) - playerCamera.fieldOfView) * 0.2f;
+            cam.m_Lens.FieldOfView += ((FOV + m_zoomAdditive) - cam.m_Lens.FieldOfView) * 0.2f;
             m_topSpeed += (moveSpeed - m_topSpeed) * 0.2f;
         }
         ///
@@ -400,14 +406,14 @@ public class PlayerFPSController : MonoBehaviour {
 
 
             /// Various outputs are assigned. The individual comments explain this in detail.
-            playerCamera.transform.localPosition += (m_camPosTracer - playerCamera.transform.localPosition) * 0.1f; //The position of the camera is shifted as needed.
+            //cam.transform.localPosition += (m_camPosTracer - cam.transform.localPosition) * 0.1f; //The position of the camera is shifted as needed.
 
             m_goalAngles += new Vector3(-Input.GetAxis(lookAxisY) * mouseSensitivity, Input.GetAxis(lookAxisX) * mouseSensitivity); //The current motion of the mouse is taken in, multiplied by the mouse sensitivity, and then added onto the goal camera angles.
 
             m_goalAngles.x = Mathf.Clamp(m_goalAngles.x, verticalRestraint.x, verticalRestraint.y); //The camera angles are restricted here, so the player can't flip their head completely down and snap their neck.
 
             gameObject.transform.rotation = Quaternion.Euler(0f, m_goalAngles.y, 0f); //The horizontal rotation is applied to the player's body.
-            playerCamera.transform.rotation = Quaternion.Euler(m_goalAngles); //The vertical rotation is applied to the player's head.
+            cam.transform.rotation = Quaternion.Euler(m_goalAngles); //The vertical rotation is applied to the player's head.
             ///
         }
 
@@ -433,18 +439,21 @@ public class PlayerFPSController : MonoBehaviour {
         ///
 
         m_lastGrav = m_grav; //The gravity from the last frame is set here. This is mostly used to compare against prior frame motion.
+        
+        m_char.Move(m_movement * Time.deltaTime); //Movement is applied here. Motion is scaled on framerate to smooth things out.
 
     }
 
     void LateUpdate()
     {
-        //playerCamera.transform.localPosition += (m_camPosTracer - playerCamera.transform.localPosition) * 0.1f; //The position of the camera is shifted as needed.
+        //cam.transform.localPosition += (m_camPosTracer - cam.transform.localPosition) * 0.1f; //The position of the camera is shifted as needed.
+        cam.transform.position = transform.position + (Vector3.up * (m_char.height / 2));
     }
 
     void FixedUpdate()
     {
-
-        m_char.Move(m_movement * Time.deltaTime); //Movement is applied here. Motion is scaled on framerate to smooth things out.
+        if (!hasControl) return;
+            //m_char.Move(m_movement * Time.deltaTime); //Movement is applied here. Motion is scaled on framerate to smooth things out.
 
     }
 

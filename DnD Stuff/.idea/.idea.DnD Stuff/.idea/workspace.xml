@@ -12,16 +12,22 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemInvUIManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/FPSInteract/FPSInteract.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinHand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/OpenInventories.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Click Clunker/ClickClunker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/CoinInventory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Shape Locks/Coin.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/CoinInvSlot.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/CoinUIUpdater.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/CoinHolder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/CoinComparator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinHolder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinUIUpdater.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinInventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinComparator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/Coin.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinUISlot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemInventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemUISlot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/CubeStateManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/Item.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Waltz FPS Controller/Scripts/PlayerFPSController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Controller.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/CoinUISlot.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -33,7 +39,6 @@
         <option value="$PROJECT_DIR$/Assets/Coin.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Shape Locks/CoinShape.cs" />
         <option value="$PROJECT_DIR$/Assets/CoinHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/Waltz FPS Controller/Scripts/PlayerFPSController.cs" />
         <option value="$PROJECT_DIR$/Assets/CoinInvSlot.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Shape Locks/Coin.cs" />
         <option value="$PROJECT_DIR$/Assets/CoinUIUpdater.cs" />
@@ -41,6 +46,29 @@
         <option value="$PROJECT_DIR$/Assets/CoinUISlot.cs" />
         <option value="$PROJECT_DIR$/Assets/CoinInventory.cs" />
         <option value="$PROJECT_DIR$/Assets/CoinComparator.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/Coin.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinUISlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/CubeSectionManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/FPSInteract/FPSInteract.cs" />
+        <option value="$PROJECT_DIR$/Assets/CoinHand.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinUIUpdater.cs" />
+        <option value="$PROJECT_DIR$/Assets/Waltz FPS Controller/Scripts/PlayerFPSController.cs" />
+        <option value="$PROJECT_DIR$/Assets/CoinAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/CoinSlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinComparator.cs" />
+        <option value="$PROJECT_DIR$/Assets/CoinReturn.cs" />
+        <option value="$PROJECT_DIR$/Assets/CoinDoor.cs" />
+        <option value="$PROJECT_DIR$/Assets/CoinReturnPickupBox.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/CubeStateManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/OpenInventories.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/CubeStateManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemUISlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/Item.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemInvUIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinHand.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinInventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemInventory.cs" />
       </list>
     </option>
   </component>
@@ -75,7 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1581450179306</updated>
       <workItem from="1581450184345" duration="1718000" />
-      <workItem from="1584386405645" duration="11273000" />
+      <workItem from="1584386405645" duration="30813000" />
     </task>
     <servers />
   </component>

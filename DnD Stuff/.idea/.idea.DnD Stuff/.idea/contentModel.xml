@@ -1041,14 +1041,11 @@
         <e p="Click Clunker" t="Include">
           <e p="ClickClunker.cs" t="Include" />
         </e>
-        <e p="CoinComparator.cs" t="Include" />
-        <e p="CoinHolder.cs" t="Include" />
-        <e p="CoinInventory.cs" t="Include" />
-        <e p="CoinInvSlot.cs" t="Include" />
-        <e p="CoinUISlot.cs" t="Include" />
-        <e p="CoinUIUpdater.cs" t="Include" />
-        <e p="Controller.cs" t="Include" />
-        <e p="InputManager.cs" t="Include" />
+        <e p="FPSInteract" t="Include">
+          <e p="FPSInteract.cs" t="Include" />
+          <e p="IFPSInteract.cs" t="Include" />
+          <e p="IFPSLookAt.cs" t="Include" />
+        </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
             <e p="LiberationSans - OFL.txt" t="Include" />
@@ -1078,11 +1075,34 @@
           </e>
         </e>
         <e p="The Cube" t="Include">
+          <e p="lmap.shader" t="Include" />
+          <e p="NewToon.shader" t="Include" />
           <e p="Scripts" t="Include">
-            <e p="Door.cs" t="Include" />
-            <e p="Shape Locks" t="Include">
+            <e p="Coins" t="Include">
               <e p="Coin.cs" t="Include" />
+              <e p="CoinAnimation.cs" t="Include" />
+              <e p="CoinComparator.cs" t="Include" />
+              <e p="CoinDoor.cs" t="Include" />
+              <e p="CoinHand.cs" t="Include" />
+              <e p="CoinHolder.cs" t="Include" />
+              <e p="CoinInventory.cs" t="Include" />
+              <e p="CoinInvSlot.cs" t="Include" />
+              <e p="CoinReturn.cs" t="Include" />
+              <e p="CoinReturnPickupBox.cs" t="Include" />
+              <e p="CoinSlot.cs" t="Include" />
+              <e p="CoinUISlot.cs" t="Include" />
+              <e p="CoinUIUpdater.cs" t="Include" />
             </e>
+            <e p="CubeSectionManager.cs" t="Include" />
+            <e p="CubeStateManager.cs" t="Include" />
+            <e p="Door.cs" t="Include" />
+            <e p="Inventory" t="Include">
+              <e p="Item.cs" t="Include" />
+              <e p="ItemInventory.cs" t="Include" />
+              <e p="ItemInvUIManager.cs" t="Include" />
+              <e p="ItemUISlot.cs" t="Include" />
+            </e>
+            <e p="OpenInventories.cs" t="Include" />
           </e>
           <e p="Toon.shader" t="Include" />
         </e>
