@@ -26,7 +26,6 @@ public class CoinHand : MonoBehaviour
 
     public void RemoveCurrentItem()
     {
-        Debug.Log("removing item");
         itemInv.ReturnCurrentItem();
         currentItem = null;
     }
@@ -89,7 +88,6 @@ public class CoinHand : MonoBehaviour
     //===Items===
     private void NewItemSelectedHandler()
     {
-        Debug.Log(itemInv.currentItem);
         //remove coin if its there
         RemoveCurrentCoin();
         currentItem = itemInv.currentItem;

@@ -43,7 +43,6 @@ public class ItemDisplay : MonoBehaviour
 
     private void Swap()
     {
-        Debug.Log("Swap");
         Item tempCur = currentItem;
         inv.AddItem(currentItem);
         currentItem = null;
@@ -53,7 +52,6 @@ public class ItemDisplay : MonoBehaviour
 
     private void Pickup()
     {
-        Debug.Log("Pickup");
         inv.AddItem(currentItem);
         inv.SelectItem(currentItem);
         currentItem = null;
@@ -61,7 +59,6 @@ public class ItemDisplay : MonoBehaviour
 
     private void Place()
     {
-        Debug.Log("Place");
         currentItem = inv.TakeCurrentItem();
         currentItem.transform.parent = itemPos;
         currentItem.transform.position = itemPos.transform.position;

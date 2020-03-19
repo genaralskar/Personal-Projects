@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using genaralskar.FPSInteract;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
-public class Item : MonoBehaviour, IFPSInteract
+[RequireComponent(typeof(Outline))]
+public class Item : MonoBehaviour, IFPSInteract, IFPSLookAt
 {
-    public UnityEvent ItemPickedUp;
+    public UnityAction ItemPickedUp;
 
     public bool active = true;
     
@@ -22,11 +22,17 @@ public class Item : MonoBehaviour, IFPSInteract
     
     private ItemInventory itemInv;
     private ItemPicTaker pt;
+
+    private Outline outline;
     
     private void Awake()
     {
         itemInv = FindObjectOfType<ItemInventory>();
         pt = FindObjectOfType<ItemPicTaker>();
+        
+        outline = GetComponent<Outline>();
+        outline.OutlineMode = Outline.Mode.OutlineVisible;
+        outline.OutlineWidth = 0;
 
         pt.GetPicture(this);
     }
@@ -46,5 +52,20 @@ public class Item : MonoBehaviour, IFPSInteract
     public static int SortItem(Item i1, Item i2)
     {
         return i1.sortScore.CompareTo(i2.sortScore);
+    }
+
+    public void HighlightItem(bool highlight)
+    {
+        outline.OutlineWidth = highlight? 10: 0;
+    }
+
+    public void OnLook()
+    {
+        HighlightItem(true);
+    }
+
+    public void OnStopLook()
+    {
+        HighlightItem(false);
     }
 }
