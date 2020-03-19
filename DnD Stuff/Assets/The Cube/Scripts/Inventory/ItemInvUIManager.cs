@@ -35,7 +35,6 @@ public class ItemInvUIManager : MonoBehaviour
     
     public void InventoryUpdatedHandler()
     {
-        Debug.Log("updating inv!");
         foreach (var slot in itemUiSlots)
         {
             slot.gameObject.SetActive(false);

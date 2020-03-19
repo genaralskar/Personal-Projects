@@ -1,6 +1,6 @@
 //Maya ASCII 2019 scene
 //Name: Cube Model.ma
-//Last modified: Mon, Mar 16, 2020 09:12:12 PM
+//Last modified: Wed, Mar 18, 2020 11:55:43 AM
 //Codeset: 1252
 requires maya "2019";
 requires "mtoa" "3.1.2";
@@ -14,13 +14,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "09ACA19A-4364-7A9E-EF82-4A8F68B41259";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -14.989119050775095 31.62031014858411 -80.093649318600811 ;
-	setAttr ".r" -type "double3" -13.538352728281753 190.5999999999716 0 ;
+	setAttr ".t" -type "double3" 4.5776016200059555 13.688752996827045 -49.356555213455245 ;
+	setAttr ".r" -type "double3" -9.9383527282576516 173.3999999999499 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "532918CC-4619-70AB-801E-0EB583AE1FD6";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 83.813023578775457;
+	setAttr ".coi" 43.70014310989211;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";

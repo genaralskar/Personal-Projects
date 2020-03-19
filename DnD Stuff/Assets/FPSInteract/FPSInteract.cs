@@ -20,6 +20,8 @@ namespace genaralskar.FPSInteract
 
         void Update()
         {
+            if (CubeStateManager.sectionActive) return;
+            
             ray = new Ray(transform.position, transform.forward);
             if (Physics.Raycast(ray, out hit, interactDistance, layerMask))
             {

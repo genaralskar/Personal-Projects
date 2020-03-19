@@ -8,7 +8,6 @@ public class CoinReturnPickupBox : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("Mouse CLick");
         cr.GrabCoins();
     }
 }

@@ -1041,6 +1041,7 @@
         <e p="Click Clunker" t="Include">
           <e p="ClickClunker.cs" t="Include" />
         </e>
+        <e p="DrawEventLines.cs" t="Include" />
         <e p="FPSInteract" t="Include">
           <e p="FPSInteract.cs" t="Include" />
           <e p="IFPSInteract.cs" t="Include" />
@@ -1100,8 +1101,12 @@
               <e p="Item.cs" t="Include" />
               <e p="ItemInventory.cs" t="Include" />
               <e p="ItemInvUIManager.cs" t="Include" />
+              <e p="ItemPicTaker.cs" t="Include" />
               <e p="ItemUISlot.cs" t="Include" />
             </e>
+            <e p="ItemDisplay.cs" t="Include" />
+            <e p="ItemDisplayActivator.cs" t="Include" />
+            <e p="ItemDisplayEvents.cs" t="Include" />
             <e p="OpenInventories.cs" t="Include" />
           </e>
           <e p="Toon.shader" t="Include" />

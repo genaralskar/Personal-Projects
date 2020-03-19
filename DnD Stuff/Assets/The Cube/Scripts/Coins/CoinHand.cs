@@ -26,7 +26,9 @@ public class CoinHand : MonoBehaviour
 
     public void RemoveCurrentItem()
     {
+        Debug.Log("removing item");
         itemInv.ReturnCurrentItem();
+        currentItem = null;
     }
 
     public void RemoveCurrentCoin()
@@ -36,8 +38,8 @@ public class CoinHand : MonoBehaviour
 
     private void CoinSelectedHandler(Coin coin)
     {
-        //remove item if its there
-        RemoveCurrentItem();
+        if(currentItem)
+            RemoveCurrentItem();
         
         if (coin == cTri)
         {
@@ -87,9 +89,13 @@ public class CoinHand : MonoBehaviour
     //===Items===
     private void NewItemSelectedHandler()
     {
+        Debug.Log(itemInv.currentItem);
         //remove coin if its there
         RemoveCurrentCoin();
+        currentItem = itemInv.currentItem;
         GameObject go = itemInv.GetCurrentItemGO();
+        
+        Debug.Log(itemInv.currentItem);
         
         go.transform.SetParent(itemSpot);
         go.transform.localRotation = Quaternion.identity;
