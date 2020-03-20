@@ -79,12 +79,12 @@
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplayActivator.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinReturnPickupBox.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/DrawEventLines.cs" />
-        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplayEvents.cs" />
-        <option value="$PROJECT_DIR$/Assets/DrawEventLines.cs" />
         <option value="$PROJECT_DIR$/Assets/QuickOutline/Scripts/Outline.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinHand.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/Item.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplayEvents.cs" />
+        <option value="$PROJECT_DIR$/Assets/DrawEventLines.cs" />
       </list>
     </option>
   </component>
@@ -120,7 +120,7 @@
       <updated>1581450179306</updated>
       <workItem from="1581450184345" duration="1718000" />
       <workItem from="1584386405645" duration="31478000" />
-      <workItem from="1584567048809" duration="20757000" />
+      <workItem from="1584567048809" duration="21261000" />
     </task>
     <servers />
   </component>

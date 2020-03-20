@@ -26,6 +26,7 @@ public class ItemDisplayEvents : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
+        Gizmos.color = Color.green;
         Draw(NewItem, transform);
     }
 
@@ -43,22 +44,21 @@ public class ItemDisplayEvents : MonoBehaviour
         {
             var obj = e.GetPersistentTarget(i);
             if (obj == null) continue;
-            MonoBehaviour mb = obj as MonoBehaviour;
-            if (mb == null)
+            
+            var comp = obj as Component;
+            if (comp != null)
             {
-                GameObject go = GameObject.Find(e.GetPersistentTarget(i).name);
-                if (go)
-                {
-                    Gizmos.color = Color.red;
-                    location = go.transform.position;
-                }
+                location = comp.transform.position;
             }
             else
             {
-                Gizmos.color = Color.green;
-                location = mb.transform.position;
+                var go = obj as GameObject;
+                if (go)
+                {
+                    location = go.transform.position;
+                }
             }
-            
+
             Gizmos.DrawLine(origin.position, location);
         }
     }
