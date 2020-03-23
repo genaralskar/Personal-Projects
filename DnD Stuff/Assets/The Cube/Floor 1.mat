@@ -41,6 +41,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _ASEOutlineWidth: 0
+    - _LightSharpness: 0.2
     - _ShadowPosturize: 1
     - _TextureIntensity: 1
     - _UseLights: 1
