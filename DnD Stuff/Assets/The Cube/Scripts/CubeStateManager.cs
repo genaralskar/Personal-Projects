@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class CubeStateManager : MonoBehaviour
 {
-    public static UnityAction StateEnter;
+    public static UnityAction<bool> StateEnter;
     public static UnityAction StateExit;
 
     public GameObject sectionCam;
@@ -45,9 +45,11 @@ public class CubeStateManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None; //Cursor is locked.
         Cursor.visible = true; //Cursor is hidden.
         sectionActive = true;
-        StateEnter?.Invoke();
 
-        if (coinInventory)
+        bool moveHands = coinInventory || itemInventory;
+        StateEnter?.Invoke(moveHands);
+
+            if (coinInventory)
         {
             coinInvAnims.SetBool("show", true);
         }

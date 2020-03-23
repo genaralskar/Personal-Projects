@@ -9,6 +9,11 @@ public class CubeSectionManager : MonoBehaviour, IFPSInteract
     public GameObject cam;
     public bool coinInv;
     public bool itemInv;
+
+    private void Awake()
+    {
+        manager = FindObjectOfType<CubeStateManager>();
+    }
     
     public void OnInteract(GameObject playerCamera, RaycastHit hit)
     {

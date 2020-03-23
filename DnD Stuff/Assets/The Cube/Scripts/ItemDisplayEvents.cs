@@ -7,21 +7,20 @@ using UnityEngine.Events;
 public class ItemDisplayEvents : MonoBehaviour
 {
     public ItemEvent NewItem;
-    private ItemDisplay id;
+    public Item itemCheck;
     
+    private ItemDisplay id;
+
     private void Awake()
     {
         id = GetComponent<ItemDisplay>();
+        id.ItemPlaced += ItemPlacedHandler;
     }
 
-    private void Start()
+    private void ItemPlacedHandler(Item item)
     {
-        
-    }
-
-    private void OnValidate()
-    {
-        
+        if (itemCheck && item != itemCheck) return;
+        NewItem.Invoke(item);
     }
 
     private void OnDrawGizmosSelected()
@@ -31,10 +30,7 @@ public class ItemDisplayEvents : MonoBehaviour
     }
 
     [System.Serializable]
-    public class ItemEvent : UnityEvent<Item>
-    {
-        
-    }
+    public class ItemEvent : UnityEvent<Item>{}
 
     private void Draw(UnityEvent<Item> e, Transform origin)
     {

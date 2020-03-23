@@ -13,33 +13,38 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemInvUIManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Click Clunker/ClickClunker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplay.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ScreenShakeTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/FPSInteract/FPSInteract.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/RotatorPiece.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinReturnPickupBox.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinHand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DrawEventLines.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/OpenInventories.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Rotator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Click Clunker/ClickClunker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemPicTaker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/QuickOutline/Scripts/Outline.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinUIUpdater.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinInventory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/FPSInteract/FPSInteract.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinComparator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/Coin.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplayEvents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinUISlot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemInventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/FPSEvents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemUISlot.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinReturnPickupBox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/CubeStateManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TeleportPad.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/Item.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinHand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/CubeSectionManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Waltz FPS Controller/Scripts/PlayerFPSController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/DrawEventLines.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/OpenInventories.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplayActivator.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Click Clunker/ClickClunker.cs" />
         <option value="$PROJECT_DIR$/Assets/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Door.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Shape Locks/KeyShape.cs" />
@@ -70,7 +75,6 @@
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/OpenInventories.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemUISlot.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinInventory.cs" />
-        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/CubeStateManager.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemInvUIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemPicTaker.cs" />
         <option value="$PROJECT_DIR$/Assets/FPSInteract/FPSInteract.cs" />
@@ -80,11 +84,18 @@
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinReturnPickupBox.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/DrawEventLines.cs" />
         <option value="$PROJECT_DIR$/Assets/QuickOutline/Scripts/Outline.cs" />
-        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinHand.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/Item.cs" />
-        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplayEvents.cs" />
         <option value="$PROJECT_DIR$/Assets/DrawEventLines.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/CubeSectionManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/CubeStateManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/RotatorPiece.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplayEvents.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinHand.cs" />
+        <option value="$PROJECT_DIR$/Assets/ScreenShakeTest.cs" />
+        <option value="$PROJECT_DIR$/Assets/Rotator.cs" />
+        <option value="$PROJECT_DIR$/Assets/FPSEvents.cs" />
+        <option value="$PROJECT_DIR$/Assets/TeleportPad.cs" />
       </list>
     </option>
   </component>
@@ -120,7 +131,8 @@
       <updated>1581450179306</updated>
       <workItem from="1581450184345" duration="1718000" />
       <workItem from="1584386405645" duration="31478000" />
-      <workItem from="1584567048809" duration="21261000" />
+      <workItem from="1584567048809" duration="21943000" />
+      <workItem from="1584925317549" duration="6405000" />
     </task>
     <servers />
   </component>

@@ -14,7 +14,7 @@ public class CoinHand : MonoBehaviour
     public Item currentItem;
     public Animator handAnims;
     public Transform itemSpot;
-    
+
     private void Awake()
     {
         coinInv.CoinSelected += CoinSelectedHandler;
@@ -22,6 +22,15 @@ public class CoinHand : MonoBehaviour
 
         CubeStateManager.StateEnter += StateEnterHandler;
         CubeStateManager.StateExit += StateExitHandler;
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            RemoveCurrentCoin();
+            RemoveCurrentItem();
+        }
     }
 
     public void RemoveCurrentItem()
@@ -102,14 +111,16 @@ public class CoinHand : MonoBehaviour
         go.SetActive(true);
     }
 
-    private void StateEnterHandler()
+    private void StateEnterHandler(bool useHands)
     {
-        handAnims.SetBool("HandUp", true);
+        if(useHands)
+            handAnims.SetBool("HandUp", true);
     }
 
     private void StateExitHandler()
     {
-        handAnims.SetBool("HandUp", false);
+        if(handAnims.GetBool("HandUp"))
+            handAnims.SetBool("HandUp", false);
     }
     
 }

@@ -1042,6 +1042,7 @@
           <e p="ClickClunker.cs" t="Include" />
         </e>
         <e p="DrawEventLines.cs" t="Include" />
+        <e p="FPSEvents.cs" t="Include" />
         <e p="FPSInteract" t="Include">
           <e p="FPSInteract.cs" t="Include" />
           <e p="IFPSInteract.cs" t="Include" />
@@ -1059,6 +1060,10 @@
             <e p="Outline.cs" t="Include" />
           </e>
         </e>
+        <e p="Rotator.cs" t="Include" />
+        <e p="RotatorPiece.cs" t="Include" />
+        <e p="ScreenShakeTest.cs" t="Include" />
+        <e p="TeleportPad.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
             <e p="LiberationSans - OFL.txt" t="Include" />
