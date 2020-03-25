@@ -16,8 +16,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScreenShakeTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/FPSInteract/FPSInteract.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Name Randomizer/NameRando.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/RotatorPiece.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinReturnPickupBox.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Name Randomizer/NameType.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinHand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DrawEventLines.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/OpenInventories.cs" root0="FORCE_HIGHLIGHTING" />
@@ -31,6 +33,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinComparator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/Coin.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplayEvents.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AmplifyShaderEditor/Examples/Official/TemplateExamples/PostProcess/Sobel/PostProcessExample.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinUISlot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemInventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/FPSEvents.cs" root0="FORCE_HIGHLIGHTING" />
@@ -45,8 +48,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Controller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Door.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Shape Locks/KeyShape.cs" />
         <option value="$PROJECT_DIR$/Assets/Coin.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Shape Locks/CoinShape.cs" />
@@ -89,13 +90,15 @@
         <option value="$PROJECT_DIR$/Assets/DrawEventLines.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/CubeSectionManager.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/CubeStateManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/RotatorPiece.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplayEvents.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinHand.cs" />
         <option value="$PROJECT_DIR$/Assets/ScreenShakeTest.cs" />
-        <option value="$PROJECT_DIR$/Assets/Rotator.cs" />
         <option value="$PROJECT_DIR$/Assets/FPSEvents.cs" />
         <option value="$PROJECT_DIR$/Assets/TeleportPad.cs" />
+        <option value="$PROJECT_DIR$/Assets/Name Randomizer/NameType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Name Randomizer/NameRando.cs" />
+        <option value="$PROJECT_DIR$/Assets/RotatorPiece.cs" />
+        <option value="$PROJECT_DIR$/Assets/Rotator.cs" />
       </list>
     </option>
   </component>
@@ -133,6 +136,7 @@
       <workItem from="1584386405645" duration="31478000" />
       <workItem from="1584567048809" duration="21943000" />
       <workItem from="1584925317549" duration="6405000" />
+      <workItem from="1585104225048" duration="4146000" />
     </task>
     <servers />
   </component>

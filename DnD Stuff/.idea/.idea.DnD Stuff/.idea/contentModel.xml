@@ -1048,6 +1048,10 @@
           <e p="IFPSInteract.cs" t="Include" />
           <e p="IFPSLookAt.cs" t="Include" />
         </e>
+        <e p="Name Randomizer" t="Include">
+          <e p="NameRando.cs" t="Include" />
+          <e p="NameType.cs" t="Include" />
+        </e>
         <e p="QuickOutline" t="Include">
           <e p="Readme.txt" t="Include" />
           <e p="Resources" t="Include">
@@ -1128,6 +1132,7 @@
           </e>
           <e p="Toon.shader" t="Include" />
         </e>
+        <e p="Triplane.shader" t="Include" />
         <e p="Waltz FPS Controller" t="Include">
           <e p="Scripts" t="Include">
             <e p="Audio" t="Include">

@@ -5,6 +5,7 @@ using UnityEngine;
 public class RotatorPiece : MonoBehaviour
 {
     public Rotator rotator;
+    public int piece;
     
     private void OnMouseDown()
     {
@@ -19,7 +20,7 @@ public class RotatorPiece : MonoBehaviour
 
             int dir = clickDif > 0 ? 1 : 0;
             
-            rotator.RotatePart(transform, dir);
+            rotator.RotatePart(transform, dir, piece);
         }
     }
 }
