@@ -10,7 +10,6 @@ public class FPSEvents : MonoBehaviour, IFPSInteract
     
     public void OnInteract(GameObject playerCamera, RaycastHit hit)
     {
-        Debug.Log("CLicked");
         Interact?.Invoke();
     }
 }

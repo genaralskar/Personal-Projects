@@ -6,8 +6,10 @@ using UnityEngine.Events;
 
 public class Rotator : MonoBehaviour
 {
-    public static UnityAction RotatingStart;
-    public static UnityAction RotatingStop;
+    public static UnityAction RotateSmallStart;
+    public static UnityAction RotateSmallStop;
+    public static UnityAction RotateBigStart;
+    public static UnityAction RotateBigStop;
     
     public Transform topBig;
     public Transform topSmall;
@@ -29,6 +31,8 @@ public class Rotator : MonoBehaviour
 
     private bool rotatingTop;
     private bool rotatingMid;
+
+    private static int rotNum = 0;
 
     private void Awake()
     {
@@ -77,7 +81,7 @@ public class Rotator : MonoBehaviour
     private IEnumerator RotateTopSmall()
     {
         rotatingTop = true;
-        RotatingStart?.Invoke();
+        RotateSmallStart?.Invoke();
         float timer = Time.time;
         WaitForEndOfFrame wait = new WaitForEndOfFrame();
         while (Time.time - timer < rotTimeSmall)
@@ -91,12 +95,13 @@ public class Rotator : MonoBehaviour
             yield return wait;
         }
         rotatingTop = false;
-        RotatingStop?.Invoke();
+        RotateSmallStop?.Invoke();
     }
     
     private IEnumerator RotateTopBig()
     {
-        RotatingStart?.Invoke();
+        if(rotNum == 0) RotateBigStart?.Invoke();
+        rotNum += 1;
         float timer = Time.time;
         WaitForEndOfFrame wait = new WaitForEndOfFrame();
         ss.GenerateImpulse();
@@ -111,13 +116,15 @@ public class Rotator : MonoBehaviour
             
             yield return wait;
         }
-        RotatingStop?.Invoke();
+        rotNum -= 1;
+        CheckRotAction();
+        
     }
     
     private IEnumerator RotateMidSmall()
     {
         rotatingMid = true;
-        RotatingStart?.Invoke();
+        RotateSmallStart?.Invoke();
         float timer = Time.time;
         WaitForEndOfFrame wait = new WaitForEndOfFrame();
         while (Time.time - timer < rotTimeSmall)
@@ -130,13 +137,14 @@ public class Rotator : MonoBehaviour
             
             yield return wait;
         }
-        rotatingTop = false;
-        RotatingStop?.Invoke();
+        rotatingMid = false;
+        RotateSmallStop?.Invoke();
     }
     
     private IEnumerator RotateMidBig()
     {
-        RotatingStart?.Invoke();
+        if(rotNum == 0) RotateBigStart?.Invoke();
+        rotNum += 1;
         float timer = Time.time;
         WaitForEndOfFrame wait = new WaitForEndOfFrame();
         ss.GenerateImpulse();
@@ -150,6 +158,18 @@ public class Rotator : MonoBehaviour
             
             yield return wait;
         }
-        RotatingStop?.Invoke();
+        rotNum -= 1;
+        CheckRotAction();
+    }
+
+    private void CheckRotAction()
+    {
+        if (rotNum <= 0)
+        {
+            RotateBigStop?.Invoke();
+        }
+
+        if (rotNum < 0)
+            rotNum = 0;
     }
 }

@@ -33,7 +33,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _ASEOutlineWidth: 0
+    - _FresnelSmoothstep: 1
+    - _LightSharpness: 0
     - _ShadowPosturize: 1
+    - _TextureIntensity: 1
     - _UseLights: 0
     - __dirty: 0
     - _normalIntensity: 0.268
