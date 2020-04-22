@@ -8,6 +8,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -19,7 +33,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Name Randomizer/NameRando.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/RotatorPiece.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinReturnPickupBox.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinSlot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Name Randomizer/NameType.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinDoor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinHand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DrawEventLines.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/OpenInventories.cs" root0="FORCE_HIGHLIGHTING" />
@@ -30,6 +46,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/QuickOutline/Scripts/Outline.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinUIUpdater.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinInventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Crystals/Crystal.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Door.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinComparator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/Coin.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplayEvents.cs" root0="FORCE_HIGHLIGHTING" />
@@ -38,6 +56,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemInventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/FPSEvents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemUISlot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DoorHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/CubeStateManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TeleportPad.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/Item.cs" root0="FORCE_HIGHLIGHTING" />
@@ -48,11 +67,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Shape Locks/KeyShape.cs" />
-        <option value="$PROJECT_DIR$/Assets/Coin.cs" />
-        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Shape Locks/CoinShape.cs" />
-        <option value="$PROJECT_DIR$/Assets/CoinHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/CoinInvSlot.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Shape Locks/Coin.cs" />
         <option value="$PROJECT_DIR$/Assets/CoinUIUpdater.cs" />
         <option value="$PROJECT_DIR$/Assets/CoinInteract.cs" />
@@ -71,34 +85,39 @@
         <option value="$PROJECT_DIR$/Assets/CoinReturn.cs" />
         <option value="$PROJECT_DIR$/Assets/CoinDoor.cs" />
         <option value="$PROJECT_DIR$/Assets/CoinReturnPickupBox.cs" />
-        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/CubeStateManager.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/OpenInventories.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemUISlot.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinInventory.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemInvUIManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemPicTaker.cs" />
         <option value="$PROJECT_DIR$/Assets/FPSInteract/FPSInteract.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/PlaceItem.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemInventory.cs" />
-        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplayActivator.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinReturnPickupBox.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/DrawEventLines.cs" />
         <option value="$PROJECT_DIR$/Assets/QuickOutline/Scripts/Outline.cs" />
-        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplay.cs" />
-        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/DrawEventLines.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/CubeSectionManager.cs" />
         <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/CubeStateManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplayEvents.cs" />
-        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinHand.cs" />
         <option value="$PROJECT_DIR$/Assets/ScreenShakeTest.cs" />
-        <option value="$PROJECT_DIR$/Assets/FPSEvents.cs" />
-        <option value="$PROJECT_DIR$/Assets/TeleportPad.cs" />
         <option value="$PROJECT_DIR$/Assets/Name Randomizer/NameType.cs" />
         <option value="$PROJECT_DIR$/Assets/Name Randomizer/NameRando.cs" />
         <option value="$PROJECT_DIR$/Assets/RotatorPiece.cs" />
+        <option value="$PROJECT_DIR$/Assets/FPSEvents.cs" />
         <option value="$PROJECT_DIR$/Assets/Rotator.cs" />
+        <option value="$PROJECT_DIR$/Assets/DoorHelper.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/Item.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Inventory/ItemPicTaker.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinHand.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinDoor.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Door.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplayActivator.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplay.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Crystals/Crystal.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/ItemDisplayEvents.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/The Cube/Scripts/Coins/CoinSlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/TeleportPad.cs" />
       </list>
     </option>
   </component>
@@ -137,6 +156,9 @@
       <workItem from="1584567048809" duration="21943000" />
       <workItem from="1584925317549" duration="6405000" />
       <workItem from="1585104225048" duration="4146000" />
+      <workItem from="1585165824265" duration="5283000" />
+      <workItem from="1585855933969" duration="5146000" />
+      <workItem from="1586199701401" duration="7753000" />
     </task>
     <servers />
   </component>

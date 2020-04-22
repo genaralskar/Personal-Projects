@@ -9,6 +9,7 @@ using UnityEngine.Events;
 public class Item : MonoBehaviour, IFPSInteract, IFPSLookAt
 {
     public UnityAction ItemPickedUp;
+    public UnityAction ItemPlaced;
 
     public bool active = true;
     
@@ -25,7 +26,7 @@ public class Item : MonoBehaviour, IFPSInteract, IFPSLookAt
 
     private Outline outline;
     
-    private void Awake()
+    protected void Awake()
     {
         itemInv = FindObjectOfType<ItemInventory>();
         pt = FindObjectOfType<ItemPicTaker>();

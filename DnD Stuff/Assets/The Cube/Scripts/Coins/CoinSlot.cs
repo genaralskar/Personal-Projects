@@ -8,6 +8,11 @@ public class CoinSlot : MonoBehaviour
 
     public CoinInventory coinInv;
 
+    private void Awake()
+    {
+        coinInv = FindObjectOfType<CoinInventory>();
+    }
+
     public void SetCoin()
     {
         coin = coinInv.selectedCoin;

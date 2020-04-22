@@ -27,6 +27,7 @@ public class ItemPicTaker : MonoBehaviour
     private IEnumerator Picture()
     {
         working = true;
+        yield return new WaitForEndOfFrame();
         while (picsQ.Count > 0)
         {
             Item obj = picsQ.Dequeue();

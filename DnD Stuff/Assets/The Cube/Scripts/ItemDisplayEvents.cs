@@ -6,8 +6,10 @@ using UnityEngine.Events;
 [RequireComponent(typeof(ItemDisplay))]
 public class ItemDisplayEvents : MonoBehaviour
 {
-    public ItemEvent NewItem;
+    public UnityEvent ItemActivated;
+    public UnityEvent ItemDeactivated;
     public Item itemCheck;
+    public Crystal.CrystalColor crystalColor;
     
     private ItemDisplay id;
 
@@ -15,47 +17,39 @@ public class ItemDisplayEvents : MonoBehaviour
     {
         id = GetComponent<ItemDisplay>();
         id.ItemPlaced += ItemPlacedHandler;
+        id.ItemRemoved += ItemRemovedHandler;
     }
 
     private void ItemPlacedHandler(Item item)
     {
-        if (itemCheck && item != itemCheck) return;
-        NewItem.Invoke(item);
+        //Debug.Log($"item: {item}");
+        Crystal c = item as Crystal;
+        if (c)
+        {
+            if (c.color == crystalColor)
+            {
+                ItemActivated.Invoke();
+                return;
+            }
+        }
+        if (item == itemCheck)
+        {
+            ItemActivated.Invoke();
+            return;
+        }
+        ItemDeactivated?.Invoke();
+    }
+
+    private void ItemRemovedHandler(Item item)
+    {
+        ItemDeactivated?.Invoke();
+        //Debug.Log("Item removed");
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Draw(NewItem, transform);
-    }
-
-    [System.Serializable]
-    public class ItemEvent : UnityEvent<Item>{}
-
-    private void Draw(UnityEvent<Item> e, Transform origin)
-    {
-        int c = e.GetPersistentEventCount();
-        Vector3 location = origin.position;
-        for (int i = 0; i < c; i++)
-        {
-            var obj = e.GetPersistentTarget(i);
-            if (obj == null) continue;
-            
-            var comp = obj as Component;
-            if (comp != null)
-            {
-                location = comp.transform.position;
-            }
-            else
-            {
-                var go = obj as GameObject;
-                if (go)
-                {
-                    location = go.transform.position;
-                }
-            }
-
-            Gizmos.DrawLine(origin.position, location);
-        }
+        genaralskar.DrawEventLines.Draw(ItemActivated, transform);
+        //Draw(NewItem, transform);
     }
 }

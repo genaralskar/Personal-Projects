@@ -37,7 +37,7 @@ public class TeleportPad : MonoBehaviour
         if (!active) return;
         if (!connectedPad) return;
         
-        Debug.Log("Teleporting!");
+        //Debug.Log("Teleporting!");
         
         //get offset
         Vector3 offset = transform.position - player.transform.position;
@@ -45,7 +45,7 @@ public class TeleportPad : MonoBehaviour
         
         c.hasControl = false;
         player.transform.position = connectedPad.transform.position - offset;
-        Debug.Log("Teleported!");
+        //Debug.Log("Teleported!");
         StartCoroutine(Tele());
     }
 
@@ -81,7 +81,7 @@ public class TeleportPad : MonoBehaviour
             Vector3 comp = port.transform.position;
             if (port.transform.parent)
             {
-                Debug.Log("Parent!");
+                //Debug.Log("Parent!");
                 comp = port.transform.parent.position - port.transform.position;
             }
                 
@@ -116,17 +116,17 @@ public class TeleportPad : MonoBehaviour
 
         p.y = 0;
         
-        Debug.Log($"Comparing {newPos} : {p}");
+        //Debug.Log($"Comparing {newPos} : {p}");
         
         float dist = Vector3.Distance(newPos, p);
         //true if close, false if not
-        Debug.Log("dist");
+        //Debug.Log("dist");
         return dist < .1f;
     }
 
     private PadType CompareY(Vector3 pos)
     {
-        Debug.Log("comparing y");
+        //Debug.Log("comparing y");
         float dist = transform.position.y - pos.y;
         
         if(Mathf.Abs(dist) > yDist)
@@ -134,5 +134,12 @@ public class TeleportPad : MonoBehaviour
         
         //if positive its down, if negative its up
         return dist < 0 ? PadType.Up : PadType.Down;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        if(connectedPad)
+            Gizmos.DrawLine(transform.position, connectedPad.transform.position);
     }
 }

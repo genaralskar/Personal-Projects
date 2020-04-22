@@ -10,7 +10,9 @@ public class CoinHolder : MonoBehaviour
     
     private void Awake()
     {
+        coinInv = FindObjectOfType<CoinInventory>();
         coinInv.ReturnAllCoin += ReturnAllCoinsHandler;
+        
     }
     
     public void SlotCoin()

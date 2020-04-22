@@ -1,26 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using genaralskar.FPSInteract;
+﻿using genaralskar.FPSInteract;
 using UnityEngine;
 
-public class ItemDisplayActivator : MonoBehaviour, IFPSInteract
+public class ItemDisplayActivator : MonoBehaviour, IFPSInteract, IFPSLookAt
 {
-    private ItemDisplay pi;
+    public ItemDisplay itemDisplay;
     
     public bool fpsInteract = true;
     public bool mouseClick = true;
 
     private void Awake()
     {
-        pi = transform.root.GetComponent<ItemDisplay>();
+        //itemDisplay = transform.root.GetComponent<ItemDisplay>();
     }
     
     public void OnInteract(GameObject playerCamera, RaycastHit hit)
     {
         if (!CubeStateManager.sectionActive && fpsInteract)
         {
-            pi.SwapLogic();
-            Debug.Log("rayCast!");
+            itemDisplay.SwapLogic();
         }
             
     }
@@ -28,6 +25,16 @@ public class ItemDisplayActivator : MonoBehaviour, IFPSInteract
     private void OnMouseDown()
     {
         if(CubeStateManager.sectionActive && mouseClick)
-            pi.SwapLogic();
+            itemDisplay.SwapLogic();
+    }
+
+    public void OnLook()
+    {
+        itemDisplay.OnLook();
+    }
+
+    public void OnStopLook()
+    {
+        itemDisplay.OnStopLook();
     }
 }

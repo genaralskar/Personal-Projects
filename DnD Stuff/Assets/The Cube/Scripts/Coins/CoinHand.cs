@@ -102,7 +102,7 @@ public class CoinHand : MonoBehaviour
         currentItem = itemInv.currentItem;
         GameObject go = itemInv.GetCurrentItemGO();
         
-        Debug.Log(itemInv.currentItem);
+        //Debug.Log(itemInv.currentItem);
         
         go.transform.SetParent(itemSpot);
         go.transform.localRotation = Quaternion.identity;

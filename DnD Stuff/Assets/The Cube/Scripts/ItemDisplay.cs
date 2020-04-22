@@ -7,15 +7,32 @@ using UnityEngine.Events;
 public class ItemDisplay : MonoBehaviour
 {
     public UnityAction<Item> ItemPlaced;
+    public UnityAction<Item> ItemRemoved;
     
     public Transform itemPos;
     
     private Item currentItem;
     private ItemInventory inv;
 
+    public bool startWithItem = false;
+    public Item startItem;
+
     private void Awake()
     {
         inv = FindObjectOfType<ItemInventory>();
+        GetComponentInChildren<ItemDisplayActivator>().itemDisplay = this;
+        if (startItem)
+        {
+            currentItem = startItem;
+            currentItem.transform.parent = itemPos;
+            currentItem.transform.position = itemPos.transform.position;
+            currentItem.transform.rotation = itemPos.transform.rotation;
+            currentItem.transform.localPosition = Vector3.zero;
+            currentItem.transform.localRotation = Quaternion.identity;
+        
+            ItemPlaced?.Invoke(currentItem);
+            currentItem.ItemPlaced?.Invoke();
+        }
     }
 
     public void SwapLogic()
@@ -45,6 +62,8 @@ public class ItemDisplay : MonoBehaviour
     {
         Item tempCur = currentItem;
         inv.AddItem(currentItem);
+        ItemRemoved?.Invoke(currentItem);
+        currentItem.OnStopLook();
         currentItem = null;
         Place();
         inv.SelectItem(tempCur);
@@ -54,6 +73,8 @@ public class ItemDisplay : MonoBehaviour
     {
         inv.AddItem(currentItem);
         inv.SelectItem(currentItem);
+        ItemRemoved?.Invoke(currentItem);
+        currentItem.OnStopLook();
         currentItem = null;
     }
 
@@ -65,5 +86,18 @@ public class ItemDisplay : MonoBehaviour
         currentItem.transform.rotation = itemPos.transform.rotation;
         
         ItemPlaced?.Invoke(currentItem);
+        currentItem.ItemPlaced?.Invoke();
+    }
+
+    public void OnLook()
+    {
+        if (!currentItem) return;
+        currentItem.OnLook();
+    }
+
+    public void OnStopLook()
+    {
+        if (!currentItem) return;
+        currentItem.OnStopLook();
     }
 }

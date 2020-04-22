@@ -1041,6 +1041,7 @@
         <e p="Click Clunker" t="Include">
           <e p="ClickClunker.cs" t="Include" />
         </e>
+        <e p="DoorHelper.cs" t="Include" />
         <e p="DrawEventLines.cs" t="Include" />
         <e p="FPSEvents.cs" t="Include" />
         <e p="FPSInteract" t="Include">
@@ -1114,6 +1115,9 @@
               <e p="CoinSlot.cs" t="Include" />
               <e p="CoinUISlot.cs" t="Include" />
               <e p="CoinUIUpdater.cs" t="Include" />
+            </e>
+            <e p="Crystals" t="Include">
+              <e p="Crystal.cs" t="Include" />
             </e>
             <e p="CubeSectionManager.cs" t="Include" />
             <e p="CubeStateManager.cs" t="Include" />

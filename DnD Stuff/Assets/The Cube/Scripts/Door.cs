@@ -10,4 +10,9 @@ public class Door : MonoBehaviour
     {
         doorObj.SetActive(false);
     }
+
+    public void CloseDoor()
+    {
+        doorObj.SetActive(true);
+    }
 }
