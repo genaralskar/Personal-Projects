@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Health))]
 public class Enemy : MonoBehaviour
 {
-    public float moveSpeed = 4f;
+    public UnityAction<Transform> AggroEnter;
+    public UnityAction AggroExit;
+
+    protected float moveSpeed = 5;
+    public float wanderSpeed = 5f;
+    public float chaseSpeed = 6f;
     public bool aggresive = false;
     
     public Transform followTarget;
@@ -19,12 +25,12 @@ public class Enemy : MonoBehaviour
     public bool canMove = true;
     public Health health;
 
-    private Vector2 desiredPos;
-    private Vector2 moveDir;
+    protected Vector2 desiredPos;
+    protected Vector2 moveDir;
 
-    private bool attacking = false;
+    protected bool attacking = false;
 
-    private Rigidbody2D rb;
+    protected Rigidbody2D rb;
 
     private void Awake()
     {
@@ -60,7 +66,9 @@ public class Enemy : MonoBehaviour
     
     private void Wander()
     {
+        moveSpeed = wanderSpeed;
         //get random position in range of center
+        //NewWanderPos sets a new pos whenever the enemy isnt following anything
     }
 
     private IEnumerator NewWanderPos()
@@ -94,12 +102,14 @@ public class Enemy : MonoBehaviour
     private void Follow()
     {
         desiredPos = followTarget.position;
+        moveSpeed = chaseSpeed;
         if (!InFollowRange())
         {
             follow = false;
             GetNewWanderPos();
             Wander();
             Debug.Log($"Out of range. Range: {DistanceToDesiredPos()}");
+            AggroExit?.Invoke();
             return;
         }
         Attack();
@@ -110,6 +120,7 @@ public class Enemy : MonoBehaviour
         follow = true;
         followTarget = target;
         Debug.Log($"New Aggro Target {target}");
+        AggroEnter?.Invoke(target);
     }
 
     private void Attack()
@@ -117,9 +128,10 @@ public class Enemy : MonoBehaviour
         attacking = InAttackRange();
     }
 
-    private void Move()
+    protected virtual void Move()
     {
-        if (!canMove || InStoppingDistance()) return;
+        if (!canMove) return;
+        if (!follow && InStoppingDistance()) return;
         
         //get direction
         moveDir = desiredPos - (Vector2) transform.position;
@@ -152,26 +164,27 @@ public class Enemy : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawSphere(desiredPos, stopDistance);
-        Gizmos.DrawWireCube(wanderCenter.position, Vector3.one * wanderRadius * 2);
+        if(wanderCenter != null)
+            Gizmos.DrawWireCube(wanderCenter.position, Vector3.one * wanderRadius * 2);
     }
     
     
-    private bool InAttackRange()
+    protected bool InAttackRange()
     {
         return DistanceToDesiredPos() < attackRange;
     }
 
-    private bool InFollowRange()
+    protected bool InFollowRange()
     {
         return DistanceToDesiredPos() < wanderRadius;
     }
 
-    private bool InStoppingDistance()
+    protected bool InStoppingDistance()
     {
         return DistanceToDesiredPos() < stopDistance;
     }
 
-    private float DistanceToDesiredPos()
+    protected float DistanceToDesiredPos()
     {
         return Vector2.Distance(transform.position, desiredPos);
     }

@@ -13,6 +13,9 @@ public class Player : MonoBehaviour, IKnockback
     private Vector2 faceDir;
     private float currentSpeed;
     
+    public enum States {Normal, Attacking, Rolling, Sliding, NoInputs, Dialog, Statue}
+
+    public States state;
     
     public Animator anims;
     public SpriteRenderer sprite;
@@ -43,7 +46,7 @@ public class Player : MonoBehaviour, IKnockback
 
     public float rollStaminaDrain = 10f;
     public ParticleSystem rollParticles;
-    
+
 
     private void Awake()
     {
@@ -54,6 +57,72 @@ public class Player : MonoBehaviour, IKnockback
     // Update is called once per frame
     void Update()
     {
+        GetInputs();
+    }
+
+    private void FixedUpdate()
+    {
+
+        if (state == States.Normal)
+        {
+            SetAnims(moveVector);
+            Move();
+        }
+
+        if (state == States.Rolling)
+        {
+            
+        }
+
+        if (state == States.Sliding)
+        {
+            //can slow down if holding opposite direction of velocity
+            if(Vector2.Dot(rb.velocity, moveVector) < 1)
+            {
+                rb.AddForce(moveVector * 10);
+            }
+
+            if (rb.velocity.magnitude <= moveSpeed * moveSpeed)
+            {
+                state = States.Normal;
+            }
+        }
+
+        if (state == States.Attacking)
+        {
+            
+        }
+
+        if (state == States.Dialog)
+        {
+            rb.velocity = Vector2.zero;
+            SetAnims(faceDir);
+            
+            if (!DialogManager.DialogActive)
+                state = States.Normal;
+        }
+
+        if (state == States.Statue)
+        {
+            rb.velocity = Vector2.zero;
+        }
+
+        if (state == States.NoInputs)
+        {
+            
+        }
+
+    }
+
+    private void GetInputs()
+    {
+        
+        
+        if (DialogManager.DialogActive)
+        {
+            state = States.Dialog;
+            return;
+        }
         if (hasControl)
         {
             moveVector.x = Input.GetAxis("Horizontal");
@@ -75,44 +144,50 @@ public class Player : MonoBehaviour, IKnockback
             moveVector = Vector3.zero;
         }
 
+        currentSpeed = moveVector.sqrMagnitude;
+        
         if (canMove && Input.GetButtonDown("Roll") && stamina > 0)
         {
             Roll();
         }
     }
-
-    private void FixedUpdate()
+    
+    
+    private void SetAnims(Vector2 movement)
     {
-        currentSpeed = moveVector.sqrMagnitude;
         anims.SetFloat("Speed", currentSpeed);
         if (currentSpeed > .01f)
         {
-            anims.SetFloat("Horizontal", moveVector.x);
-            anims.SetFloat("Vertical", moveVector.y);
-            sprite.flipX = moveVector.x < 0;
-        }
-
-
-        if (hasControl && canMove)
-        {
-            //Debug.Log($"rbsqrmag {rb.velocity.sqrMagnitude}, movespeedsqr {moveSpeed*moveSpeed}");
-            if (rb.velocity.sqrMagnitude < moveSpeed * moveSpeed)
+            anims.SetFloat("Horizontal", movement.x);
+            anims.SetFloat("Vertical", movement.y);
+            if (Mathf.Abs(movement.x)> Mathf.Abs(movement.y))
             {
-                rb.MovePosition(rb.position + moveVector * moveSpeed * Time.fixedDeltaTime);
-                //rb.AddForce(moveVector * moveSpeed * Time.fixedDeltaTime * 2000);
-                //Debug.Log("Adding force");
+                sprite.flipX = moveVector.x < 0;
             }
-            else if(Vector2.Dot(rb.velocity, moveVector) < 1)
+            else
             {
-                rb.AddForce(moveVector * 10);
+                sprite.flipX = false;
             }
-                
         }
-            
     }
 
-    public void Roll()
+    private void Move()
     {
+        if (rb.velocity.sqrMagnitude < moveSpeed * moveSpeed)
+        {
+            rb.MovePosition(rb.position + moveVector * moveSpeed * Time.fixedDeltaTime);
+            //rb.AddForce(moveVector * moveSpeed * Time.fixedDeltaTime * 2000);
+        }
+        //can slow down if holding opposite direction of velocity
+        else if(Vector2.Dot(rb.velocity, moveVector) < 1)
+        {
+            rb.AddForce(moveVector * 10);
+        }
+    }
+
+    private void Roll()
+    {
+        state = States.Rolling;
         hasControl = false;
         Vector2 dir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         //rb.AddForce(moveVector.normalized * 2, ForceMode2D.Impulse);
@@ -121,14 +196,11 @@ public class Player : MonoBehaviour, IKnockback
         Stamina -= rollStaminaDrain;
         Invoke("RegainControl", .2f);
     }
-
-    public void Dash()
-    {
-        
-    }
+    
     
     public void Knockback(Vector2 dir)
     {
+        state = States.Sliding;
         float mag = dir.sqrMagnitude;
         float kbTime = 0;
         if (mag < 2)
@@ -151,6 +223,10 @@ public class Player : MonoBehaviour, IKnockback
         {
             kbTime = 2f;
         }
+        else
+        {
+            kbTime = .5f;
+        }
         
         Debug.Log($"Mag {mag}, dir {dir}");
         hasControl = false;
@@ -162,8 +238,11 @@ public class Player : MonoBehaviour, IKnockback
     {
         hasControl = true;
         canMove = true;
+        state = States.Normal;
+        Debug.Log("Regain Control");
     }
 
+    
     private void StaminaRecharge()
     {
         if(sR != null)
@@ -181,4 +260,6 @@ public class Player : MonoBehaviour, IKnockback
             yield return wait;
         }
     }
+
+    
 }

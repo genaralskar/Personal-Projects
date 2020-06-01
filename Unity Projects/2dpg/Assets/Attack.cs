@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    public Hitbox hb;
     public Animator attackAnims;
+    public GameObject sword;
     private PlayerInputs inputs;
 
     private void Awake()
@@ -13,23 +13,26 @@ public class Attack : MonoBehaviour
         inputs = GetComponent<PlayerInputs>();
         inputs.LightAttack += LightAttack;
     }
-    
+
+    private void Update()
+    {
+        //rotate sword to face dir
+        //Debug.Log("Facing dir: " + inputs.facingDir);
+        float angle = Mathf.Atan2(inputs.facingDir.y, inputs.facingDir.x) * Mathf.Rad2Deg;
+        sword.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    }
+
     private void LightAttack()
     {
-        if (attackAnims.GetBool("Attack"))
+        if (attackAnims.GetBool("LightAttack"))
         {
             Debug.Log("Gotta Wait!");
             return;
         }
+
+        //play animation
         
-        if (inputs.dirInput.sqrMagnitude > .01f)
-        {
-            Vector2 d = inputs.dirInput.normalized;
-            attackAnims.SetFloat("Horizontal", d.x);
-            attackAnims.SetFloat("Vertical", d.y);
-        }
-        
-        attackAnims.SetTrigger("Attack");
+        attackAnims.SetTrigger("LightAttack");
     }
 
     private void HeavyAttack()

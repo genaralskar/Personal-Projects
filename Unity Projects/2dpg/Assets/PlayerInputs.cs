@@ -14,6 +14,7 @@ public class PlayerInputs : MonoBehaviour
     public UnityAction<float> Vertical;
 
     public Vector2 dirInput;
+    public Vector2 facingDir;
 
     // Update is called once per frame
     void Update()
@@ -34,6 +35,18 @@ public class PlayerInputs : MonoBehaviour
         
         Horizontal?.Invoke(dirInput.x);
         Vertical?.Invoke(dirInput.y);
-            
+
+        if (dirInput.sqrMagnitude > 0)
+        {
+            facingDir.x = dirInput.x;
+        }
+        if (dirInput.sqrMagnitude > 0)
+        {
+            facingDir.y = dirInput.y;
+        }
+
+        //facingDir = facingDir.normalized;
+
+
     }
 }

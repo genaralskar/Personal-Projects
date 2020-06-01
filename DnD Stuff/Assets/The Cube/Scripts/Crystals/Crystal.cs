@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Crystal : Item
 {
-    public enum CrystalColor {Red, Green, Blue, Yellow}
+    public enum CrystalColor {Red, Green, Blue, Yellow, White}
 
     public CrystalColor color;
     

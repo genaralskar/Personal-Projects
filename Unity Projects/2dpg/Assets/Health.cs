@@ -21,13 +21,29 @@ public class Health : MonoBehaviour
 
     public float invincibleTime = 1f;
 
-    private bool invincible = false;
+    public bool invincible = false;
     private bool bufferingHealth = false;
+    public bool resetHealth = false;
+    public bool enemy = true;
 
+    private void OnEnable()
+    {
+        currentHealth = maxHealth;
+        
+        if (isPlayer)
+        {
+            //update health for ui
+            ModifyHealth(0);
+        }
+        
+        IFrameEnd?.Invoke();
+    }
+    
     private void Start()
     {
         if (isPlayer)
         {
+            //update health for ui
             ModifyHealth(0);
         }
     }
@@ -49,20 +65,33 @@ public class Health : MonoBehaviour
         {
             //death
             currentHealth = 0;
-            Death?.Invoke();
+            if (!resetHealth)
+            {
+                Death?.Invoke();
+            }
+            else
+            {
+                currentHealth = maxHealth;
+            }            
         }
 
         if (!invincible && amount < 0 && currentHealth > 0)
         {
             StartCoroutine(IFrames());
         }
+        else if(!invincible && amount < 0)
+        {
+            IFrameStart?.Invoke();
+        }
 
         if (currentHealth > maxHealth)
         {
+            //cap overflow health
             if (currentHealth > maxOverflowHealth + maxHealth)
             {
                 currentHealth = maxOverflowHealth + maxHealth;
             }
+            //start drain coroutine if not already started
             if (!bufferingHealth)
                 StartCoroutine(HealthOverflowBuffer());
         }

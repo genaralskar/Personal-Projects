@@ -8,8 +8,10 @@ public class ItemDisplayEvents : MonoBehaviour
 {
     public UnityEvent ItemActivated;
     public UnityEvent ItemDeactivated;
-    public Item itemCheck;
+    public List<Item> itemCheck;
     public Crystal.CrystalColor crystalColor;
+    [HideInInspector] public bool hasCrystal = false;
+    public Crystal.CrystalColor currentCrystalColor;
     
     private ItemDisplay id;
 
@@ -26,22 +28,33 @@ public class ItemDisplayEvents : MonoBehaviour
         Crystal c = item as Crystal;
         if (c)
         {
+            hasCrystal = true;
+            currentCrystalColor = c.color;
             if (c.color == crystalColor)
+            {
+                ItemActivated.Invoke();
+            }
+            return;
+        }
+        currentCrystalColor = Crystal.CrystalColor.White;
+        hasCrystal = false;
+
+        foreach(var i in itemCheck)
+        {
+            if (item == i)
             {
                 ItemActivated.Invoke();
                 return;
             }
         }
-        if (item == itemCheck)
-        {
-            ItemActivated.Invoke();
-            return;
-        }
+        
         ItemDeactivated?.Invoke();
     }
 
     private void ItemRemovedHandler(Item item)
     {
+        currentCrystalColor = Crystal.CrystalColor.White;
+        hasCrystal = false;
         ItemDeactivated?.Invoke();
         //Debug.Log("Item removed");
     }

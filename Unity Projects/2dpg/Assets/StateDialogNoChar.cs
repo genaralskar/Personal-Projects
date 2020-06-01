@@ -7,6 +7,7 @@ public class StateDialogNoChar : StateMachineBehaviour
     private DialogCharacter character;
     public string displayName;
     public Sprite image;
+    public int positionIndex = 0;
     public bool isPlayer = false;
     public string dialog;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -16,7 +17,7 @@ public class StateDialogNoChar : StateMachineBehaviour
         character.displayName = displayName;
         character.displayImage = image;
         character.isPlayer = isPlayer;
-        DialogManager.SendDialog?.Invoke(new DialogInfo(character, dialog));   
+        DialogManager.SendDialog?.Invoke(new DialogInfo(character, dialog, positionIndex));   
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

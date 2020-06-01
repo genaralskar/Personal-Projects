@@ -39,7 +39,7 @@ public class Rotator : MonoBehaviour
         ss.m_ImpulseDefinition.m_TimeEnvelope.m_SustainTime = rotTimeBig;
     }
     
-    /// <param name="index">0 for middle, 1 for top</param>
+    /// <param name="piece">0 for top, 1 for middle</param>
     /// <param name="direction">0 for right, 1 for left</param>
     public void RotatePart(Transform part, int direction, int piece)
     {

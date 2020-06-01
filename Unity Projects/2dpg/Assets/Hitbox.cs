@@ -7,6 +7,7 @@ public class Hitbox : MonoBehaviour
     public int damage = 10;
     public bool knockback = true;
     public Transform kbPoint;
+    public bool enemy = false;
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class Hitbox : MonoBehaviour
         Health h = other.GetComponent<Health>();
         if (h)
         {
+            if (h.enemy == enemy) return;
             h.ModifyHealth(-damage);
         }
         
