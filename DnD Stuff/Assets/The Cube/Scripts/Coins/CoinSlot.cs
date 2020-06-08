@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CoinSlot : MonoBehaviour
 {
     public Coin coin;
 
-    public CoinInventory coinInv;
+    private CoinInventory coinInv;
 
     private void Awake()
     {
@@ -15,6 +13,7 @@ public class CoinSlot : MonoBehaviour
 
     public void SetCoin()
     {
+        Debug.Log($"Selected coin = {coinInv.selectedCoin}");
         coin = coinInv.selectedCoin;
     }
 }

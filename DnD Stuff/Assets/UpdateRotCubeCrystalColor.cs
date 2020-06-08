@@ -16,6 +16,9 @@ public class UpdateRotCubeCrystalColor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        itemDisplayEvents.ItemActivated.AddListener(UpdateColor);
+        itemDisplayEvents.ItemDeactivated.AddListener(UpdateColor);
+
         UpdateColor();
     }
 

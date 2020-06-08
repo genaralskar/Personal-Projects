@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class CoinComparator : MonoBehaviour
@@ -9,33 +7,43 @@ public class CoinComparator : MonoBehaviour
     public List<Coin> slot1;
     public List<Coin> slot2;
 
-    public CoinInventory coinInv;
-
     public CoinReturn coinReturn;
     
     public Image comparitorImage;
     public Sprite blankSprite, greaterSprite, lessSprite, equalSprite, errorSprite;
 
+    public enum Comparison { Equal, Greater, Less, Error, Blank }
+
+    private CoinInventory coinInv;
+
+    public CoinSlot slot1Pos;
+    public CoinSlot slot2Pos;
+    private CoinAnimation cAnim;
+
     private void Awake()
     {
+        coinInv = FindObjectOfType<CoinInventory>();
         coinInv.ReturnAllCoin += ReturnAllCoinsHandler;
+
+        cAnim = FindObjectOfType<CoinAnimation>();
     }
-    
-    public enum Comparison{Equal, Greater, Less, Error, Blank}
 
     public void SlotCoin(int slotNum)
     {
         if (coinInv.selectedCoin == null) return;
+        
 
         Coin newCoin = coinInv.TakeSelectedCoin();
         
         if (slotNum == 0)
         {
             slot1.Add(newCoin);
+            cAnim.InsertCoin(slot1Pos);
         }
         else
         {
             slot2.Add(newCoin);
+            cAnim.InsertCoin(slot2Pos);
         }
         UpdateComparitorUI(Comparison.Blank);
     }
