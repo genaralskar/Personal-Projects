@@ -1,0 +1,1 @@
+{"names":["genaralskar"],"players":[{"name":"genaralskar","sprite":{"instanceID":0},"gold":1}]}
