@@ -188,6 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 260949032}
   - component: {fileID: 260949031}
+  - component: {fileID: 260949033}
   m_Layer: 0
   m_Name: Gather Point 2
   m_TagString: Untagged
@@ -259,6 +260,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &260949033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260949030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81abb5e9f527153468b18a2280f7fd86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillType: 1
 --- !u!1 &328703608
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +286,7 @@ GameObject:
   - component: {fileID: 328703611}
   - component: {fileID: 328703612}
   - component: {fileID: 328703613}
+  - component: {fileID: 328703614}
   m_Layer: 0
   m_Name: ChatCommands
   m_TagString: Untagged
@@ -292,6 +307,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefixChar: 33
+  Save:
+    m_PersistentCalls:
+      m_Calls: []
+  Load:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &328703610
 Transform:
   m_ObjectHideFlags: 0
@@ -318,8 +339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76124155ddf54594fa6b64a860ff563c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woodPoint: {fileID: 0}
-  orePoint: {fileID: 0}
+  woodPoint: {fileID: 966669481}
+  orePoint: {fileID: 260949033}
 --- !u!114 &328703612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,6 +363,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 700ac44bfc16b8147860daad1b85bb8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &328703614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328703608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a82135ee4ea504da5cc4bd535c00da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &519420028
@@ -633,6 +666,7 @@ GameObject:
   m_Component:
   - component: {fileID: 966669480}
   - component: {fileID: 966669479}
+  - component: {fileID: 966669481}
   m_Layer: 0
   m_Name: Gather Point 1
   m_TagString: Untagged
@@ -704,6 +738,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &966669481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966669478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81abb5e9f527153468b18a2280f7fd86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillType: 0
 --- !u!1 &1294198766
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,6 +879,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3de9cd7dd002084293b70d6bc8c203d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allSkills:
+  - type: 0
+    skillName: 
+    currentTotalExp: 0
+  - type: 1
+    skillName: 
+    currentTotalExp: 0
   playerPrefab: {fileID: 4621645953211999847, guid: b26b5d8b3d6355f4a91b5a749b8fbc74,
     type: 3}
 --- !u!4 &1491713240

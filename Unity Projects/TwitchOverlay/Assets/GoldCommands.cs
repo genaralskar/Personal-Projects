@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoldController : MonoBehaviour
+public class GoldCommands : MonoBehaviour
 {
     private void Awake()
     {

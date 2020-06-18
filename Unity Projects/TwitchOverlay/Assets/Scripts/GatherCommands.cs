@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GatherController : MonoBehaviour
+public class GatherCommands : MonoBehaviour
 {
     public GatherPoint woodPoint;
     public GatherPoint orePoint;
@@ -15,6 +15,7 @@ public class GatherController : MonoBehaviour
 
     private void GatherHandler(ChatMessage m)
     {
+        if (m.splitMessage.Length <= 1) return;
         GatherPoint gp = null;
         switch(m.splitMessage[1])
         {

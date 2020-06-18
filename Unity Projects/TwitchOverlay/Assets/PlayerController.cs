@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
     public Player player;
-    [SerializeField]
-    private float moveSpeed = 5f;
 
-    private Vector2 desiredPosition; 
 
     private Rigidbody2D rb;
     private Animator anims;
+
+    //movement stuff
+    [SerializeField]
+    private float moveSpeed = 5f;
+    private Vector2 desiredPosition;
+    private Coroutine moveC;
 
     [Header("Art Stuff")]
     [SerializeField]
@@ -24,6 +28,8 @@ public class PlayerController : MonoBehaviour
     private TextMeshPro nameText;
     [SerializeField]
     private TextMeshPro messageText;
+
+    public UnityAction<PlayerController> playerMove;
 
     private void Awake()
     {
@@ -39,6 +45,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         if (Vector2.Distance(transform.position, desiredPosition) < 1f) return;
+        Move();
     }
 
     public void SetupPlayer()
@@ -46,6 +53,8 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Player Name " + player.name);
         SetName(player.name);
         SetSprite(player.sprite);
+        player.LevelUpEvent = LevelUpHandler;
+        player.AssignLevelUpHandler();
     }
 
     private void SetName(string name)
@@ -59,9 +68,18 @@ public class PlayerController : MonoBehaviour
         spriteRenderer.sprite = newSprite;
     }
 
-    private void MoveTo(Vector2 obj)
+    private void LevelUpHandler(Skill.SkillType type, int level)
     {
+        //Fireworks!
+        SetChatMessage($"My {type} level is now {level}!");
+    }
+
+    public void MoveTo(Vector2 obj)
+    {
+        playerMove?.Invoke(this);
+        playerMove = null;
         desiredPosition = obj;
+
     }
 
     private void Move()
@@ -90,7 +108,9 @@ public class PlayerController : MonoBehaviour
     public void StartGather(GatherPoint point)
     {
         //Move to gather point
-        //Start Gathering
+        MoveTo((Vector2)point.transform.position);
+        //assign to gathering point
+        point.AssignPlayer(this);
     }
 
     private IEnumerator ChatMessage(string message)
@@ -108,6 +128,4 @@ public class PlayerController : MonoBehaviour
 
         messageText.gameObject.SetActive(false);
     }
-
-
 }

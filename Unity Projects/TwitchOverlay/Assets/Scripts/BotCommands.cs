@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class BotController : MonoBehaviour
+public class BotCommands : MonoBehaviour
 {
 
     private List<PlayerController> bots = new List<PlayerController>();
@@ -39,6 +39,23 @@ public class BotController : MonoBehaviour
                         //not a number, more words
                     }
                 }
+                break;
+
+            case "gather":
+                GatherPoint p = FindObjectOfType<GatherPoint>();
+                foreach(var bot in bots)
+                {
+                    bot.StartGather(p);
+                }
+                break;
+
+            case "clear":
+                foreach(var bot in bots)
+                {
+                    PlayerManager.RemovePlayer(bot.player);
+                }
+                PlayerManager.UpdateActiveGOs();
+                Debug.Log("Clear!");
                 break;
         }
     }

@@ -16,6 +16,8 @@ public class TwitchChatCommands : MonoBehaviour
     public ChatMessageEvent Gold = new ChatMessageEvent();
     public ChatMessageEvent Bot = new ChatMessageEvent();
     public ChatMessageEvent Gather = new ChatMessageEvent();
+    public ChatMessageEvent Skill = new ChatMessageEvent();
+
     public UnityEvent Save = new UnityEvent();
     public UnityEvent Load = new UnityEvent();
 
@@ -31,6 +33,8 @@ public class TwitchChatCommands : MonoBehaviour
 
     public void OnChatMessageHandler(ChatMessage m)
     {
+        //add a check for in the player is in the scene
+
         //check if first part of the message is the prefixChar. If not, return
         if(m.message[0] != prefixChar)
         {
@@ -66,6 +70,10 @@ public class TwitchChatCommands : MonoBehaviour
             case "gather":
                 Gather?.Invoke(m);
                 break;
+            case "skill":
+                Skill?.Invoke(m);
+                break;
+
             case "save":
                 Save?.Invoke();
                 break;

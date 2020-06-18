@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
     {
         Player player;
         bool i = players.TryGetValue(name, out player);
+        //add new player if not in database
         if(!i)
         {
             player = new Player(name);
@@ -23,6 +24,11 @@ public class PlayerManager : MonoBehaviour
         }
 
         return player;
+    }
+
+    public static void RemovePlayer(Player player)
+    {
+        players.Remove(player);
     }
 
     public static void Save()
@@ -52,7 +58,7 @@ public class PlayerManager : MonoBehaviour
 
     //This will remove any players from the game that aren't in the Player list.
     //Used when loading, and maybe you've got some extra characters that shouldn't be there.
-    private static void UpdateActiveGOs()
+    public static void UpdateActiveGOs()
     {
         List<PlayerController> endMe = new List<PlayerController>();
         foreach(var go in playerGOs)
@@ -88,7 +94,9 @@ public class PlayerManager : MonoBehaviour
 
     #endregion
 
-
+    public static List<Skill> AllSkills;
+    [SerializeField]
+    private List<Skill> allSkills;
 
     public static List<PlayerController> playerGOs = new List<PlayerController>();
 
@@ -164,14 +172,13 @@ public class PlayerManager : MonoBehaviour
 [System.Serializable]
 public class PlayerDatabase
 {
-    public List<string> names = new List<string>();
     public List<Player> players = new List<Player>();
 
     public bool TryGetValue(string tryName, out Player p)
     {
-        foreach(var player in players)
+        foreach (var player in players)
         {
-            if(player.name == tryName)
+            if (player.name == tryName)
             {
                 p = player;
                 return true;
@@ -189,8 +196,15 @@ public class PlayerDatabase
 
         if (!inList)
         {
-            names.Add(newName);
             players.Add(newPlayer);
+        }
+    }
+
+    public void Remove(Player player)
+    {
+        if(players.Contains(player))
+        {
+            players.Remove(player);
         }
     }
 }
