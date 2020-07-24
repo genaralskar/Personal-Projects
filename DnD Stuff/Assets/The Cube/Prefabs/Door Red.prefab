@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorObj: {fileID: 8254499025280275893}
+  doorColor: 0
 --- !u!1 &4918870428866899172
 GameObject:
   m_ObjectHideFlags: 0

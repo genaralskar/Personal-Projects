@@ -18,8 +18,8 @@ public class ItemDisplayEvents : MonoBehaviour
     private void Awake()
     {
         id = GetComponent<ItemDisplay>();
-        id.ItemPlaced += ItemPlacedHandler;
-        id.ItemRemoved += ItemRemovedHandler;
+        //id.ItemPlaced += ItemPlacedHandler;
+        //id.ItemRemoved += ItemRemovedHandler;
     }
 
     private void ItemPlacedHandler(Item item)

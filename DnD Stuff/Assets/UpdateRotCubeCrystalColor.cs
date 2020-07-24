@@ -2,36 +2,51 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(ItemDisplayEvents))]
 public class UpdateRotCubeCrystalColor : MonoBehaviour
 {
-    private ItemDisplayEvents itemDisplayEvents;
+    private ItemDisplay itemDisplay;
     [SerializeField] private GameObject rotCube;
 
     private void Awake()
     {
-        itemDisplayEvents = GetComponent<ItemDisplayEvents>();
+        itemDisplay = GetComponent<ItemDisplay>();
+        itemDisplay.ItemPlaced += UpdateColor;
+        itemDisplay.ItemRemoved += DefaultColor;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        itemDisplayEvents.ItemActivated.AddListener(UpdateColor);
-        itemDisplayEvents.ItemDeactivated.AddListener(UpdateColor);
-
-        UpdateColor();
+         //UpdateColor(Crystal.CrystalColor.White);
     }
 
-    public void UpdateColor()
+    public void UpdateColor(Item item)
     {
-        Crystal.CrystalColor c = Crystal.CrystalColor.White;
-        if(itemDisplayEvents.hasCrystal)
+        //set a default color
+        Crystal.CrystalColor col = Crystal.CrystalColor.White;
+
+        //check if placed item is a crystal
+        Crystal c = item as Crystal;
+        if (!c)
         {
-            Debug.Log("Has Crystal!");
-            Debug.Log($"CrystalColor = {itemDisplayEvents.currentCrystalColor}");
-            c = itemDisplayEvents.currentCrystalColor;
+            //if its not, send the default white color to the cube, then return
+            SendColor(col);
+            return;
         }
-        SendColor(c);
+
+        //if it is a crystal, set the color to that crystals color
+        col = c.color;
+        SendColor(col);
+    }
+
+    public void UpdateColor(Crystal.CrystalColor color)
+    {
+        SendColor(color);
+    }
+
+    public void DefaultColor(Item item)
+    {
+        SendColor(Crystal.CrystalColor.White);
     }
 
     private void SendColor(Crystal.CrystalColor color)
@@ -44,11 +59,19 @@ public class UpdateRotCubeCrystalColor : MonoBehaviour
     {
         switch(c)
         {
-            case Crystal.CrystalColor.Blue:
+            case Crystal.CrystalColor.Blue1:
                 return Color.blue;
-            case Crystal.CrystalColor.Green:
+            case Crystal.CrystalColor.Blue2:
+                return Color.blue;
+            case Crystal.CrystalColor.Green1:
                 return Color.green;
-            case Crystal.CrystalColor.Red:
+            case Crystal.CrystalColor.Green2:
+                return Color.green;
+            case Crystal.CrystalColor.Red1:
+                return Color.red;
+            case Crystal.CrystalColor.Red2:
+                return Color.red;
+            case Crystal.CrystalColor.Red3:
                 return Color.red;
             case Crystal.CrystalColor.Yellow:
                 return Color.yellow;

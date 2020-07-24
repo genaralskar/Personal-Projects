@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2923980641446766349, guid: 02a3eb1a62745ab47bf2fc0851446243,
+        type: 3}
+      propertyPath: doorColor
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3221455573393850949, guid: 02a3eb1a62745ab47bf2fc0851446243,
         type: 3}
       propertyPath: m_Name
