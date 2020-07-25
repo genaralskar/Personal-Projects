@@ -23,7 +23,7 @@ public class ItemDisplayCrystalEvents : MonoBehaviour
     {
         Crystal c = item as Crystal;
         if (!c) return;
-
+        Debug.Log("Crystal Placed");
         CubeStatusTracker.UpdateCubeStatus?.Invoke(location, CubeStatusTracker.CrystalColorsToCubeStatus(c.color));
 
         //if crystal color matches event color
@@ -38,6 +38,7 @@ public class ItemDisplayCrystalEvents : MonoBehaviour
     {
         Crystal c = item as Crystal;
         if (!c) return;
+        Debug.Log("Crystal Removed");
 
         //if crystal color matches event color
         //if (Crystal.ColorChecker(c.color, color))
