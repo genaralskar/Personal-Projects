@@ -34,12 +34,10 @@ public class Crystal : Item
 
     public static bool ColorChecker(Crystal.CrystalColor color1, Crystal.CrystalColor color2)
     {
-        Debug.Log($"Colors are {color1}, {color2}");
         if(color1 == CrystalColor.Red1 || color1 == CrystalColor.Red2 || color1 == CrystalColor.Red3)
         {
             if (color2 == CrystalColor.Red1 || color2 == CrystalColor.Red2 || color2 == CrystalColor.Red3)
             {
-                Debug.Log("Colors Match Red!");
                 return true;
             }
         }
@@ -48,7 +46,6 @@ public class Crystal : Item
         {
             if (color2 == CrystalColor.Blue1 || color2 == CrystalColor.Blue2)
             {
-                Debug.Log("Colors Match Blue!");
                 return true;
             }
         }
@@ -57,7 +54,6 @@ public class Crystal : Item
         {
             if (color2 == CrystalColor.Green1 || color2 == CrystalColor.Green2)
             {
-                Debug.Log("Colors Match Green!");
                 return true;
             }
         }
@@ -66,7 +62,6 @@ public class Crystal : Item
         {
             if(color2 == CrystalColor.Yellow)
             {
-                Debug.Log("Colors Match Yellow!");
                 return true;
             }
         }

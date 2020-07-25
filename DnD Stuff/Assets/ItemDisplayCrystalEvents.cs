@@ -10,6 +10,8 @@ public class ItemDisplayCrystalEvents : MonoBehaviour
 
     public Crystal.CrystalColor color = Crystal.CrystalColor.Red1;
 
+    public Vector3Int location;
+
     private void Awake()
     {
         id = GetComponent<ItemDisplay>();
@@ -21,6 +23,8 @@ public class ItemDisplayCrystalEvents : MonoBehaviour
     {
         Crystal c = item as Crystal;
         if (!c) return;
+
+        CubeStatusTracker.UpdateCubeStatus?.Invoke(location, CubeStatusTracker.CrystalColorsToCubeStatus(c.color));
 
         //if crystal color matches event color
         if (Crystal.ColorChecker(c.color, color))
@@ -39,6 +43,7 @@ public class ItemDisplayCrystalEvents : MonoBehaviour
         //if (Crystal.ColorChecker(c.color, color))
         //{
         Crystal.CrystalRemovedEvent?.Invoke(color);
+        CubeStatusTracker.UpdateCubeStatus?.Invoke(location, CubeStatusTracker.CubeStatus.Empty);
         //}
     }
 
