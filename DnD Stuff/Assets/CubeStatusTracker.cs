@@ -7,7 +7,7 @@ public class CubeStatusTracker : MonoBehaviour
 {
     public enum CubeStatus {Empty, Red, Blue, Green, Yellow, Focus}
 
-    public CubeStatus[][][] statusArray;
+    public CubeStatus[,,] statusArray = new CubeStatus[3,3,3];
 
     public static UnityAction<Vector3Int, CubeStatus> UpdateCubeStatus;
 
@@ -18,12 +18,12 @@ public class CubeStatusTracker : MonoBehaviour
 
     private void UpdateCubeStatusHandler(Vector3Int l, CubeStatus status)
     {
-        statusArray[l.x][l.y][l.z] = status;
+        statusArray[l.x,l.y,l.z] = status;
     }
 
     public CubeStatus GetStatus(Vector3Int l)
     {
-        return statusArray[l.x][l.y][l.z];
+        return statusArray[l.x,l.y,l.z];
     }
 
     public bool CheckStatus(Vector3Int l, CubeStatus status)

@@ -6588,7 +6588,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 157810271}
   m_HandleRect: {fileID: 157810270}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -9114,7 +9114,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.000118255615, y: 0}
+  m_AnchoredPosition: {x: 2.4999008, y: 0}
   m_SizeDelta: {x: -4.999996, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1552878914
@@ -13109,6 +13109,26 @@ PrefabInstance:
     - target: {fileID: 5636316736201065211, guid: 3f5fc71522d58864faa4f47e657713a8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918151635755783386, guid: 3f5fc71522d58864faa4f47e657713a8,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918151635755783386, guid: 3f5fc71522d58864faa4f47e657713a8,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918151635755783386, guid: 3f5fc71522d58864faa4f47e657713a8,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918151635755783386, guid: 3f5fc71522d58864faa4f47e657713a8,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6186154783755125739, guid: 3f5fc71522d58864faa4f47e657713a8,

@@ -11,7 +11,7 @@ public class Door : MonoBehaviour
     private void Awake()
     {
         Crystal.CrystalPlacedEvent += CrystalPlacedEventHandler;
-        Crystal.CrystalRemovedEvent += CrystalPlacedEventHandler;
+        Crystal.CrystalRemovedEvent += CrystalRemovedEventHandler;
     }
 
     public void OpenDoor()
@@ -27,12 +27,12 @@ public class Door : MonoBehaviour
 
     public void CrystalPlacedEventHandler(Crystal.CrystalColor color)
     {
-        Debug.Log($"{this}, {doorColor}:{color}");
+        //Debug.Log($"{this}, {doorColor}:{color}");
         if (color == doorColor)
             OpenDoor();
     }
 
-    public void CyrstalRemovedEventHandler(Crystal.CrystalColor color)
+    public void CrystalRemovedEventHandler(Crystal.CrystalColor color)
     {
         if (color == doorColor)
             CloseDoor();

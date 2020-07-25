@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed0e479f61a807d4491109c9b514b8fb, type: 3}
   m_Name: Coin Hexagon
   m_EditorClassIdentifier: 
-  value: 0
+  value: 5
   image: {fileID: 8400000, guid: b38a4ce5925044d4e9350a31f15c68b8, type: 2}
