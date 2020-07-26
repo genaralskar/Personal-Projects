@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class CubeStatusTracker : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class CubeStatusTracker : MonoBehaviour
 
     public static UnityAction<Vector3Int, CubeStatus> UpdateCubeStatus;
 
+    public Cinemachine.CinemachineImpulseSource ss;
+    public Image fadeOutImage;
+
+    private Coroutine c;
+
     private void Awake()
     {
         UpdateCubeStatus += UpdateCubeStatusHandler;
@@ -19,6 +25,7 @@ public class CubeStatusTracker : MonoBehaviour
     private void UpdateCubeStatusHandler(Vector3Int l, CubeStatus status)
     {
         statusArray[l.x,l.y,l.z] = status;
+        CheckIfCubeFinished();
     }
 
     public CubeStatus GetStatus(Vector3Int l)
@@ -31,6 +38,7 @@ public class CubeStatusTracker : MonoBehaviour
         return GetStatus(l) == status;
     }
 
+    
     private void CheckIfCubeFinished()
     {
         // First floor
@@ -93,6 +101,40 @@ public class CubeStatusTracker : MonoBehaviour
 
         // If its made it this far, then everything should be where it's supposed to be!
         // END THE GAME!
+        EndIt();   
+        
+    }
+
+    [ContextMenu("End Game!")]
+    private void EndIt()
+    {
+        if (c == null)
+        {
+            //fade in white screen
+            c = StartCoroutine(EndGame());
+        }
+    }
+
+    private IEnumerator EndGame()
+    {
+        ss.GenerateImpulse();
+        yield return new WaitForSeconds(5f);
+        float timer = 0;
+        float length = 5f;
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+        while(timer < length)
+        {
+            float norm = timer / length;
+
+            float exp = norm * norm;
+
+            var c = fadeOutImage.color;
+            c.a = exp;
+            fadeOutImage.color = c;
+
+            timer += Time.deltaTime;
+            yield return wait;
+        }
     }
 
     public static CubeStatus CrystalColorsToCubeStatus(Crystal.CrystalColor color)

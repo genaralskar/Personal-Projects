@@ -59,6 +59,7 @@ namespace genaralskar.FPSInteract
         private void SendInteract(RaycastHit hit)
         {
             //Gets all IFPSInterat interfaces on the collided gameObject and sends out a call
+            if (currentCollider == null) return;
             var interacts = currentCollider.gameObject.GetComponents<IFPSInteract>();
             if (interacts == null) return;
             foreach (var interact in interacts)
