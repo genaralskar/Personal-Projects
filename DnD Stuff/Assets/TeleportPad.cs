@@ -16,6 +16,8 @@ public class TeleportPad : MonoBehaviour
     public PadType padType;
     public float yDist = 16f;
 
+    public GameObject particles;
+
     private bool active = false;
 
     private void Awake()
@@ -59,6 +61,7 @@ public class TeleportPad : MonoBehaviour
     {
         active = false;
         //disable vfx
+        particles.SetActive(false);
     }
 
     private void Enable()
@@ -66,8 +69,10 @@ public class TeleportPad : MonoBehaviour
         GetConnectedPad();
         if (connectedPad)
         {
-            //enable vfx
+            
             active = true;
+            //enable vfx
+            particles.SetActive(true);
         }
     }
 
