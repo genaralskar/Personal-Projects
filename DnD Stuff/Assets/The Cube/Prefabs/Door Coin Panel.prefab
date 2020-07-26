@@ -413,7 +413,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coin: {fileID: 0}
-  coinInv: {fileID: 0}
 --- !u!1 &4102109937595217536
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,7 +471,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 72781ff3178876f4e8e8e4f639335919, type: 2}
+  - {fileID: 2100000, guid: 660158e2bf51d61408cc469e0c294999, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
