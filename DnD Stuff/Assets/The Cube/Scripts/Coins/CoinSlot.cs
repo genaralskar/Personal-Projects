@@ -13,7 +13,7 @@ public class CoinSlot : MonoBehaviour
 
     public void SetCoin()
     {
-        Debug.Log($"Selected coin = {coinInv.selectedCoin}");
+        //Debug.Log($"Selected coin = {coinInv.selectedCoin}");
         coin = coinInv.selectedCoin;
     }
 }
