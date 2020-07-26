@@ -50,7 +50,17 @@ public class ItemPicTaker : MonoBehaviour
             //move it
             orig.position = objPos.position;
             //offset by center
-            Vector3 center = obj.gameObject.GetComponent<Renderer>().bounds.center;
+            Vector3 center = Vector3.zero;
+            //do by renderer center if there is one
+            if(obj.gameObject.GetComponent<Renderer>())
+            {
+                center = obj.gameObject.GetComponent<Renderer>().bounds.center;
+            }
+            //otherwise use object center
+            else
+            {
+                center = obj.transform.position;
+            }
             orig.position -= center - objPos.position;
             
             orig.transform.rotation = objPos.rotation;
