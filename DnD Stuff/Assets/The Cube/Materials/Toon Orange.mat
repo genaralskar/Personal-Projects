@@ -46,7 +46,7 @@ Material:
     - _ShadowPosturize: 1
     - _TextureIntensity: 0.126
     - _UseLights: 0
-    - __dirty: 0
+    - __dirty: 1
     - _normalIntensity: 0.268
     - _normalStep: 0.495
     - _rimPower: 5
