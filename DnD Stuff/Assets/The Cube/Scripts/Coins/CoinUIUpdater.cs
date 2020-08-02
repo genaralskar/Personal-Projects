@@ -10,10 +10,10 @@ public class CoinUIUpdater : MonoBehaviour
 
     public List<CoinUISlot> coinSlots;
 
-    private void Awake()
+    private void Start()
     {
         inv.InventoryUpdated += UpdateSlots;
-        
+        // ^ Don't Break ^ ^^ carrot
         for (int i = 0; i < coinSlots.Count; i++)
         {
             //if there are most slots than coin types
@@ -28,8 +28,10 @@ public class CoinUIUpdater : MonoBehaviour
             coinSlots[i].button.onClick.AddListener(delegate { inv.SelectCoin(coinSlots[i1].coin); });
         }
         
+        UpdateSlots();
         inv.InventoryUpdated?.Invoke();
     }
+
 
     public void UpdateSlots()
     {

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Crystal : Item
 {
-    public enum CrystalColor {Red1, Red2, Red3, Green1, Green2, Blue1, Blue2, Yellow, White}
+    public enum CrystalColor {Red1, Red2, Red3, Green1, Green2, Blue1, Blue2, Yellow, White, Empty}
 
     public CrystalColor color;
 

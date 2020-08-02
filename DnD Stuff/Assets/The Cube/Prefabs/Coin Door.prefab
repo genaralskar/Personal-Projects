@@ -7,10 +7,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2342799189177380211, guid: 02a3eb1a62745ab47bf2fc0851446243,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2923980641446766349, guid: 02a3eb1a62745ab47bf2fc0851446243,
         type: 3}
       propertyPath: doorColor
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3221455573393850949, guid: 02a3eb1a62745ab47bf2fc0851446243,
         type: 3}
@@ -77,6 +82,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f4ef2de82fdcfa04289ca917d8a90cdd, type: 2}
+    - target: {fileID: 6513478586685512612, guid: 02a3eb1a62745ab47bf2fc0851446243,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02a3eb1a62745ab47bf2fc0851446243, type: 3}
 --- !u!4 &3845020925931384689 stripped
