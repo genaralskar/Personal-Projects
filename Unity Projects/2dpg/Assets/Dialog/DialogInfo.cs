@@ -12,8 +12,10 @@ public struct DialogInfo
     public string optionText2;
     public string optionText3;
     public string optionText4;
+    public int eventIndex;
 
-    public DialogInfo(DialogCharacter character, string dialog, int positionIndex, bool options = false, int numOptions = 0, string optionText0 = "", string optionText1 = "", string optionText2 = "", string optionText3 = "", string optionText4 = "")
+    public DialogInfo(DialogCharacter character, string dialog, int positionIndex, int eventIndex = 0, bool options = false, int numOptions = -1, string optionText0 = "",
+        string optionText1 = "", string optionText2 = "", string optionText3 = "", string optionText4 = "")
     {
         this.character = character;
         this.dialog = dialog;
@@ -25,6 +27,7 @@ public struct DialogInfo
         this.optionText2 = optionText2;
         this.optionText3 = optionText3;
         this.optionText4 = optionText4;
+        this.eventIndex = eventIndex;
     }
 
 }

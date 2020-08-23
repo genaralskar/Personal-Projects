@@ -8,9 +8,11 @@ using UnityEngine.EventSystems;
 public class DialogManager : MonoBehaviour
 {
     public static UnityAction<DialogInfo> SendDialog;
-    public static UnityAction<AnimatorController, List<Transform>> NewDialog;
+    public static UnityAction<DialogStartInfo> NewDialog;
     public static UnityAction<int> DialogOptionInput;
+    public static UnityAction<int, float> DialogEvent;
     public static UnityAction EndDialog;
+    
 
     public DialogBox dialogBox;
     public DialogOptionBox optionsBox;
@@ -20,6 +22,7 @@ public class DialogManager : MonoBehaviour
     public RectTransform dialogBoxTransform;
     public Transform playerPos;
     public List<Transform> otherPos;
+    public List<UnityEvent> otherEvents;
     public float moveTime = .5f;
     public AnimationCurve moveCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
     public float normalizedYOffset = .1f;
@@ -33,6 +36,7 @@ public class DialogManager : MonoBehaviour
         SendDialog += SendDialogHandler;
         NewDialog += NewDialogHandler;
         DialogOptionInput += DialogOptionInputHandler;
+        DialogEvent += DialogEventHandler;
         EndDialog += EndDialogHandler;
     }
 
@@ -42,10 +46,11 @@ public class DialogManager : MonoBehaviour
         currentDialog.SetTrigger(op);
     }
     
-    public void NewDialogHandler(AnimatorController newDialog, List<Transform> pos)
+    public void NewDialogHandler(DialogStartInfo info)
     {
-        currentDialog.runtimeAnimatorController = newDialog;
-        otherPos = pos;
+        currentDialog.runtimeAnimatorController = info.dialog;
+        otherPos = info.dialogPos;
+        otherEvents = info.dialogEvents;
         DialogActive = true;
     }
     
@@ -65,11 +70,11 @@ public class DialogManager : MonoBehaviour
 
         if (info.options || info.character.isPlayer)
         {
-            SetDesiredPos(playerPos.position);
+            SetDesiredDialogPos(playerPos.position);
         }
         else
         {
-            SetDesiredPos(otherPos[info.positionIndex].position);
+            SetDesiredDialogPos(otherPos[info.positionIndex].position);
         }
         
         if(mover != null)
@@ -77,12 +82,35 @@ public class DialogManager : MonoBehaviour
         mover = StartCoroutine(MoveDialogBox());
     }
 
-    private void SetDesiredPos(Vector2 pos)
+    private void SetDesiredDialogPos(Vector2 pos)
     {
         //move desiredPos.y up by normalized offset
         Vector2 off = Camera.main.ViewportToScreenPoint(new Vector3(0, normalizedYOffset));
-        Debug.Log("Off = " + off);
+        //Debug.Log("Off = " + off);
         desiredPos = (Vector2)Camera.main.WorldToScreenPoint(pos) + off;
+    }
+
+    private void DialogEventHandler(int eventIndex, float delay = 0f)
+    {
+        if (eventIndex <= -1) return;
+
+        if(eventIndex > otherEvents.Count - 1)
+        {
+            Debug.LogError("Dialog Event Index out of range!" + otherEvents.Count);
+        }
+        else
+        {
+            otherEvents[eventIndex].Invoke();
+        }
+        StartCoroutine(EventDelay(delay));
+    }
+
+    private IEnumerator EventDelay(float delay)
+    {
+        if (delay <= 0)
+            delay = 0;
+        yield return new WaitForSeconds(delay);
+        currentDialog.SetTrigger("EventOption");
     }
 
     private void EndDialogHandler()

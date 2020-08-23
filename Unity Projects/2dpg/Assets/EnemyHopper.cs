@@ -29,7 +29,6 @@ public class EnemyHopper : Enemy
 
     private IEnumerator Jump()
     {
-        Debug.Log("Jump!");
         Vector2 startPos = art.localPosition;
         art.localPosition = startPos + Vector2.down * .2f;
         float t = 0;

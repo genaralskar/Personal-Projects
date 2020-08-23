@@ -16,7 +16,7 @@ public class StateOptionsDialog : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        DialogManager.SendDialog?.Invoke(new DialogInfo(null, "", 0, true, numOptions, option0, option1, option2, option3, option4));   
+        DialogManager.SendDialog?.Invoke(new DialogInfo(null, "", 0, -1, true, numOptions, option0, option1, option2, option3, option4));   
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

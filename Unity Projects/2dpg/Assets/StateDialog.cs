@@ -5,12 +5,14 @@ using UnityEngine;
 public class StateDialog : StateMachineBehaviour
 {
     public DialogCharacter character;
+    public int dialogBoxPositionIndex = 0;
+    public int eventIndex = -1;
+    [TextArea(3, 5)]
     public string dialog;
-    public int positionIndex = 0;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        DialogManager.SendDialog?.Invoke(new DialogInfo(character, dialog, positionIndex));
+        DialogManager.SendDialog?.Invoke(new DialogInfo(character, dialog, dialogBoxPositionIndex, eventIndex));
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
