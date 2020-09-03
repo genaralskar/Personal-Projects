@@ -1,0 +1,4 @@
+{useItem}
+{interact}
+{attack}
+{dodge}

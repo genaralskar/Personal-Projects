@@ -17,7 +17,6 @@ public class Attack : MonoBehaviour
     private void Update()
     {
         //rotate sword to face dir
-        //Debug.Log("Facing dir: " + inputs.facingDir);
         float angle = Mathf.Atan2(inputs.facingDir.y, inputs.facingDir.x) * Mathf.Rad2Deg;
         sword.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }

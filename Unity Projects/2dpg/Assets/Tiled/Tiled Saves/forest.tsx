@@ -114,6 +114,76 @@
    <object id="1" x="0" y="0" width="16" height="16"/>
   </objectgroup>
  </tile>
+ <tile id="313">
+  <objectgroup draworder="index" id="2">
+   <object id="2" x="16" y="13">
+    <polygon points="0,0 -4,3 0,3"/>
+   </object>
+  </objectgroup>
+ </tile>
+ <tile id="314">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="16" y="10">
+    <polygon points="0,0 -9,0 -16,3 -16,6 0,6"/>
+   </object>
+  </objectgroup>
+ </tile>
+ <tile id="315">
+  <objectgroup draworder="index" id="2">
+   <object id="2" x="0" y="10">
+    <polygon points="0,0 7,0 14,3 16,5 16,6 0,6"/>
+   </object>
+  </objectgroup>
+ </tile>
+ <tile id="316">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="15">
+    <polygon points="0,0 2,1 0,1"/>
+   </object>
+  </objectgroup>
+ </tile>
+ <tile id="333">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="12" y="0">
+    <polygon points="0,0 -3,3 -5,7 -5,14 -4,16 4,16 4,0"/>
+   </object>
+  </objectgroup>
+ </tile>
+ <tile id="336">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="2" y="0">
+    <polygon points="0,0 4,4 5,8 5,14 4,16 -2,16 -2,0"/>
+   </object>
+  </objectgroup>
+ </tile>
+ <tile id="353">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="8" y="0">
+    <polygon points="0,0 1,1 5,5 6,6 8,7 8,0"/>
+   </object>
+  </objectgroup>
+ </tile>
+ <tile id="354">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="7">
+    <polygon points="0,0 6,2 16,2 16,-7 0,-7"/>
+   </object>
+  </objectgroup>
+ </tile>
+ <tile id="355">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="9">
+    <polygon points="0,0 10,0 16,-3 16,-9 0,-9"/>
+   </object>
+  </objectgroup>
+ </tile>
+ <tile id="356">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="6" y="0">
+    <polygon points="0,0 -1,2 -3,4 -4,5 -6,6 -6,0"/>
+   </object>
+  </objectgroup>
+ </tile>
  <tile id="383">
   <animation>
    <frame tileid="383" duration="100"/>

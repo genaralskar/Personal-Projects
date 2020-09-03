@@ -108,7 +108,7 @@ public class Enemy : MonoBehaviour
             follow = false;
             GetNewWanderPos();
             Wander();
-            Debug.Log($"Out of range. Range: {DistanceToDesiredPos()}");
+            //Debug.Log($"Out of range. Range: {DistanceToDesiredPos()}");
             AggroExit?.Invoke();
             return;
         }
@@ -119,7 +119,7 @@ public class Enemy : MonoBehaviour
     {
         follow = true;
         followTarget = target;
-        Debug.Log($"New Aggro Target {target}");
+        //Debug.Log($"New Aggro Target {target}");
         AggroEnter?.Invoke(target);
     }
 
@@ -144,13 +144,13 @@ public class Enemy : MonoBehaviour
 
     private void IFrameStartHandler()
     {
-        Debug.Log("IFrame Start");
+        //Debug.Log("IFrame Start");
         canMove = false;
     }
 
     private void IFrameEndHandler()
     {
-        Debug.Log("IFrame End");
+        //Debug.Log("IFrame End");
         canMove = true;
     }
 

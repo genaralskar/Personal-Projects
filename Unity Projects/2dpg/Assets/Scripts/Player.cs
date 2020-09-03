@@ -96,7 +96,7 @@ public class Player : MonoBehaviour, IKnockback
         if (state == States.Dialog)
         {
             rb.velocity = Vector2.zero;
-            SetAnims(faceDir);
+            SetAnims(Vector2.zero);
             
             if (!DialogManager.DialogActive)
                 state = States.Normal;
@@ -116,8 +116,9 @@ public class Player : MonoBehaviour, IKnockback
 
     private void GetInputs()
     {
-        
-        
+
+        currentSpeed = moveVector.sqrMagnitude;
+
         if (DialogManager.DialogActive)
         {
             state = States.Dialog;
@@ -144,7 +145,7 @@ public class Player : MonoBehaviour, IKnockback
             moveVector = Vector3.zero;
         }
 
-        currentSpeed = moveVector.sqrMagnitude;
+        
         
         if (canMove && Input.GetButtonDown("Roll") && stamina > 0)
         {
@@ -155,7 +156,8 @@ public class Player : MonoBehaviour, IKnockback
     
     private void SetAnims(Vector2 movement)
     {
-        anims.SetFloat("Speed", currentSpeed);
+        float cSpeed = movement.sqrMagnitude;
+        anims.SetFloat("Speed", cSpeed);
         if (currentSpeed > .01f)
         {
             anims.SetFloat("Horizontal", movement.x);

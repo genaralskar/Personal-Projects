@@ -19,16 +19,17 @@ public class PlayerInputs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("LightAttack"))
+        if (DialogManager.DialogActive) return;
+        if(Input.GetButtonDown("LightAttack") && !DialogManager.DialogActive)
             LightAttack?.Invoke();
         
-        if(Input.GetButtonDown("HeavyAttack"))
+        if(Input.GetButtonDown("HeavyAttack") && !DialogManager.DialogActive)
             HeavyAttack?.Invoke();
         
-        if(Input.GetButtonDown("Roll"))
+        if(Input.GetButtonDown("Roll") && !DialogManager.DialogActive)
             Roll?.Invoke();
         
-        if(Input.GetButtonDown("Interact"))
+        if(Input.GetButtonDown("Interact") && !DialogManager.DialogActive)
             Interact?.Invoke();
         
         dirInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));

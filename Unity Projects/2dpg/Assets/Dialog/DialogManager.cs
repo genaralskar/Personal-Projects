@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 
 public class DialogManager : MonoBehaviour
 {
+    public static bool DialogActive;
+
     public static UnityAction<DialogInfo> SendDialog;
     public static UnityAction<DialogStartInfo> NewDialog;
     public static UnityAction<int> DialogOptionInput;
@@ -15,6 +17,10 @@ public class DialogManager : MonoBehaviour
     
 
     public DialogBox dialogBox;
+    [SerializeField]
+    private float dBoxPaddingY = 30f;
+    [SerializeField]
+    private float dBoxPaddingX = 30f;
     public DialogOptionBox optionsBox;
     public Animator currentDialog;
 
@@ -26,10 +32,12 @@ public class DialogManager : MonoBehaviour
     public float moveTime = .5f;
     public AnimationCurve moveCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
     public float normalizedYOffset = .1f;
+
+    private Vector2 dBoxPos;
     private Vector2 desiredPos;
     private Coroutine mover;
 
-    public static bool DialogActive;
+    
     
     private void Awake()
     {
@@ -71,10 +79,12 @@ public class DialogManager : MonoBehaviour
         if (info.options || info.character.isPlayer)
         {
             SetDesiredDialogPos(playerPos.position);
+            dBoxPos = playerPos.position;
         }
         else
         {
             SetDesiredDialogPos(otherPos[info.positionIndex].position);
+            dBoxPos = otherPos[info.positionIndex].position;
         }
         
         if(mover != null)
@@ -126,14 +136,19 @@ public class DialogManager : MonoBehaviour
         float timer = 0;
         Vector2 startPos = dialogBoxTransform.position;
         WaitForEndOfFrame wait = new WaitForEndOfFrame();
-        while (timer < moveTime)
+
+        while (DialogActive)
         {
+            SetDesiredDialogPos(dBoxPos);
+
+            //fit desired position within bounds of the screen
+            Vector2 dPos = desiredPos;
+            dPos.x = Mathf.Clamp(dPos.x, (dialogBoxTransform.rect.width * .5f) + dBoxPaddingX, Camera.main.pixelWidth - (dialogBoxTransform.rect.width * .5f) - dBoxPaddingX);
+            dPos.y = Mathf.Clamp(dPos.y, (dialogBoxTransform.rect.height * .5f) + dBoxPaddingY, Camera.main.pixelHeight - (dialogBoxTransform.rect.height * .5f) - dBoxPaddingY);
+            //Debug.Log($"minY: {dialogBoxTransform.rect.height * .5f}");
+
             //lerp box
-            Vector2 newPos = Vector2.LerpUnclamped(startPos, desiredPos, moveCurve.Evaluate(timer/moveTime));
-            //Debug.Log($"Eval= {moveCurve.Evaluate(timer / moveTime)}, newPos: {newPos}");
-            //Debug.Log($"newpos {newPos}");
-            newPos.x = Mathf.Clamp(newPos.x, (0 + dialogBoxTransform.offsetMax.x * .5f), Camera.main.pixelWidth - (dialogBoxTransform.offsetMax.x * .5f));
-            newPos.y = Mathf.Clamp(newPos.y, (0 + dialogBoxTransform.offsetMax.y * .5f), Camera.main.pixelHeight - (dialogBoxTransform.offsetMax.y * .5f));
+            Vector2 newPos = Vector2.Lerp(dialogBoxTransform.position, dPos, .5f);
             
             dialogBoxTransform.position = newPos;
             timer += Time.deltaTime;

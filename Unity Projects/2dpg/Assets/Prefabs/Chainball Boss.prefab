@@ -693,7 +693,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 7
 --- !u!1 &6620945175527620895
 GameObject:
   m_ObjectHideFlags: 0
