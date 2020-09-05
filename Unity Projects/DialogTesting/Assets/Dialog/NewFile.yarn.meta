@@ -1,0 +1,115 @@
+fileFormatVersion: 2
+guid: d7334a04df75e4e47ab182f077a240fb
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - NewFile-Start-0
+  - NewFile-Start-1
+  - NewFile-Start-2
+  - NewFile-Yes-3
+  - NewFile-No-4
+  - NewFile-Next-5
+  - NewFile-Next-6
+  - NewFile-Next-7
+  - NewFile-Next-8
+  - NewFile-Next-9
+  - NewFile-Next-10
+  - NewFile-Next-11
+  - NewFile-Next-12
+  - NewFile-Next-13
+  - NewFile-Next-14
+  - NewFile-Next-15
+  - NewFile-Next-16
+  - NewFile-Next-17
+  - NewFile-Next-18
+  - NewFile-Next-19
+  - NewFile-Next-20
+  - NewFile-Next-21
+  - NewFile-Next-22
+  - NewFile-Next-23
+  - NewFile-Next-24
+  - NewFile-Next-25
+  - NewFile-Next-26
+  - NewFile-wizboy-27
+  - NewFile-wizboy-28
+  - NewFile-wizboy-29
+  - NewFile-wizboy-30
+  - NewFile-wizboy-31
+  - NewFile-wizboy-32
+  - NewFile-wizboy-33
+  - NewFile-wizboy-34
+  - NewFile-wizboy-35
+  - NewFile-wizboy-36
+  - NewFile-wizboy-37
+  - NewFile-wizboy-38
+  - NewFile-meetLung-39
+  - NewFile-meetLung-40
+  - NewFile-meetLung-41
+  - NewFile-meetLung-42
+  - NewFile-meetLung-43
+  - NewFile-knockout-44
+  - NewFile-knockout-45
+  - NewFile-knockout-46
+  - NewFile-knockout-47
+  - NewFile-knockout-48
+  - NewFile-knockout-49
+  - NewFile-knockout-50
+  - NewFile-knockout-51
+  - NewFile-knockout-52
+  - NewFile-knockout-53
+  - NewFile-knockout-54
+  - NewFile-knockout-55
+  - NewFile-knockout-56
+  - NewFile-knockout-57
+  - NewFile-knockout-58
+  - NewFile-knockout-59
+  - NewFile-knockout-60
+  - NewFile-knockout-61
+  - NewFile-knockout-62
+  - NewFile-knockout-63
+  - NewFile-knockout-64
+  - NewFile-knockout-65
+  - NewFile-knockout-66
+  - NewFile-knockout-67
+  - NewFile-knockout-68
+  - NewFile-knockout-69
+  - NewFile-knockout-70
+  - NewFile-knockout-71
+  - NewFile-knockout-72
+  - NewFile-knockout-73
+  - NewFile-lungDialog-74
+  - NewFile-lungDialog-75
+  - NewFile-lungDialog-76
+  - NewFile-lungDialog-77
+  - NewFile-lungDialog-78
+  - NewFile-lungDialog-79
+  - NewFile-lungDialog-80
+  - NewFile-lungDialog-81
+  - NewFile-lungDialog-82
+  - NewFile-lungDialog-83
+  - NewFile-lungDialog-84
+  - NewFile-lungDialog-85
+  - NewFile-lungDialog-86
+  - NewFile-lungDialog-87
+  - NewFile-lungDialog-88
+  - NewFile-lungDialog-89
+  - NewFile-lungDialog-90
+  - NewFile-lungDialog-91
+  - NewFile-lungDialog-92
+  - NewFile-lungDialog-93
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 'Error on line 134 at position 85:token recognition error
+    at: ''/''
+
+'
+  baseLanguage: {fileID: 7128917941130120860, guid: d7334a04df75e4e47ab182f077a240fb,
+    type: 3}
+  localizations: []

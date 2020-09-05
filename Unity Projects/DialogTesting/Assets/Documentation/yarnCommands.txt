@@ -1,0 +1,36 @@
+hideBox
+	Calls onHideBox UnityEvent. Used to hide the dialogue box while a dialogue is still running
+
+autoContinue float time = 0
+	Does not show the continue button, instead auto continues to the next line of dialogue.
+	time is how long in seconds to wait after the dialogue is completed to continue. Defaults to 0
+	<<autoContinue .5>>
+
+move string actorName, string locationName
+	Moves and actor with actorName to a location with locationName.
+	<<move actor1 location 1>>
+moveInstant string actorName, string locationName
+	Sets the position of an actor with actorName to a location with locationName.
+	<<moveInstant actor1 location1>>
+moveWait string actorName, string locationName
+	Moves and actor with actorName to a location with locationName, but waits until the actor as reached location to continue dialogue.
+	<<moveWait actor1 location1>>
+
+faceLeft string actorName
+	Used to set an actor with actorName to face left
+	<<faceLeft actor1>>
+faceRight string actorName
+	Used to set an actor with actorName to face right
+	<<faceRight actor1>>
+
+fadeIn string colorName, float time
+	Fade's a panel from full colorName to transparent over time seconds
+	<<fadeIn black 1>>
+fadeOut string colorName, float time
+	Fade's a panel from full transparent to colorName over time seconds
+	<<fadeOut black 1>>
+
+textSeed float speed
+	Set text to diplay new character every speed seconds. if speed is < 0, reset to default text speed
+	<<textSpeed .2>>
+	<<textSpeed -1>>

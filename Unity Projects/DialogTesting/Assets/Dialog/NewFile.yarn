@@ -1,0 +1,212 @@
+title: Start
+tags: 
+colorID: 0
+position: 900,186
+---
+<< set $north to false >>
+<< set $east to false >>
+<< set $south to false >>
+<< set $west to false >> 
+
+Comp:: This is a test.
+
+[[Is it?|Yes]]
+[[I don't believe you|No]]
+===
+title: Yes
+tags: 
+colorID: 0
+position: 763,490
+---
+Comp:: Yes it is.
+
+[[Next]]
+===
+title: No
+tags: 
+colorID: 0
+position: 1117,477
+---
+Empty Text
+===
+title: Next
+tags: 
+colorID: 0
+position: 665,745
+---
+You find yourself in a field
+
+-> Go North << if $north is false>> 
+    You try to go north, but a large gnome blocks the path.
+    It's pretty big actually, if you didn't know any better you'd think it was just a small man with a tall red hat.
+    It gives you a blank stare as it breathes heavily in your direction.
+    It gives you a look of "I'm not going to do anything, but there's no way you're going any further."
+    You concede to it, and head back to the field.
+    << set $north to true>> 
+    [[Next]]
+-> Go East << if $east is false>> 
+    You start heading east, but get a bit distracted and find you've walked too far.
+    You're right back where you started, and you've gotten a bit a seaweed in your boot.
+    << set $east to true>> 
+    [[Next]]
+-> Go South << if $south is false>> 
+    You start heading south, until you realize you don't know which way is south.
+    You return to the field to try and get your bearings.
+    << set $south to true>> 
+    [[Next]]
+-> Go West << if $west is false>> 
+    You start heading west, but get a bit distracted and find you've walked too far.
+    You're right back where you started, and you've somehow managed to capture a bird's nest in your hat.
+    Sounds like a family of bluebirds. Nice.
+    << set $west to true>> 
+    [[Next]]
+
+-> Well now what? << if $north is true and $east is true and $south is true and $west is true>>
+    You sit and think about this for a moment, when suddenly you remember something your father told you when you were little.
+    Dad:: "My sweet child, it's imperative that you remember these words, for they will surely save your life one day, as they have mine many times."
+    Dad:: "Never Eat Soggy Waffles."
+    Thanks Dad...
+
+[[wizboy]]
+===
+title: wizboy
+tags: 
+colorID: 0
+position: 568,1073
+---
+You sit for a while and think about how you got here.
+Think about how you're stuck here.
+Think about that weird gnome.
+When you realize that very gnome is staring at you from behind a bush.
+You try to ignore it by looking at some ants on the ground and hope it goes away.
+It doesn't.
+You look up after a minute and the gnome has even gotten closer.
+You can see it's stupid little face
+with it's stupid little hat
+and it's stupid little tongue
+sticking out a little
+from it's stupid little mouth.
+===
+title: meetLung
+tags: 
+position: 1623.3170166015625,155.91267776489258
+---
+<<fadeIn black 1>>
+After a quick push and shove, You now find yourself standing the middle of the area.
+<<moveInstant Lung lungSpot>>
+The sound of loud drunken cheers surrounds you, and the smell of sweat and blood kinda kills your vibe.
+From the other side of the area, a large man walks toward you
+<<hideBox>>
+<<move Lung lungSpot>> 
+Lung:: ME LUNG!
+<< faceLeft Lung>> 
+Lung:: ME BASH!
+<< faceRight Lung>> 
+Lung:: ME BREAK!
+<< faceLeft Lung>> 
+Lung:: ME BEAT!
+<< faceRight Lung>> 
+Player:: That's nice
+[[lungDialog]]
+===
+title: knockout
+tags: 
+position: 1616.3170166015625,656.456298828125
+---
+<< fadeIn black 1>>
+Player:: Ow... I feel like I got hit by a ton of bricks
+You wake up and find yourself in a hospital with a splitting headache.
+<< hideBox>> 
+<< faceRight DrAcula>> 
+<< moveWait DrAcula drPoint>>
+Doctor Acula:: Yes well it's a miracle you survived at all. Hello, I'm Doctor Acula, I'll be your attending physician.
+Player:: Doctor Acula? Like... Dracula?
+
+<<  autoContinue .5>> 
+Doctor Acula:: Hohoho no no, nothing like that. Just a regular old doctor person just like anybody else. Absolutely nothing out of the ordinary for ol' Doctor Acula. Just your run of the mill body knowledge man. No sir, nothing strange at all, and I can assure you my blood soaked appearance is entirely due to normal run of the mill doctor stuff not related to undead beings of the night that may or may not bring back beings from the dead in a ghoulish state to serve as their slaves and/or golf caddies.
+Nurse:: Doctor Acula, Doctor Marcy wants to know if you're free for golf this weekend. I'm free if you need a caddy.
+<< textSpeed .5>> 
+Player:: ...
+<< textSpeed 1 >> 
+Doctor Acula:: ...
+<< textSpeed -1>> 
+<< faceLeft DrAcula>> 
+Doctor Acula:: Thank you nurse, I'll let you know...
+Doctor Acula:: ...
+<< faceRight DrAcula>> 
+Doctor Acula:: So...
+Doctor Acula:: What seems to be the problem?
+Player:: Um, my whole everything hurts.
+Doctor Acula:: Right! You're lucky be alive you are. Ol' Lung gave you quite a beating.
+Doctor Acula:: Smashed your face clean in. Had to do lots of reconstructive surgery. According to your chart here you lost a lot of blood. And an arm! Oh my.
+Nurse:: Ahem. Doctor Acula.
+<< faceLeft DrAcula>> 
+Doctor Acula:: Yes nurse.
+Nurse:: I believe we mixed up the charts on your way in here. That one's for the patient in room 3. Here's the proper chart for player.
+<<hideBox>>
+<< moveWait DrAcula roomDoor>>
+Doctor Acula:: Ah I see. Thank you nurse!
+<< faceRight DrAcula>>
+<<hideBox>>
+<< moveWait DrAcula drPoint>>
+Doctor Acula:: Let's see here. Oh, looks like you got off with only a scuffed knee.
+<< hideBox>> 
+<< wait 2>>
+Doctor Acula:: What are you doing here?
+Player:: Uh..
+Player:: I guess I passed out?
+<< hideBox>>
+<< wait 2>> 
+Doctor Acula:: From what?
+Player:: ...
+Player:: The pain?
+<< textSpeed .3>> 
+<< autoContinue .3>> 
+Doctor Acula:: Riiigght
+<< textSpeed -1>> 
+Doctor Acula:: Well, the nurse's will have your paperwork whenever you decide to leave.
+
+<< autoContinue .25>> 
+Doctor Acula:: You big baby.
+<<autoContinue>>
+<<textSpeed 0>>
+Doctor Acula:: Good day!
+<< faceLeft DrAcula>> 
+<< moveWait DrAcula exitLeft>>
+===
+title: lungDialog
+tags: 
+position: 1622.575927734375,415.76055908203125
+---
+-> Tell me about yourself Lung
+    Lung:: Lung big and strong.
+    Lung:: Lung like to beat things.
+    Lung:: Beat records,
+    Lung:: beat monsters,
+    Lung:: beat people.
+    Lung:: Sometime when Lung home alone,
+    Lung:: Lung beat his head into wall.
+    << set $lungDialog to true>> 
+    [[lungDialog]]
+-> How did you get so big?
+    Lung:: Lung born big. Had big parents. Big family.
+    Player:: Do you have some workout routine I could follow? Something to get me big?
+    Lung:: Hmm. Lung not know.
+    Lung:: Lung never work out with stick before.
+    Player:: Hmm...
+    << set $lungDialog to true>> 
+    [[lungDialog]]
+-> You like jazz?
+    Lung:: Only in sense that it gives Lung more people to beat up.
+    << set $lungDialog to true>> 
+    [[lungDialog]]
+->  Truce? << if $lungDialog is true>> 
+    Player:: Hey, you don't think there's any way we could get out of this without beating each other up... Do you?
+    Lung:: Lung not think, only beat.
+    Player:: I'll take that as a no then...
+    << hideBox>> 
+    <<fadeOut black 1>>
+    << moveInstant Lung exitLeft>>
+    <<wait 1>>
+    [[knockout]]
+===
