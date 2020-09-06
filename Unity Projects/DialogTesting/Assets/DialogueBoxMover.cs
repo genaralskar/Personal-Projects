@@ -12,7 +12,7 @@ public class DialogueBoxMover : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 3f, paddingUp = 10f, paddingDown = 250f, paddingLeft = 320f, paddingRight = 320f;
     [SerializeField]
-    private Vector2 offset;
+    private Vector2 offset = new Vector2(0, 3);
     [SerializeField]
     Transform defaultLocation;
 
