@@ -8,12 +8,13 @@ public class Actor : MonoBehaviour
     public UnityAction<Vector2> MoveEvent;
     public UnityAction<Vector2> SetPositionEvent;
     public UnityAction MoveFinishEvent;
-    public UnityAction<bool> SetFacingEvent;
+    public UnityAction<Vector2> SetFacingEvent;
     private System.Action blockingHolder;
 
     [Tooltip("This is the name that is used to match the actor to dialog." +
         "This should be the same as how the name appears in a dialogue")]
     public string actorName;
+    public bool playerControlling = false;
 
     private void Awake()
     {

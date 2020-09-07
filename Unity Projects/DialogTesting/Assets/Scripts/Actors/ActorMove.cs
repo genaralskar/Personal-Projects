@@ -1,39 +1,70 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Actor))]
 public class ActorMove : MonoBehaviour
 {
+    public UnityAction<Vector2> MoveDirectionUpdated;
+    public UnityAction<Vector2> FaceDirectionUpdated;
+    public UnityAction<float> SpeedUpdated;
+
     private Actor actor;
+    private ActorMoveAnimator moveAnimator;
+    private ActorFacing actorFacing;
 
     [SerializeField]
     private float moveSpeed = 5;
+    private float defaultSpeed = 5f;
+
+    public Vector2 MoveDirection { get; private set; } = Vector2.zero;
+    private Vector2 previousPosition = Vector2.zero;
+    public Vector2 Velocity => (previousPosition - (Vector2)transform.position) / Time.deltaTime;
+    public float CurrentSpeed => Velocity.magnitude;
 
     private void Awake()
     {
         actor = GetComponent<Actor>();
-        actor.MoveEvent += MoveActorHandler;
-    }
-
-    public void MoveActorHandler(Vector2 location)
-    {
-        StopAllCoroutines();
-        StartCoroutine(Move(location));
-    }
-
-    private IEnumerator Move(Vector2 location)
-    {
-        WaitForEndOfFrame wait = new WaitForEndOfFrame();
-        while (Vector2.Distance(transform.position, location) > .1f)
+        actorFacing = GetComponent<ActorFacing>();
+        moveAnimator = GetComponent<ActorMoveAnimator>();
+        if (moveAnimator)
         {
-            yield return wait;
-            //get direction
-            Vector2 direction = location - (Vector2)transform.position;
-
-            transform.Translate(direction.normalized * moveSpeed * Time.deltaTime);
+            SpeedUpdated += moveAnimator.SetActorSpeed;
+            if(actorFacing)
+            {
+                actorFacing.FaceDirectionUpdated += moveAnimator.SetActorFaceDirection;
+            }
         }
+            
+        defaultSpeed = moveSpeed;
+    }
 
-        actor.MoveFinishEvent();
+    private void Update()
+    {
+        previousPosition = transform.position;
+        transform.Translate(MoveDirection.normalized * moveSpeed * Time.deltaTime);
+        SpeedUpdated?.Invoke(CurrentSpeed);
+
+        if(actorFacing && actorFacing.FaceMove && CurrentSpeed > .01f)
+        {
+            moveAnimator.SetActorFaceDirection(MoveDirection);
+        }
+    }
+
+    public void SetMoveDirection(Vector2 direction)
+    {
+        MoveDirection = direction;
+        MoveDirectionUpdated?.Invoke(MoveDirection.normalized);
+    }
+
+    public void SetMoveSpeed(float speed)
+    {
+        if(speed <= 0)
+        {
+            moveSpeed = defaultSpeed;
+        }
+        else
+        {
+            moveSpeed = speed;
+        }
     }
 }

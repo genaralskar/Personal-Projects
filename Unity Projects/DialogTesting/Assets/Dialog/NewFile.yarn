@@ -24,8 +24,7 @@ Comp:: Yes it is.
 ===
 title: No
 tags: 
-colorID: 0
-position: 1117,477
+position: 1091.7286376953125,477
 ---
 Empty Text
 ===
@@ -91,21 +90,22 @@ title: meetLung
 tags: 
 position: 1623.3170166015625,155.91267776489258
 ---
+<<hideBox>>
 <<fadeIn black 1>>
 After a quick push and shove, You now find yourself standing the middle of the area.
-<<moveInstant Lung lungSpot>>
 The sound of loud drunken cheers surrounds you, and the smell of sweat and blood kinda kills your vibe.
 From the other side of the area, a large man walks toward you
 <<hideBox>>
+<<face down Lung>>
 <<move Lung lungSpot>> 
 Lung:: ME LUNG!
-<< faceLeft Lung>> 
+<<face left Lung>> 
 Lung:: ME BASH!
-<< faceRight Lung>> 
+<<face right Lung>> 
 Lung:: ME BREAK!
-<< faceLeft Lung>> 
+<<face left Lung>> 
 Lung:: ME BEAT!
-<< faceRight Lung>> 
+<<face right Lung>> 
 Player:: That's nice
 [[lungDialog]]
 ===
@@ -114,10 +114,11 @@ tags:
 position: 1616.3170166015625,656.456298828125
 ---
 << fadeIn black 1>>
+<< face up DrAcula>> 
 Player:: Ow... I feel like I got hit by a ton of bricks
 You wake up and find yourself in a hospital with a splitting headache.
 << hideBox>> 
-<< faceRight DrAcula>> 
+<<face DrAcula>>
 << moveWait DrAcula drPoint>>
 Doctor Acula:: Yes well it's a miracle you survived at all. Hello, I'm Doctor Acula, I'll be your attending physician.
 Player:: Doctor Acula? Like... Dracula?
@@ -130,23 +131,23 @@ Player:: ...
 << textSpeed 1 >> 
 Doctor Acula:: ...
 << textSpeed -1>> 
-<< faceLeft DrAcula>> 
+<< face left DrAcula>> 
 Doctor Acula:: Thank you nurse, I'll let you know...
 Doctor Acula:: ...
-<< faceRight DrAcula>> 
+<< face right DrAcula>> 
 Doctor Acula:: So...
 Doctor Acula:: What seems to be the problem?
 Player:: Um, my whole everything hurts.
 Doctor Acula:: Right! You're lucky be alive you are. Ol' Lung gave you quite a beating.
 Doctor Acula:: Smashed your face clean in. Had to do lots of reconstructive surgery. According to your chart here you lost a lot of blood. And an arm! Oh my.
 Nurse:: Ahem. Doctor Acula.
-<< faceLeft DrAcula>> 
+<< face left DrAcula>> 
 Doctor Acula:: Yes nurse.
 Nurse:: I believe we mixed up the charts on your way in here. That one's for the patient in room 3. Here's the proper chart for player.
 <<hideBox>>
 << moveWait DrAcula roomDoor>>
 Doctor Acula:: Ah I see. Thank you nurse!
-<< faceRight DrAcula>>
+<< face right DrAcula>>
 <<hideBox>>
 << moveWait DrAcula drPoint>>
 Doctor Acula:: Let's see here. Oh, looks like you got off with only a scuffed knee.
@@ -170,8 +171,8 @@ Doctor Acula:: Well, the nurse's will have your paperwork whenever you decide to
 Doctor Acula:: You big baby.
 <<autoContinue>>
 <<textSpeed 0>>
+<< face DrAcula>> 
 Doctor Acula:: Good day!
-<< faceLeft DrAcula>> 
 << moveWait DrAcula exitLeft>>
 ===
 title: lungDialog

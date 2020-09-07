@@ -12,12 +12,22 @@ public class EquipmentManager : MonoBehaviour
     public UnityAction SpellcastEvent;
     public UnityAction ShootEvent;
 
+    public OutfitSO outfit;
+
     private List<Equipment> equipment = new List<Equipment>();
 
     private void Awake()
     {
         equipment.Add(GetComponent<Equipment>());
         equipment.AddRange(GetComponentsInChildren<Equipment>());
+    }
+
+    private void Start()
+    {
+        foreach(var e in outfit.outift)
+        {
+            EquipItem(e);
+        }
     }
 
     public void EquipItem(EquipmentSO item)
@@ -27,7 +37,25 @@ public class EquipmentManager : MonoBehaviour
             if (e.EquipmentType == item.Type)
             {
                 e.Equip(item);
+                break;
             }
         }
     }
+
+    public void UpdateAnimatorFloat(string param, float value)
+    {
+        foreach(var e in equipment)
+        {
+            e.UpdateAnimatorFloat(param, value);
+        }
+    }
+    public void UpdateAnimatorBool(string param, bool value)
+    {
+        foreach(var e in equipment)
+        {
+            e.UpdateAnimatorBool(param, value);
+        }
+    }
+    
+
 }

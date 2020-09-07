@@ -19,21 +19,25 @@ public class Equipment : MonoBehaviour
 
     public void Equip(EquipmentSO newItem)
     {
+        Debug.Log("Equipping " + newItem);
         SetAnimatorController(newItem.OverrideController);
     }
 
     public void UpdateAnimatorFloat(string name, float value)
     {
+        if (!anims.runtimeAnimatorController) return;
         anims.SetFloat(name, value);
     }
 
     public void UpdateAnimatorBool(string name, bool value)
     {
+        if (!anims.runtimeAnimatorController) return;
         anims.SetBool(name, value);
     }
 
     private void SetAnimatorController(AnimatorOverrideController newController)
     {
+        Debug.Log("Equipping " + newController);
         anims.runtimeAnimatorController = newController;
     }
 }

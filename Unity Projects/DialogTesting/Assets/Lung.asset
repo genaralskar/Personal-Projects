@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e63f996969e701842b3901aa06862130, type: 3}
+  m_Name: Lung
+  m_EditorClassIdentifier: 
+  outift:
+  - {fileID: 11400000, guid: 7b3d13e02f91d9a49adf195a17f6ab81, type: 2}

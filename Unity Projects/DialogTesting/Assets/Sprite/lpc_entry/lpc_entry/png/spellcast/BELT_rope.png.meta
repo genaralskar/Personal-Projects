@@ -80,6 +80,12 @@ TextureImporter:
   - first:
       213: -6551393718462963799
     second: BELT_rope_25
+  - first:
+      213: -8816562535405450755
+    second: BELT_rope_26
+  - first:
+      213: 8752349713829423859
+    second: BELT_rope_27
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -98,7 +104,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
@@ -123,7 +129,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -183,12 +189,12 @@ TextureImporter:
         y: 192
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: 5c9b8571540f74ba0800000000000000
       internalID: -6104646590342317627
@@ -204,12 +210,12 @@ TextureImporter:
         y: 192
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: 5ce26998d8749e340800000000000000
       internalID: 4893521143339036357
@@ -225,12 +231,12 @@ TextureImporter:
         y: 192
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: 4eb03843792227130800000000000000
       internalID: 3562948288019893220
@@ -246,12 +252,12 @@ TextureImporter:
         y: 192
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: 7d218632b0631b630800000000000000
       internalID: 3940990570392457943
@@ -267,12 +273,12 @@ TextureImporter:
         y: 192
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: c22173d239adcb150800000000000000
       internalID: 5889822738347397676
@@ -288,12 +294,12 @@ TextureImporter:
         y: 192
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: 7186bdd7aaf5b52f0800000000000000
       internalID: -983086907789711337
@@ -309,12 +315,12 @@ TextureImporter:
         y: 192
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: fe7e16a5d782b0900800000000000000
       internalID: 651659089937557487
@@ -330,12 +336,12 @@ TextureImporter:
         y: 128
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: cb49806d9f73d52a0800000000000000
       internalID: -6747175120553864004
@@ -351,12 +357,12 @@ TextureImporter:
         y: 128
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: cc8cd523d29028cd0800000000000000
       internalID: -2557471548669835060
@@ -368,16 +374,16 @@ TextureImporter:
       name: BELT_rope_9
       rect:
         serializedVersion: 2
-        x: 192
+        x: 128
         y: 128
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: 3a395f2ebc036e5b0800000000000000
       internalID: -5339526655956905053
@@ -389,16 +395,16 @@ TextureImporter:
       name: BELT_rope_10
       rect:
         serializedVersion: 2
-        x: 256
+        x: 192
         y: 128
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: d8f09098c651accc0800000000000000
       internalID: -3690113388776976499
@@ -410,16 +416,16 @@ TextureImporter:
       name: BELT_rope_11
       rect:
         serializedVersion: 2
-        x: 320
+        x: 256
         y: 128
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: fab2aadfd36aaf4e0800000000000000
       internalID: -1947061103705314385
@@ -431,16 +437,16 @@ TextureImporter:
       name: BELT_rope_12
       rect:
         serializedVersion: 2
-        x: 384
+        x: 320
         y: 128
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: 2be514ad61b8fbbb0800000000000000
       internalID: -4918059337798033742
@@ -452,16 +458,16 @@ TextureImporter:
       name: BELT_rope_13
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 384
+        y: 128
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: a67464ff6abcec860800000000000000
       internalID: 7552197543254706026
@@ -473,16 +479,16 @@ TextureImporter:
       name: BELT_rope_14
       rect:
         serializedVersion: 2
-        x: 64
+        x: 0
         y: 64
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: f4e5cf609f7ae54f0800000000000000
       internalID: -838047792638435761
@@ -494,16 +500,16 @@ TextureImporter:
       name: BELT_rope_15
       rect:
         serializedVersion: 2
-        x: 128
+        x: 64
         y: 64
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: 22b4ea72a413ef670800000000000000
       internalID: 8574344935123077922
@@ -515,16 +521,16 @@ TextureImporter:
       name: BELT_rope_16
       rect:
         serializedVersion: 2
-        x: 192
+        x: 128
         y: 64
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: a7ffbdc2403f7b4c0800000000000000
       internalID: -4271678522279592070
@@ -536,16 +542,16 @@ TextureImporter:
       name: BELT_rope_17
       rect:
         serializedVersion: 2
-        x: 256
+        x: 192
         y: 64
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: a72dc839c5b7a8820800000000000000
       internalID: 2921282945845875322
@@ -557,16 +563,16 @@ TextureImporter:
       name: BELT_rope_18
       rect:
         serializedVersion: 2
-        x: 320
+        x: 256
         y: 64
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: bb9bf054a2cdd9c10800000000000000
       internalID: 2062046278510950843
@@ -578,16 +584,16 @@ TextureImporter:
       name: BELT_rope_19
       rect:
         serializedVersion: 2
-        x: 384
+        x: 320
         y: 64
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: 76ed42a8095cd8910800000000000000
       internalID: 1841345047248035431
@@ -599,16 +605,16 @@ TextureImporter:
       name: BELT_rope_20
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 384
+        y: 64
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: 4a4b4ceb010239080800000000000000
       internalID: -9181959958986181468
@@ -620,16 +626,16 @@ TextureImporter:
       name: BELT_rope_21
       rect:
         serializedVersion: 2
-        x: 64
+        x: 0
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: 82d07288e9c640de0800000000000000
       internalID: -1367848958668894936
@@ -641,16 +647,16 @@ TextureImporter:
       name: BELT_rope_22
       rect:
         serializedVersion: 2
-        x: 192
+        x: 64
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: df4a59b5808161b10800000000000000
       internalID: 1951773912687027453
@@ -662,16 +668,16 @@ TextureImporter:
       name: BELT_rope_23
       rect:
         serializedVersion: 2
-        x: 256
+        x: 128
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: d56abffb2d3f09dd0800000000000000
       internalID: -2481215308191521187
@@ -683,16 +689,16 @@ TextureImporter:
       name: BELT_rope_24
       rect:
         serializedVersion: 2
-        x: 320
+        x: 192
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: cd5c8dfe81eed62a0800000000000000
       internalID: -6742471276233177636
@@ -704,19 +710,61 @@ TextureImporter:
       name: BELT_rope_25
       rect:
         serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9af1a43bf16c415a0800000000000000
+      internalID: -6551393718462963799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BELT_rope_26
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df90421161745a580800000000000000
+      internalID: -8816562535405450755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BELT_rope_27
+      rect:
+        serializedVersion: 2
         x: 384
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9af1a43bf16c415a0800000000000000
-      internalID: -6551393718462963799
+      spriteID: 3fa6bca51b7967970800000000000000
+      internalID: 8752349713829423859
       vertices: []
       indices: 
       edges: []

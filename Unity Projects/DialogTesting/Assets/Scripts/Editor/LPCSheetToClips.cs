@@ -7,10 +7,7 @@ namespace genaralskar.Tools
     public class LPCSheetToClips : AnimationClipFromSpritesheet
     {
         private enum Type { Walk, Thrust, Slash, Shoot, Spellcast, Hurt, Universal}
-        private static Sprite spritesheet;
-        private static string clipName;
         private float framesPerSecond = 12;
-        private bool loop = true;
         private string saveLocation = "Assets";
         private Type type;
 
@@ -24,33 +21,42 @@ namespace genaralskar.Tools
 
         private void OnGUI()
         {
-            spritesheet = (Sprite)EditorGUILayout.ObjectField("Spritesheet", spritesheet, typeof(Sprite), false);
-            clipName = EditorGUILayout.TextField("Clip prefix override", clipName);
+            GUILayout.Label("Select 1 or more pre-sliced texture spritesheets to run this! Clips prefixes will be the same as the texture name");
             framesPerSecond = EditorGUILayout.FloatField("Frames Per Second", framesPerSecond);
-            loop = EditorGUILayout.Toggle("Loop animation", loop);
             type = (Type)EditorGUILayout.EnumPopup("Animation Type", type);
 
             EditorGUILayout.LabelField($"Save Location: {saveLocation}");
             if (GUILayout.Button("Choose Save Location"))
             {
-                saveLocation = EditorUtility.OpenFolderPanel("Open Folder", "Assets", "clip");
+                saveLocation = EditorUtility.OpenFolderPanel("Open Folder", saveLocation, "clip");
             }
 
             if (GUILayout.Button("Create Animation Clips"))
             {
-                string spriteLocation = AssetDatabase.GetAssetPath(spritesheet);
-
-                //if clip name has not been set, use name of the sprite sheet
-                if (clipName == "")
+                //get selection
+                Object[] sel = Selection.GetFiltered(typeof(Texture2D), SelectionMode.Assets);
+                foreach(var s in sel)
                 {
-                    clipName = spritesheet.name;
-                }
+                    string spriteLoc = AssetDatabase.GetAssetPath(s);
 
-                SetupProperSheet(GetSpritesFromDirectory(spriteLocation), saveLocation, clipName, framesPerSecond, loop, type);
+                    //set name
+                    string clipName = s.name;
+                    string[] splitStrings = new string[] { "_0" };
+                    string[] split = clipName.Split(splitStrings, System.StringSplitOptions.None);
+                    string name = "";
+                    //add all but last section
+                    for (int i = 0; i < split.Length; i++)
+                    {
+                        name += split[i];
+                    }
+                    clipName = name;
+
+                    SetupProperSheet(GetSpritesFromDirectory(spriteLoc), saveLocation, clipName, framesPerSecond, type);
+                }
             }
         }
 
-        private void SetupProperSheet(Sprite[] sprites, string saveLocation, string clipPrefix, float framesPerSecond, bool loop, Type type)
+        private void SetupProperSheet(Sprite[] sprites, string saveLocation, string clipPrefix, float framesPerSecond, Type type)
         {
             List<AnimationInfo> holders = new List<AnimationInfo>();
             if(type == Type.Spellcast)
@@ -118,15 +124,29 @@ namespace genaralskar.Tools
 
             }
 
+            if (clipPrefix == null)
+            {
+                //clipPrefix = spritesheet.name;
+                Debug.Log("doin the thing");
+            }
+
+            //create new folder to store the info
+            
+            string relativePath = "Assets";
+            if (saveLocation.IndexOf("Assets/") >= 0)
+            {
+                relativePath = saveLocation.Substring(saveLocation.IndexOf("Assets/"));
+            }
+            if (!AssetDatabase.IsValidFolder(relativePath+"/"+clipPrefix))
+            {
+                Debug.Log(relativePath + "/" + clipPrefix +" folder does not exist, creating it");
+                AssetDatabase.CreateFolder(relativePath, clipPrefix);
+            }
+            
             //create clip for each set of sprites collected
             foreach(var h in holders)
             {
-                if(clipPrefix == null)
-                {
-                    clipPrefix = spritesheet.name;
-                    Debug.Log("doin the thing");
-                }
-                CreateClip(h.Sprites, saveLocation, $"{clipPrefix} {h.Name}", framesPerSecond, h.Loop);
+                CreateClip(h.Sprites, saveLocation + "/" + clipPrefix, $"{clipPrefix} {h.Name}", framesPerSecond, h.Loop);
             }
         }
 
@@ -182,7 +202,7 @@ namespace genaralskar.Tools
             clipsToCreate.Add(new AnimationInfo(anim, "walkRight", true));
 
             indexIncrement = index - startIndex;
-            Debug.Log(indexIncrement);
+            //Debug.Log(indexIncrement);
         }
 
         private void Hurt(Sprite[] sprites, List<AnimationInfo> clipsToCreate, out int indexIncrement, int startIndex = 0)

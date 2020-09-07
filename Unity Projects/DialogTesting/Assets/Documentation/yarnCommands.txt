@@ -22,6 +22,11 @@ faceLeft string actorName
 faceRight string actorName
 	Used to set an actor with actorName to face right
 	<<faceRight actor1>>
+face string direction
+	left, right, up, down, ""
+	<<face left>> <<face>>
+	set facing direction for actor
+	if blank, will follow actors move direction
 
 fadeIn string colorName, float time
 	Fade's a panel from full colorName to transparent over time seconds

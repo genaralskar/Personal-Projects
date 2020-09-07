@@ -28,28 +28,6 @@ public class MoveCommand : MonoBehaviour
     private void MoveWait(string[] parameters, System.Action onComplete)
     {
         MoveSetupBlocking(parameters, onComplete, MoveType.wait);
-        return;
-        //find actor in scene with name parameters[0]
-        Actor actor = SceneObjects.GetActor(parameters[0]);
-
-        //find location in scene with name parameters[1]
-        Location location = SceneObjects.GetLocation(parameters[1]);
-
-        if(actor == null)
-        {
-            Debug.LogWarning($"No actor with name {parameters[0]} found. Continuing dialogue");
-            onComplete?.Invoke();
-        }
-        if(location == null)
-        {
-            Debug.LogWarning($"No location with name {parameters[1]} found. Continuing dialogue");
-            onComplete?.Invoke();
-        }
-
-        //move actor to location
-        actor.MoveActorBlocking(location.Position, onComplete);
-
-        //after move is done, call onActionComplete
     }
 
     private void MoveSetupBlocking(string[] parm, System.Action onComplete, MoveType type)
