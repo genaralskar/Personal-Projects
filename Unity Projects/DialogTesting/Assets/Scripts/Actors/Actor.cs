@@ -9,6 +9,13 @@ public class Actor : MonoBehaviour
     public UnityAction<Vector2> SetPositionEvent;
     public UnityAction MoveFinishEvent;
     public UnityAction<Vector2> SetFacingEvent;
+    public UnityAction<float> SetMoveSpeedEvent;
+    public UnityAction<BattleController, int, UnityAction> ActorAttack;
+    public UnityAction<string, bool> SetAnimatorBool;
+    public UnityAction<string, float> SetAnimatorFloat;
+    public UnityAction<string> SetAnimatorTrigger;
+    public UnityAction<int> DamageActor;
+
     private System.Action blockingHolder;
 
     [Tooltip("This is the name that is used to match the actor to dialog." +
@@ -16,8 +23,12 @@ public class Actor : MonoBehaviour
     public string actorName;
     public bool playerControlling = false;
 
+    private Vector2 startPos;
+    public Vector2 StartPos => startPos;
+
     private void Awake()
     {
+        startPos = transform.position;
         MoveFinishEvent += ActorFinishMoveHandler;
     }
 

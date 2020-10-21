@@ -4,7 +4,9 @@ hideBox
 autoContinue float time = 0
 	Does not show the continue button, instead auto continues to the next line of dialogue.
 	time is how long in seconds to wait after the dialogue is completed to continue. Defaults to 0
+	Goes before line that will autoContinue
 	<<autoContinue .5>>
+	Player:: This text will advance automatically
 
 move string actorName, string locationName
 	Moves and actor with actorName to a location with locationName.

@@ -35,7 +35,8 @@ namespace genaralskar.Tools
             {
                 if (sel is AnimationClip)
                 {
-                    //parce end of name for clip
+                    // split end of name for clip
+                    // matches clips based on the last word in the name
                     AnimationClip clip = (AnimationClip)sel;
                     string name = clip.name.Split(' ')[clip.name.Split(' ').Length - 1];
                     clipOverrides[name] = clip;

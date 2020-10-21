@@ -1,0 +1,106 @@
+title: Start
+tags: 
+position: 919,-92
+---
+<<fadeIn black 1>>
+Guard:: Oops. Sorry about that!
+Player:: ...
+Player:: Just get me out of here...
+Guard:: Yeah...
+Guard:: Uh...
+Guard:: Can't.
+Player:: What!?
+Guard:: You're too far down. Not much I can do.
+Guard:: Sorry, but looks like you'll have to find another way out.
+Player:: Can't you just throw down a rope or something?
+Guard:: Um...
+Guard:: No...
+Guard:: Doesn't look like we've got any rope up here.
+Player:: Well can't you go get some?
+Guard:: Yeah...
+Guard:: Uh...
+Guard:: No.
+Guard:: Sorry.
+Player:: *sigh*
+Player:: Well, I've got this letter for the King. Can you at least deliver it for me?
+Guard:: Uh...
+Guard:: Sure... I guess...
+Guard:: Just throw it up here.
+[[Throw]]
+===
+title: Throw
+tags: 
+position: 695.9635718878467,236.61140736260438
+---
+<<animWait letter throw>>
+Guard:: Uh..
+Guard:: Think you could throw it a bit higher?
+[[Yeah|Throw]]
+[[No]]
+===
+title: No
+tags: 
+position: 1029.5186917750748,226.81307100006785
+---
+Player:: Uhmm...
+Player:: No.
+Guard:: Well, guess you just gotta find another way out. Sorry
+Player:: *sigh* Just my luck
+<<face player left>>
+<<moveWait player hagSpot>>
+Player:: Ah!
+<<camera activate sewer2>>
+<<wait 2>>
+Player:: Have you been there the entire time?
+Sewer Hag:: Yes.
+Player:: Well...
+<<autoContinue>>
+Player:: Goodb
+Sewer Hag:: I was once like you.
+Player:: Oh.
+Sewer Hag:: Young.
+Sewer Hag:: Spry.
+Sewer Hag:: Clean.
+Sewer Hag:: It has been many a flushes since I have met with someone at eye level.
+
+Sewer Hag:: I was once like you.
+<<autoContinue>>
+Player:: Yes, you've said that alrea
+Sewer Hag:: I was without a worry in the world. I was careless! And it lead to my ultimate demise.
+Sewer Hag:: One fatefull spring morning I was prancing about without a care in the world, when suddenly the ground started to rise!
+Sewer Hag:: Turns out it was I that had started to fall! Into that very grate. There was no escape. No help to hear my calls.
+
+<<autoContinue 1>>
+Sewer Hag:: Ever since, I have been stuck in this endless maze of twists and turds.
+<<textSpeed 0>>
+<<autoContinue .5>>
+Sewer Hag:: Ever since, I have been stuck in this endless maze of twists and turds
+<<autoContinue .5>>
+Sewer Hag:: Ever since, I have been stuck in this endless maze of twists and turd
+<<autoContinue .8>>
+Sewer Hag:: Ever since, I have been stuck in this endless maze of twists and tur
+<<autoContinue .5>>
+Sewer Hag:: Ever since, I have been stuck in this endless maze of twists and turn
+<<autoContinue .5>>
+Sewer Hag:: Ever since, I have been stuck in this endless maze of twists and turns
+Sewer Hag:: Ever since, I have been stuck in this endless maze of twists and turns.
+<<textSpeed -1>>
+
+Player:: So you've been stuck here for a while?
+Sewer Hag:: Correct!
+Player:: And you can't find the way out?
+Sewer Hag:: Indeed.
+Player:: ...
+Player:: Why not just follow the exit signs?
+<<hideBox>>
+<<wait 2>>
+Sewer Hag:: ...
+Sewer Hag:: The what?
+<<hideBox>>
+<<face hag left>>
+<<wait 1>>
+<<camera hag2>>
+<<wait 2>>
+Sewer Hag:: BLAST ME!
+Sewer Hag:: How long has that been there!
+===

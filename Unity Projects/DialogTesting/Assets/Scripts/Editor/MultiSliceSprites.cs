@@ -7,6 +7,8 @@ public class MultiSliceSprites : EditorWindow
 {
     static int spriteWidth = 64;
     static int spriteHeight = 64;
+    static float pivotX = .5f;
+    static float pivotY = .5f;
 
     [MenuItem("Tools/genaralskar/Multi Slice Sprite")]
     private static void Init()
@@ -20,14 +22,16 @@ public class MultiSliceSprites : EditorWindow
     {
         spriteWidth = EditorGUILayout.IntField("Cell Width", spriteWidth);
         spriteWidth = EditorGUILayout.IntField("Cell Height", spriteHeight);
+        pivotX = EditorGUILayout.FloatField("Pivot X", pivotX);
+        pivotY = EditorGUILayout.FloatField("Pivot Y", pivotY);
 
         if (GUILayout.Button("Slice"))
         {
-            SliceSprites(spriteWidth, spriteHeight);
+            SliceSprites(spriteWidth, spriteHeight, pivotX, pivotY);
         }
     }
 
-    static void SliceSprites(int width, int height)
+    static void SliceSprites(int width, int height, float _pivotX, float _pivotY)
     {
         // Change the below for the with and height dimensions of each sprite within the spritesheets
         int sliceWidth = width;
@@ -63,7 +67,7 @@ public class MultiSliceSprites : EditorWindow
                 for (int x = 0; x < spriteSheet.width; x += sliceWidth)
                 {
                     SpriteMetaData smd = new SpriteMetaData();
-                    smd.pivot = new Vector2(0.5f, 0.5f);
+                    smd.pivot = new Vector2(_pivotX, _pivotY);
                     smd.alignment = 9;
                     smd.name = $"{textures[z].name}_{counter}";
                     //smd.name = (spriteSheet.height - j) / sliceHeight + ", " + i / sliceWidth;

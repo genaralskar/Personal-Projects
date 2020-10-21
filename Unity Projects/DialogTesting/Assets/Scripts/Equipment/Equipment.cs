@@ -4,7 +4,7 @@
 [RequireComponent(typeof(SpriteRenderer))]
 public class Equipment : MonoBehaviour
 {
-    public enum Type { Head, Neck, Chest, Back, Waist, Hands, Legs, Feet, Base }
+    public enum Type { Head, Neck, Chest, Back, Waist, Hands, Legs, Feet, Weapon, Base }
 
     [SerializeField]
     private Type type;
@@ -19,7 +19,7 @@ public class Equipment : MonoBehaviour
 
     public void Equip(EquipmentSO newItem)
     {
-        Debug.Log("Equipping " + newItem);
+        //Debug.Log("Equipping " + newItem);
         SetAnimatorController(newItem.OverrideController);
     }
 
@@ -37,7 +37,7 @@ public class Equipment : MonoBehaviour
 
     private void SetAnimatorController(AnimatorOverrideController newController)
     {
-        Debug.Log("Equipping " + newController);
+        //Debug.Log("Equipping " + newController);
         anims.runtimeAnimatorController = newController;
     }
 }

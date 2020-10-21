@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: 4a8687a89259faa41891ff39312a6bc4
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - Opening-Start-0
+  - Opening-Start-1
+  - Opening-Start-2
+  - Opening-Start-3
+  - Opening-Start-4
+  - Opening-Start-5
+  - Opening-Start-6
+  - Opening-Start-7
+  - Opening-Start-8
+  - Opening-Start-9
+  - Opening-Start-10
+  - Opening-Start-11
+  - Opening-Start-12
+  - Opening-Start-13
+  - Opening-Start-14
+  - Opening-Start-15
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

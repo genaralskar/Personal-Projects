@@ -88,7 +88,7 @@ from it's stupid little mouth.
 ===
 title: meetLung
 tags: 
-position: 1623.3170166015625,155.91267776489258
+position: 1619.3170166015625,162.91267776489258
 ---
 <<hideBox>>
 <<fadeIn black 1>>
@@ -210,4 +210,12 @@ position: 1622.575927734375,415.76055908203125
     << moveInstant Lung exitLeft>>
     <<wait 1>>
     [[knockout]]
+===
+title: speech
+tags: 
+position: -3,-1
+---
+Bossman:: Greetings everyone. As
+Bossman:: You <size=120%>WHAT!?</size>
+Bossman:: <size=50%>No it's not okay</size> Everything is going to be fine!
 ===

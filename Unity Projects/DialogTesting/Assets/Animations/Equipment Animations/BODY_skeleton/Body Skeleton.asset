@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Body Skeleton
   m_EditorClassIdentifier: 
   overrideController: {fileID: 22100000, guid: 297eab48a20d21747984cf123c23da0b, type: 2}
-  type: 8
+  type: 9

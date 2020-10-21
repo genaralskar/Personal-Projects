@@ -1,0 +1,80 @@
+fileFormatVersion: 2
+guid: 1862a71d2180fbe46954d529d68398c6
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - SewerHag-Start-0
+  - SewerHag-Start-1
+  - SewerHag-Start-2
+  - SewerHag-Start-3
+  - SewerHag-Start-4
+  - SewerHag-Start-5
+  - SewerHag-Start-6
+  - SewerHag-Start-7
+  - SewerHag-Start-8
+  - SewerHag-Start-9
+  - SewerHag-Start-10
+  - SewerHag-Start-11
+  - SewerHag-Start-12
+  - SewerHag-Start-13
+  - SewerHag-Start-14
+  - SewerHag-Start-15
+  - SewerHag-Start-16
+  - SewerHag-Start-17
+  - SewerHag-Start-18
+  - SewerHag-Start-19
+  - SewerHag-Start-20
+  - SewerHag-Start-21
+  - SewerHag-Start-22
+  - SewerHag-Throw-23
+  - SewerHag-Throw-24
+  - SewerHag-Throw-25
+  - SewerHag-No-26
+  - SewerHag-No-27
+  - SewerHag-No-28
+  - SewerHag-No-29
+  - SewerHag-No-30
+  - SewerHag-No-31
+  - SewerHag-No-32
+  - SewerHag-No-33
+  - SewerHag-No-34
+  - SewerHag-No-35
+  - SewerHag-No-36
+  - SewerHag-No-37
+  - SewerHag-No-38
+  - SewerHag-No-39
+  - SewerHag-No-40
+  - SewerHag-No-41
+  - SewerHag-No-42
+  - SewerHag-No-43
+  - SewerHag-No-44
+  - SewerHag-No-45
+  - SewerHag-No-46
+  - SewerHag-No-47
+  - SewerHag-No-48
+  - SewerHag-No-49
+  - SewerHag-No-50
+  - SewerHag-No-51
+  - SewerHag-No-52
+  - SewerHag-No-53
+  - SewerHag-No-54
+  - SewerHag-No-55
+  - SewerHag-No-56
+  - SewerHag-No-57
+  - SewerHag-No-58
+  - SewerHag-No-59
+  - SewerHag-No-60
+  - SewerHag-No-61
+  - SewerHag-No-62
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

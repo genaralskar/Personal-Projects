@@ -1,0 +1,24 @@
+title: Start
+tags: 
+---
+Ahhhh... what a nice day.
+To sleep in that is.
+It's been a long week of working hard and de-Betsy-fying the farm.
+Betsy's our cow. She likes to... break things.
+But Uncle said I could have the morning off, and I'm going to enjoy every second of it
+
+<<anim betsy>>
+Ugh...
+Uncle:: Gal durn it gurl! That's the third time this month!
+<<moveWait uncle uncle1>>
+Uncle:: Ah, sorry 'bout that kid.
+Uncle:: Ol' Betsy here was just too excited to see ya I suppose.
+All I ask is for one day off...
+Player:: It's fine...
+Uncle:: Oh!
+Uncle:: And here I thought you'd be more riled up than a bee hive in a carriage on a bumpy mountain road!
+Player:: What?
+Uncle:: Well, seeing how you're up and all, why not fetch some wood so we can fix this here hole.
+Uncle:: Don't want them bandersnatches getting a chance at ya, now do we?
+<<moveWait uncle uncle2>>
+===
