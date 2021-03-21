@@ -1,0 +1,34 @@
+title: Start
+tags: 
+colorID: 0
+position: 1281,148
+---
+This is the start of the dialog
+[[Next]]
+===
+title: Next
+tags: 
+colorID: 0
+position: 1294,405
+---
+This is the next dialog
+Bob:: Where do you want to go?
+[[ answer: Go Right |right]]
+[[ answer: Go Left |left]]
+===
+title: right
+tags: 
+colorID: 0
+position: 1464,664
+---
+<< move Player spot1 >> 
+You chose right!
+===
+title: left
+tags: 
+colorID: 0
+position: 1137,681
+---
+<< move Player spot2 >> 
+You chose left!
+===

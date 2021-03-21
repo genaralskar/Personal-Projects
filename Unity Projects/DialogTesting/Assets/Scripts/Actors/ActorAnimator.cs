@@ -17,6 +17,7 @@ public class ActorAnimator : MonoBehaviour
     }
     public void UpdateAnimatorFloat(string param, float value)
     {
+        if (!equipManager) return;
         equipManager.UpdateAnimatorFloat(param, value);
     }
 
